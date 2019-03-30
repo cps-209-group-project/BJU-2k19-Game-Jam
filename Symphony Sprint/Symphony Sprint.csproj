@@ -79,6 +79,7 @@
     <Compile Include="Game Model\World Objects\GameObject.cs" />
     <Compile Include="Game Model\World Objects\Notes\EighthNote.cs" />
     <Compile Include="Game Model\World Objects\Notes\HalfNote.cs" />
+    <Compile Include="Game Model\World Objects\Notes\QuarterNote.cs" />
     <Compile Include="Game Model\World Objects\Notes\WholeNote.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

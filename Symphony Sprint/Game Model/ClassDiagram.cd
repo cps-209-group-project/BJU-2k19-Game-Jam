@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Symphony_Sprint.Game_Model.Level">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <NestedTypes>
       <Enum Name="Symphony_Sprint.Game_Model.Level.Difficulty" Collapsed="true">
         <TypeIdentifier>
@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Symphony_Sprint.Game_Model.World_Objects.Player">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Game Model\Player.cs</FileName>
@@ -76,6 +76,21 @@
     <TypeIdentifier>
       <HashCode>AAAAgICAAAAAgAAAAAAAwAIBAAACAQAAAAAAwAAAAAA=</HashCode>
       <FileName>Game Model\World Objects\Enemies\Sharp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Symphony_Sprint.Game_Model.World_Objects.Notes.QuarterNote">
+    <Position X="13.5" Y="3" Width="1.5" />
+    <InheritanceLine Type="Symphony_Sprint.Game_Model.GameObject" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="2.824" />
+        <Point X="8" Y="2.906" />
+        <Point X="14.312" Y="2.906" />
+        <Point X="14.312" Y="3" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAwgIBAAICAQAAAAAAwAAAAAA=</HashCode>
+      <FileName>Game Model\World Objects\Notes\QuarterNote.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
