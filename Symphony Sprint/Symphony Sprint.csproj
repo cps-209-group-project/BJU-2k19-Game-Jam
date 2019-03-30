@@ -75,7 +75,10 @@
     <Compile Include="Game Model\Player.cs" />
     <Compile Include="Game Model\UnitTests.cs" />
     <Compile Include="Game Model\World Objects\Enemies\Flat.cs" />
+    <Compile Include="Game Model\World Objects\Enemies\Sharp.cs" />
     <Compile Include="Game Model\World Objects\GameObject.cs" />
+    <Compile Include="Game Model\World Objects\Notes\EighthNote.cs" />
+    <Compile Include="Game Model\World Objects\Notes\HalfNote.cs" />
     <Compile Include="Game Model\World Objects\Notes\WholeNote.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
