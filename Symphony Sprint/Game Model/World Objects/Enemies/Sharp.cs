@@ -9,6 +9,11 @@ namespace Symphony_Sprint.Game_Model.World_Objects.Enemies
     class Sharp : GameObject
     {
         public int damage;
+        public string imgPath;
+        public int speed;
+        public int posX;
+        public int posY;
+        public int Damage { get { return damage; } set { damage = value; } }
         public override string ImgPath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override int Speed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override int PosX { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
