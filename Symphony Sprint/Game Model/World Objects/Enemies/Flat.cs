@@ -22,12 +22,12 @@ namespace Symphony_Sprint.Game_Model.World_Objects.Enemies
         public override int PosX { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override int PosY { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public override void Load()
+        public override string Serialize()
         {
             throw new NotImplementedException();
         }
 
-        public override void Save()
+        public override void Deserialize(string data)
         {
             throw new NotImplementedException();
         }

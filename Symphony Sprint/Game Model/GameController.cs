@@ -21,7 +21,15 @@ namespace Symphony_Sprint.Game_Model
         public int Points { get { return points; } set { points = value; } }
         public int Notes { get { return notes; } set { notes = value; } }
 
+        public void Load(string filename)
+        {
+            throw new NotImplementedException();
+        }
 
+        public string Save()
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

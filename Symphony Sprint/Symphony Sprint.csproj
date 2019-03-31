@@ -71,6 +71,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Game Model\GameController.cs" />
+    <Compile Include="Game Model\GameControllerTest.cs" />
+    <Compile Include="Game Model\ISerialize.cs" />
     <Compile Include="Game Model\Level.cs" />
     <Compile Include="Game Model\Player.cs" />
     <Compile Include="Game Model\UnitTests.cs" />

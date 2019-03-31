@@ -15,9 +15,9 @@ namespace Symphony_Sprint.Game_Model
         public abstract int PosX { get; set; }
         public abstract int PosY { get; set; }
 
-        public abstract void Load();
+        public abstract string Serialize();
 
-        public abstract void Save();
+        public abstract void Deserialize(string data);
 
     }
 }
