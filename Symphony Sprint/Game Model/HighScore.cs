@@ -33,7 +33,7 @@ namespace Symphony_Sprint
         //takes scores and names and makes string to be displayed on the window
         public string CreateStringOfScoresAndNames()
         {
-
+            return "a";
         }
 
     }   
