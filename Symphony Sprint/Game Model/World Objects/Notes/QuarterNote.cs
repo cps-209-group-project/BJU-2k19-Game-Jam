@@ -16,10 +16,10 @@ namespace Symphony_Sprint.Game_Model.World_Objects.Notes
         public int posY;
 
         public int PointValue { get { return pointValue; } set { pointValue = value; } }
-        public override string ImgPath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int Speed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int PosX { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int PosY { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override string ImgPath { get { return imgPath; } set { imgPath = value; } }
+        public override int Speed { get { return speed; } set { speed = value; } }
+        public override int PosX { get { return posX; } set { posX = value; } }
+        public override int PosY { get { return posY; } set { posY = value; } }
 
         public override string Serialize()
         {
