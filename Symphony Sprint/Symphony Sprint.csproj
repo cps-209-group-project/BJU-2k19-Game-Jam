@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="Game Model\GameController.cs" />
     <Compile Include="Game Model\GameControllerTest.cs" />
+    <Compile Include="Game Model\HighScoreUnitTest.cs" />
     <Compile Include="Game Model\ISerialize.cs" />
     <Compile Include="Game Model\Level.cs" />
     <Compile Include="Game Model\Player.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Game Model\World Objects\Notes\HalfNote.cs" />
     <Compile Include="Game Model\World Objects\Notes\QuarterNote.cs" />
     <Compile Include="Game Model\World Objects\Notes\WholeNote.cs" />
+    <Compile Include="Game Model\HighScore.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
