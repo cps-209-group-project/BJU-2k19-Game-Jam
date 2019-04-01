@@ -75,7 +75,6 @@
     <Compile Include="Game Model\ISerialize.cs" />
     <Compile Include="Game Model\Level.cs" />
     <Compile Include="Game Model\Player.cs" />
-    <Compile Include="Game Model\UnitTests.cs" />
     <Compile Include="Game Model\World Objects\Enemies\Flat.cs" />
     <Compile Include="Game Model\World Objects\Enemies\Sharp.cs" />
     <Compile Include="Game Model\World Objects\GameObject.cs" />
