@@ -13,9 +13,19 @@ namespace Symphony_Sprint.Game_Model
         [Test]
         public void CreateStringOfScoresAndName_ReturnsString_Succesful()
         {
+            List<string> names = new List<string>();
+            List<int> hsList = new List<int>();
+
+            hsList.Add(3000);
+            hsList.Add(2300);
+            hsList.Add(500);
+
+            names.Add("billybob");
+            names.Add("bobbybill");
+            names.Add("billybobbybillbob");
             HighScore hs = new HighScore();
-            hs.HSList = [3000, 2300, 500];
-            hs.Names = ["billybob", "bobbybill", "billybobbybillbob"];
+            hs.HSList = hsList;
+            hs.Names = names;
             Assert.IsTrue(hs.CreateStringOfScoresAndNames() == "billybob......3000, bobbybill......2300, billybobbybillbob......500");
         }
     }
