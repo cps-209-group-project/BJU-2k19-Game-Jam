@@ -138,7 +138,7 @@
     <None Include="Graphics\trebleClef.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\wholeNote.gif" />
+    <Resource Include="Graphics\wholeNote.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\100-1.png.png" />
@@ -168,7 +168,7 @@
     <None Include="Graphics\flat.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\halfNote.gif" />
+    <Resource Include="Graphics\halfNote.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\heart-1.png.png" />

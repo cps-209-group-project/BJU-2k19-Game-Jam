@@ -36,7 +36,7 @@ namespace Symphony_Sprint
             gameTimer.Tick += GameTimer_Tick;
 
             GameController.Instance.Largo();
-            SetupGame();
+            //SetupGame();
             UpdateScreen();
       
             gameTimer.Start();
@@ -57,26 +57,22 @@ namespace Symphony_Sprint
             
         }
 
-        public void SetupGame()
-        {
-            foreach(GameObject obj in GameController.Instance.Level.GameObjects)
-            {
-                var source = new BitmapImage(new Uri(String.Format("/Graphics/GameObjects{0}", obj.ImgPath), UriKind.Relative));
-                var img = new Image();
-                {
-                    Tag = obj;
-                    HorizontalAlignment = HorizontalAlignment.Right;
-                    Margin = new Thickness(10);
-                    Width = 20;
-                }
+        //public void SetupGame()
+        //{
+            
+        //    foreach(GameObject obj in GameController.Instance.Level.GameObjects)
+        //    {
+        //        var source = new BitmapImage(new Uri(String.Format("/Graphics/{0}", obj.ImgPath), UriKind.Relative));
+        //        var img = new Image();
+                
 
-                ImageBehavior.SetAnimatedSource(img, source);
+        //        ImageBehavior.SetAnimatedSource(img, source);
 
-                GameCanvas.Children.Add(img);
+        //        GameCanvas.Children.Add(img);
 
                 
-            }
-        }
+        //    }
+        //}
 
         private void UpdateScreen()
         {
@@ -88,14 +84,17 @@ namespace Symphony_Sprint
             
             foreach (GameObject obj in GameController.Instance.Level.GameObjects)
             {
-                var source = new BitmapImage(new Uri(String.Format("/Graphics/GameObjects{0}", obj.ImgPath), UriKind.Relative));
+                var source = new BitmapImage(new Uri(String.Format("/Graphics/{0}", obj.ImgPath), UriKind.Relative));
                 var img = new Image();
                 
 
                 ImageBehavior.SetAnimatedSource(img, source);
-                
+
+                img.Height = 40;
                 GameCanvas.Children.Add(img);
+                obj.posX -= obj.Speed;
                 Canvas.SetLeft(img, obj.posX);
+                
             }
         }
 

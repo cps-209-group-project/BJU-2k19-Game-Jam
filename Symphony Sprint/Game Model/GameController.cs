@@ -44,7 +44,7 @@ namespace Symphony_Sprint.Game_Model
 
         public void Largo()
         {
-            GameObject wholeNote = new GameObject("/wholeNote.gif", 10, 100, 10);
+            GameObject wholeNote = new GameObject("wholeNote.gif", 20, 800, 5);
 
             Level.GameObjects.Add(wholeNote);
         }
