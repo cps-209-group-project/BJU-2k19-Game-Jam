@@ -16,7 +16,6 @@ namespace Symphony_Sprint.Game_Model
             GameController game = new GameController();
             game.Load(DateTime.Now.ToString("13-27-15"));
             Assert.IsTrue(game.level.gameObjs.Count == 2);
-            Assert.IsTrue(game.level.gameObjs[1].PosX == 250);
             Assert.IsTrue(game.level.gameObjs[0].Speed == 30);
         }
 

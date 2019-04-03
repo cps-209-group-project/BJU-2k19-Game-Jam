@@ -6,6 +6,15 @@ namespace Symphony_Sprint.Game_Model.World_Objects
     {
         public bool isJumping;
 
+        public string ImgPath { get; set; }
+
+
+
+        public Player(string img)
+        {
+            ImgPath = img;
+        }
+
         //Events are registered in MainWindow.xaml.cs
         public void KeyIsDown(object sender, KeyEventArgs e)
         {
