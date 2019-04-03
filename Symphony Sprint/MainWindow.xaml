@@ -6,5 +6,9 @@
         xmlns:local="clr-namespace:Symphony_Sprint"
         mc:Ignorable="d"
         Title="Symphony Sprint" Height="450" Width="800">
-    <StackPanel></StackPanel>
+    <Canvas>
+        <StackPanel Background="Black">
+            <Image/>
+        </StackPanel>
+    </Canvas>
 </Window>
