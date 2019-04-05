@@ -202,7 +202,7 @@
     <None Include="Graphics\longTitle-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\piano.gif" />
+    <Resource Include="Graphics\piano.gif" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\quarterNote.gif" />

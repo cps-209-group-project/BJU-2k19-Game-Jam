@@ -52,7 +52,7 @@ namespace Symphony_Sprint.Game_Model
         {
             var usedPos = new List<int>();
 
-            var positions = new HashSet<int>();
+            var positions = new HashSet<int>(); //HashSets cannot contain duplicate items.
 
             for (int i = 0; i < 50; i++)
             {
@@ -65,7 +65,7 @@ namespace Symphony_Sprint.Game_Model
                 var posList = positions.ToList();
                 posX = posList[i];
 
-                GameObject obj = new GameObject(images[img], 20, posX, posY);
+                GameObject obj = new GameObject(images[img], 50, posX, posY);
                 Level.GameObjects.Add(obj);
             }
 

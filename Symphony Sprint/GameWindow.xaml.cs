@@ -32,7 +32,7 @@ namespace Symphony_Sprint
 
         public void Window_Loaded(object sender, EventArgs e)
         {
-            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 200) };
+            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 1000) };
             gameTimer.Tick += GameTimer_Tick;
 
             GameController.Instance.LargoLevel();
@@ -64,8 +64,26 @@ namespace Symphony_Sprint
             //Update Health
             //Update NoteObjective
             //Update Level when needed.
+
+
+
+
             GameCanvas.Children.Clear();
 
+            
+
+            //Screen Graphics Add
+            //-------------------
+            //Piano Graphics
+            var pianoSource = new BitmapImage(new Uri("/Graphics/piano.gif", UriKind.Relative));
+            var piano = new Image();
+            piano.Height = 50;
+            Canvas.SetBottom(piano, 0);
+
+            ImageBehavior.SetAnimatedSource(piano, pianoSource);
+            GameCanvas.Children.Add(piano);
+
+            
 
             //Player
             var playerSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", GameController.Instance.Player.ImgPath), UriKind.Relative));
@@ -107,14 +125,14 @@ namespace Symphony_Sprint
                     img.Visibility = Visibility.Hidden;
                 }
 
-               
-     
                 img.Height = 40;
                 GameCanvas.Children.Add(img);
                 obj.posX -= obj.Speed;
 
                 Canvas.SetLeft(img, obj.posX);
                 Canvas.SetBottom(img, obj.posY);
+
+                
                 //End of Game Object Code
                 
             }
