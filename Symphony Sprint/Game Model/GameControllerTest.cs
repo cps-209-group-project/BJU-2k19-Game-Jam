@@ -36,9 +36,9 @@ namespace Symphony_Sprint.Game_Model
         public void Save_Test()
         {
             GameController game = new GameController();
-            game.Save("testload");
+            game.Save("testsave");
 
-            FileAssert.Exists("testload");
+            FileAssert.Exists("testsave");
         }
 
         [Test]
