@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,13 +20,24 @@ namespace Symphony_Sprint.Game_Model
             hs.AddNameandScore(name, highScore);
             Assert.IsTrue(hs.CreateStringOfScoresAndNames() == "billybobbybillbob......3000");
         }
+
         [Test]
         public void TestLoad_ReturnsText_Succesful()
         {
+            string filename = "/highscoresfile.txt";
+            HighScoreManager hs = new HighScoreManager();
+            hs.LoadScore(filename);
+            Assert.IsTrue(hs.HighScoreList.Count > 0);
+        }
+
+        [Test]
+        public void TestSave_ReturnsNothings_Succesful()
+        {
             string filename = "highscoresfile.txt";
             HighScoreManager hs = new HighScoreManager();
-            string results = hs.LoadScore(filename);
-            Assert.IsTrue(results == "player1......4000, player2......400, player3......40, player4......4");
+            hs.SaveScore(filename);
+            Assert.IsTrue(File.Exists(Directory.GetCurrentDirectory() + filename));
         }
+
     }
 }

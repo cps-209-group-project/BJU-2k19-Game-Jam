@@ -10,7 +10,6 @@ namespace Symphony_Sprint
     class HighScoreManager
     {
         public List<HighScore> HighScoreList { get; set; }
-        public string fileLocation { get; set; }
 
         //adds the name of the players and their score to a list in sorted order
         public void AddNameandScore(string name, int score)
@@ -27,7 +26,7 @@ namespace Symphony_Sprint
         //loads scores from a text file
         public void LoadScore(string filename)
         {
-
+            return "a";
         }
 
         //takes scores and names and makes string to be displayed on the window
