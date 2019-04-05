@@ -73,7 +73,16 @@ namespace Symphony_Sprint
             GameController.Instance.Player.PosY = 50;
 
             Canvas.SetLeft(playerImg, GameController.Instance.Player.PosX);
-            Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
+
+            if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.running)
+            {
+                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
+            } else if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.jumping)
+            {
+                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY + 20);
+            }
+
+            
 
             ImageBehavior.SetAnimatedSource(playerImg, playerSource);
             GameCanvas.Children.Add(playerImg);
@@ -83,10 +92,16 @@ namespace Symphony_Sprint
             {
                 var objectSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", obj.ImgPath), UriKind.Relative));
                 var img = new Image();
-                
 
                 ImageBehavior.SetAnimatedSource(img, objectSource);
 
+                if (obj.posX > 1190 || obj.posX < 10)
+                {
+                    img.Visibility = Visibility.Hidden;
+                }
+
+               
+     
                 img.Height = 40;
                 GameCanvas.Children.Add(img);
                 obj.posX -= obj.Speed;

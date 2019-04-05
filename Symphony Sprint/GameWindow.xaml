@@ -8,7 +8,7 @@
         Title="GameWindow" Height="500" Width="1440"
         Loaded="Window_Loaded">
     
-    <Grid x:Name="GameGrid">
+    <Grid x:Name="GameGrid" Background="Black">
         
         <Canvas x:Name="GameCanvas" HorizontalAlignment="Center" Background="Blue" Width="1200">
             

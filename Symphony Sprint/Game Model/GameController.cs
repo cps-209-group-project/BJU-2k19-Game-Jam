@@ -49,9 +49,6 @@ namespace Symphony_Sprint.Game_Model
         public void LargoLevel()
         {
 
-
-            
-
             for (int i = 0; i < 20; i++)
             {
                 int img = rand.Next(0, 6);
