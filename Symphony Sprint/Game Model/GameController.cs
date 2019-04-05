@@ -37,7 +37,7 @@ namespace Symphony_Sprint.Game_Model
 
         public GameController()
         {
-            Player = new Player("/Graphics/stone.png");
+            Player = new Player("robin.png");
             level = new Level();
         }
 

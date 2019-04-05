@@ -12,6 +12,9 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         public string ImgPath { get; set; }
         public int Height { get; set; }
 
+        public int PosX { get; set; }
+        public int PosY { get; set; }
+
 
         public Player(string img)
         {
@@ -41,13 +44,13 @@ namespace Symphony_Sprint.Game_Model.World_Objects
             }
         }
 
-        //public void KeyIsUp(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.Space)
-        //    {
-        //        isJumping = false;
-        //    }
-        //}
+        public void KeyIsUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                //isJumping = false;
+            }
+        }
 
         public void Jump()
         {

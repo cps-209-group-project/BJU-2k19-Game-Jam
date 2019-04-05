@@ -159,9 +159,6 @@
     <None Include="Graphics\about-1.png %282%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\dr._schaub_avatar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Graphics\eigthNote.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +199,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\sharp.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Graphics\Dr. Schaub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\robin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
