@@ -32,7 +32,7 @@ namespace Symphony_Sprint
 
         public void Window_Loaded(object sender, EventArgs e)
         {
-            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 1) };
+            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 200) };
             gameTimer.Tick += GameTimer_Tick;
 
             GameController.Instance.LargoLevel();
@@ -66,6 +66,8 @@ namespace Symphony_Sprint
             //Update Level when needed.
             GameCanvas.Children.Clear();
 
+
+            //Player
             var playerSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", GameController.Instance.Player.ImgPath), UriKind.Relative));
             var playerImg = new Image();
             playerImg.Height = 60;
@@ -74,19 +76,24 @@ namespace Symphony_Sprint
 
             Canvas.SetLeft(playerImg, GameController.Instance.Player.PosX);
 
-            if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.running)
-            {
-                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
-            } else if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.jumping)
-            {
-                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY + 20);
-            }
-
-            
 
             ImageBehavior.SetAnimatedSource(playerImg, playerSource);
             GameCanvas.Children.Add(playerImg);
-            
+
+
+            //Sets the players position depeding on its state. 
+            if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.running)
+            {
+                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
+            }
+            else if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.jumping)
+            {
+                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY + 20);
+            }
+            //End of player code
+
+
+            //Game Object Code
             //Loops through each game object and sets there custom position.
             foreach (GameObject obj in GameController.Instance.Level.GameObjects)
             {
@@ -107,8 +114,8 @@ namespace Symphony_Sprint
                 obj.posX -= obj.Speed;
 
                 Canvas.SetLeft(img, obj.posX);
-                Canvas.SetTop(img, obj.posY);
-
+                Canvas.SetBottom(img, obj.posY);
+                //End of Game Object Code
                 
             }
         }

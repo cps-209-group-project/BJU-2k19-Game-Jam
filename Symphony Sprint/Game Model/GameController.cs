@@ -46,15 +46,24 @@ namespace Symphony_Sprint.Game_Model
 
         }
 
+        //Sets up Level One
         public void LargoLevel()
         {
+            var usedPos = new List<int>();
 
-            for (int i = 0; i < 20; i++)
+            var positions = new HashSet<int>();
+
+            for (int i = 0; i < 50; i++)
             {
                 int img = rand.Next(0, 6);
-                int space = rand.Next(10, 20);
-                int posX = rand.Next(1200, 1500);
-                int posY = rand.Next(100, 400);
+                int posX = rand.Next(1200, 15000);
+                int posY = rand.Next(150, 250);
+
+                //Protects against duplicate random numbers.
+                positions.Add(posX);
+                var posList = positions.ToList();
+                posX = posList[i];
+
                 GameObject obj = new GameObject(images[img], 20, posX, posY);
                 Level.GameObjects.Add(obj);
             }
