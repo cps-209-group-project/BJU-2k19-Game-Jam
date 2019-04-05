@@ -17,6 +17,10 @@ namespace Symphony_Sprint.Game_Model
         public int notes;
         public bool isGameOver = false;
 
+        public string[] images = { "wholeNote.gif", "quarterNote.gif", "eigthNote.gif", "trebleClef.gif", "flat.gif", "sharp.gif", "halfNote.gif" };
+
+        Random rand = new Random();
+
         private static GameController instance = new GameController();
 
         public static GameController Instance
@@ -34,7 +38,7 @@ namespace Symphony_Sprint.Game_Model
 
         public GameController()
         {
-            Player = new Player("/Graphics/stone.png");
+            Player = new Player("robin.png");
             level = new Level();
         }
 
@@ -43,11 +47,20 @@ namespace Symphony_Sprint.Game_Model
 
         }
 
-        public void Largo()
+        public void LargoLevel()
         {
-            GameObject wholeNote = new GameObject("wholeNote.gif", 20, 800, 5);
 
-            Level.GameObjects.Add(wholeNote);
+            for (int i = 0; i < 20; i++)
+            {
+                int img = rand.Next(0, 6);
+                int space = rand.Next(10, 20);
+                int posX = rand.Next(1200, 1500);
+                int posY = rand.Next(100, 400);
+                GameObject obj = new GameObject(images[img], 20, posX, posY);
+                Level.GameObjects.Add(obj);
+            }
+
+            
         }
 
         public void Save(string filename)
