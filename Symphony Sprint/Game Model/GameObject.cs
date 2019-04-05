@@ -16,6 +16,7 @@ namespace Symphony_Sprint.Game_Model
         public int posX { get; set; }
         public int posY { get; set; }
 
+
         public GameObject(string imgPath, int speed, int x, int y)
         {
             this.posX = x;

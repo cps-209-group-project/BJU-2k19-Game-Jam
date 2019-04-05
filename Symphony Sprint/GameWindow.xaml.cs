@@ -35,7 +35,7 @@ namespace Symphony_Sprint
             gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 1) };
             gameTimer.Tick += GameTimer_Tick;
 
-            GameController.Instance.Largo();
+            GameController.Instance.LargoLevel();
             //SetupGame();
             UpdateScreen();
       
@@ -94,6 +94,7 @@ namespace Symphony_Sprint
                 GameCanvas.Children.Add(img);
                 obj.posX -= obj.Speed;
                 Canvas.SetLeft(img, obj.posX);
+                Canvas.SetTop(img, obj.posY);
                 
             }
         }
