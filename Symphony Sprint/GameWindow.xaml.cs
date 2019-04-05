@@ -93,7 +93,7 @@ namespace Symphony_Sprint
                 img.Height = 40;
                 GameCanvas.Children.Add(img);
                 obj.posX -= obj.Speed;
-                Canvas.SetLeft(img, obj.posX);
+                Canvas.SetLeft(img, obj.posX); 
                 
             }
         }
