@@ -26,7 +26,7 @@ namespace Symphony_Sprint
         //loads scores from a text file
         public void LoadScore(string filename)
         {
-            return "a";
+
         }
 
         //takes scores and names and makes string to be displayed on the window
