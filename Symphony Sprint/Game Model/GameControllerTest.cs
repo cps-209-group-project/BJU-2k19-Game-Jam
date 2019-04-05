@@ -46,9 +46,9 @@ namespace Symphony_Sprint.Game_Model
         {
             var game = new GameController
             {
-                Points = 20,
-                Notes = 33,
-                Player = new Player("img"),
+                Points = 52,
+                Notes = 99,
+                Player = new Player("p2.png"),
                 level = new Level()
             };
 
