@@ -54,7 +54,7 @@ namespace Symphony_Sprint.Game_Model
 
             var serializedData = game.Serialize();
 
-            Assert.AreEqual("Points:52|Notes:99|Player:Lives=3,PosX=20,PoxY=20,ImgPath=p2.png|" +
+            Assert.AreEqual("Points:52|Notes:99|Player:Lives=3,Height=0,PosX=20,PoxY=20,ImgPath=p2.png|" +
                 "Level:Difficulty=>EASY&NoteObjective=>90&GameObjects=>Speed=3,PosX=20,PoxY=20," +
                 "ImgPath=o1.png;Speed=2,PosX=5,PoxY=10,ImgPath=o2.png", serializedData);
         }
@@ -62,7 +62,7 @@ namespace Symphony_Sprint.Game_Model
         [Test]
         public void Deserialize_Sets_Properties()
         {
-            var serializedData = "Points:52|Notes:99|Player:Lives=3,PosX=20,PoxY=20,ImgPath=p2.png|" +
+            var serializedData = "Points:52|Notes:99|Player:Lives=3,Height=0,PosX=20,PoxY=20,ImgPath=p2.png|" +
                 "Level:Difficulty=>EASY&NoteObjective=>90&GameObjects=>Speed=3,PosX=20,PoxY=20," +
                 "ImgPath=o1.png;Speed=2,PosX=5,PoxY=10,ImgPath=o2.png";
 
