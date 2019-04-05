@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Symphony_Sprint.Game_Model
 {
-    public class GameObject
+    public class GameObject : ISerialize
     {
         
 

@@ -1,13 +1,14 @@
 ﻿using Symphony_Sprint.Game_Model.World_Objects;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Symphony_Sprint.Game_Model
 {
-    class GameController
+    public class GameController : ISerialize
     {
 
         public Level level;
@@ -71,15 +72,28 @@ namespace Symphony_Sprint.Game_Model
             
         }
 
-        public void Load(string filename)
+        public void Save(string filename)
+        {
+            string serializedData = Serialize();
+            File.WriteAllText(filename, serializedData);
+        }
+
+        public GameController Load(string filename)
+        {
+            string serializedData = File.ReadAllText(filename);
+            var game = new GameController();
+            game.Deserialize(serializedData);
+            return game;
+        }
+
+        public string Serialize()
         {
             throw new NotImplementedException();
         }
 
-        public string Save()
+        public void Deserialize(string data)
         {
             throw new NotImplementedException();
         }
-
     }
 }
