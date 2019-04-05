@@ -2,7 +2,7 @@
 
 namespace Symphony_Sprint.Game_Model.World_Objects
 {
-    public class Player
+    public class Player : ISerialize
     {
 
         public enum movementState { running, jumping, doublejump }
@@ -10,6 +10,7 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         //public bool isJumping;
 
         public string ImgPath { get; set; }
+        public int Lives { get; set; }
         public int Height { get; set; }
 
         public int PosX { get; set; }
@@ -72,6 +73,16 @@ namespace Symphony_Sprint.Game_Model.World_Objects
             {
                 this.State = movementState.running;
             }       
-        }       
+        }
+
+        public string Serialize()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Deserialize(string data)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
