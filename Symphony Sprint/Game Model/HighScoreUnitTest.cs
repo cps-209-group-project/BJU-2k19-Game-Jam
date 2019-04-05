@@ -11,22 +11,21 @@ namespace Symphony_Sprint.Game_Model
     public class HighScoreUnitTest
     {
         [Test]
-        public void CreateStringOfScoresAndName_ReturnsString_Succesful()
+        public void TestCreateStringOfScoresAndName_ReturnsString_Succesful()
         {
-            List<string> names = new List<string>();
-            List<int> hsList = new List<int>();
-
-            hsList.Add(3000);
-            hsList.Add(2300);
-            hsList.Add(500);
-
-            names.Add("billybob");
-            names.Add("bobbybill");
-            names.Add("billybobbybillbob");
-            HighScore hs = new HighScore();
-            hs.HSList = hsList;
-            hs.Names = names;
-            Assert.IsTrue(hs.CreateStringOfScoresAndNames() == "billybob......3000, bobbybill......2300, billybobbybillbob......500");
+            string name = "billybobbybillbob";
+            int highScore = 3000;
+            HighScoreManager hs = new HighScoreManager();
+            hs.AddNameandScore(name, highScore);
+            Assert.IsTrue(hs.CreateStringOfScoresAndNames() == "billybobbybillbob......3000");
+        }
+        [Test]
+        public void TestLoad_ReturnsText_Succesful()
+        {
+            string filename = "highscoresfile.txt";
+            HighScoreManager hs = new HighScoreManager();
+            string results = hs.LoadScore(filename);
+            Assert.IsTrue(results == "player1......4000, player2......400, player3......40, player4......4");
         }
     }
 }
