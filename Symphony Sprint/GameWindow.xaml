@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Symphony_Sprint"
         mc:Ignorable="d"
-        Title="GameWindow" Height="500" Width="1440"
+        Title="GameWindow" Height="900" Width="1600"
         Loaded="Window_Loaded">
     
     <Grid x:Name="GameGrid" Background="Black">
         
-        <Canvas x:Name="GameCanvas" HorizontalAlignment="Center" Background="Blue" Width="1200">
+        <Canvas x:Name="GameCanvas" HorizontalAlignment="Center" Background="Blue" Width="1200" Height="700">
             
         </Canvas>
     </Grid>
