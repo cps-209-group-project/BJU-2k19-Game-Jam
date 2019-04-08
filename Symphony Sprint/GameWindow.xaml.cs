@@ -22,21 +22,27 @@ namespace Symphony_Sprint
     {
 
         public static DispatcherTimer gameTimer;
-        public int time = 100;
-
+        public int seconds = 0;
+        
 
         public GameWindow()
         {
             InitializeComponent();
-            this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
-            this.KeyUp += new KeyEventHandler(GameController.Instance.Player.KeyIsUp);
-            GameController.Instance.Player.PosX = 100;
-            GameController.Instance.Player.PosY = 50;
         }
 
         public void Window_Loaded(object sender, EventArgs e)
         {
-            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 100) };
+            //Load images on screen
+            var source = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
+
+            time.Source = new BitmapImage(new Uri("/Graphics/time-1.png.png", UriKind.Relative));
+            lives.Source = new BitmapImage(new Uri("/Graphics/lives-1.png.png", UriKind.Relative));
+            heart1.Source = source;
+            heart2.Source = source;
+            heart3.Source = source;
+
+
+            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 200) };
             gameTimer.Tick += GameTimer_Tick;
 
             GameController.Instance.LargoLevel();
@@ -50,8 +56,7 @@ namespace Symphony_Sprint
         //If is not over then update screen...
         private void GameTimer_Tick(object sender, EventArgs e)
         {
-            --time;
-            Console.WriteLine("Working");
+            
 
             if (GameController.Instance.isGameOver == false)
             {
@@ -68,13 +73,21 @@ namespace Symphony_Sprint
             //Update Health
             //Update NoteObjective
             //Update Level when needed.
+
+            seconds++;
+            timeNum.Content = seconds.ToString();
+
+
             GameCanvas.Children.Clear();
+            
 
 
             //Player
             var playerSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", GameController.Instance.Player.ImgPath), UriKind.Relative));
             var playerImg = new Image();
             playerImg.Height = 60;
+            GameController.Instance.Player.PosX = 100;
+            GameController.Instance.Player.PosY = 50;
 
             Canvas.SetLeft(playerImg, GameController.Instance.Player.PosX);
 
@@ -84,18 +97,14 @@ namespace Symphony_Sprint
 
 
             //Sets the players position depeding on its state. 
-
-            Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
-            GameController.Instance.Player.UpdatePosition();
-            //GameController.Instance.Player.PosY += 1;
-            //call method update Positon
-
-            //else if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.jumping)
-            //{
-            //    Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY + 20);
-            //}
-
-
+            if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.running)
+            {
+                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
+            }
+            else if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.jumping)
+            {
+                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY + 20);
+            }
             //End of player code
 
 
@@ -104,26 +113,35 @@ namespace Symphony_Sprint
             foreach (GameObject obj in GameController.Instance.Level.GameObjects)
             {
                 var objectSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", obj.ImgPath), UriKind.Relative));
-                var img = new Image();
+                var objImg = new Image();
 
-                ImageBehavior.SetAnimatedSource(img, objectSource);
+
+                ImageBehavior.SetAnimatedSource(objImg, objectSource);
 
                 if (obj.posX > 1190 || obj.posX < 10)
                 {
-                    img.Visibility = Visibility.Hidden;
+                    objImg.Visibility = Visibility.Hidden;
                 }
 
                
-     
-                img.Height = 40;
-                GameCanvas.Children.Add(img);
+                if (obj.ImgPath == "trebleClef.gif")
+                {
+                    objImg.Height = 60;
+                }
+                else
+                {
+                    objImg.Height = 40;
+                }
+                objImg.Uid = "GameObject";
+                GameCanvas.Children.Add(objImg);
                 obj.posX -= obj.Speed;
 
-                Canvas.SetLeft(img, obj.posX);
-                Canvas.SetBottom(img, obj.posY);
+                Canvas.SetLeft(objImg, obj.posX);
+                Canvas.SetBottom(objImg, obj.posY);
                 //End of Game Object Code
                 
             }
+            
         }
 
         

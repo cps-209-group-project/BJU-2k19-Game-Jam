@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Symphony_Sprint.Properties
+namespace Symphony_Sprint
 {
     /// <summary>
-    /// Interaction logic for About.xaml
+    /// Interaction logic for HighScorePage.xaml
     /// </summary>
-    public partial class About : Page
+    public partial class HighScoreWindow : Window
     {
-        public About()
+        public HighScoreWindow()
         {
             InitializeComponent();
+            HighScoreManager.CreateStringOfScoresAndNames();
+        }
+
+        private void InitializeComponent()
+        {
         }
     }
 }

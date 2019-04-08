@@ -54,23 +54,54 @@ namespace Symphony_Sprint.Game_Model
 
             var positions = new HashSet<int>();
 
+            
             for (int i = 0; i < 50; i++)
             {
+                //Sets our random numbers each time the loop goes through.
                 int img = rand.Next(0, 6);
                 int posX = rand.Next(1200, 15000);
-                int posY = rand.Next(150, 250);
+                int posY = rand.Next(115, 250);
 
-                //Protects against duplicate random numbers.
-                positions.Add(posX);
-                var posList = positions.ToList();
-                posX = posList[i];
+                
+                //Protects against duplicate random positions.
+                
+                positions.Add(posX); //Hashsets cannot obtain the same value.
+                
+                var posList = positions.ToList(); //Change our hashset to a list so we can index it.
+                
+                if (posList.Count < 10 || posList.Count != 0)
+                {
+                    posX = posList[i];
+                } else
+                {
+                    posX = rand.Next(1200, 15000);
+                    posList.Clear();
+                }
 
                 GameObject obj = new GameObject(images[img], 20, posX, posY);
                 Level.GameObjects.Add(obj);
+                
             }
 
             
         }
+
+
+        public void ShuffleMe(List<int> list)
+        {
+            Random random = new Random();
+            int n = list.Count;
+
+            for (int i = list.Count - 1; i > 1; i--)
+            {
+                int rnd = random.Next(i + 1);
+
+                int value = list[rnd];
+                list[rnd] = list[i];
+                list[i] = value;
+            }
+        }
+
 
         public void Save(string filename)
         {
@@ -88,11 +119,12 @@ namespace Symphony_Sprint.Game_Model
 
         public string Serialize()
         {
-            throw new NotImplementedException();
+            return $"Points:{Points}\r\nNotes:{Notes}\r\nPlayer:{Player.Serialize()}\r\nLevel:{Level.Serialize()}";
         }
 
         public void Deserialize(string data)
         {
+            string[] parts = data.Split('\r', '\n');
             throw new NotImplementedException();
         }
     }
