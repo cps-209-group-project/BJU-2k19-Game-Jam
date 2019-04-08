@@ -93,12 +93,13 @@
     </Compile>
     <Compile Include="Game Model\GameController.cs" />
     <Compile Include="Game Model\GameControllerTest.cs" />
+    <Compile Include="Game Model\HighScore.cs" />
     <Compile Include="Game Model\HighScoreUnitTest.cs" />
     <Compile Include="Game Model\ISerialize.cs" />
     <Compile Include="Game Model\Level.cs" />
     <Compile Include="Game Model\Player.cs" />
     <Compile Include="Game Model\GameObject.cs" />
-    <Compile Include="Game Model\HighScore.cs" />
+    <Compile Include="Game Model\HighScoreManager.cs" />
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
