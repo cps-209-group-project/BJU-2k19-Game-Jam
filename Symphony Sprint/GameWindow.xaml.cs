@@ -29,7 +29,6 @@ namespace Symphony_Sprint
         {
             InitializeComponent();
             this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
-            this.KeyUp += new KeyEventHandler(GameController.Instance.Player.KeyIsUp);
             GameController.Instance.Player.PosX = 100;
             GameController.Instance.Player.PosY = 50;
         }
