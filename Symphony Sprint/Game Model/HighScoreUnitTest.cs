@@ -11,33 +11,35 @@ namespace Symphony_Sprint.Game_Model
     [TestFixture]
     public class HighScoreUnitTest
     {
-        //[Test]
-        //public void TestCreateStringOfScoresAndName_ReturnsString_Succesful()
-        //{
-        //    string name = "billybobbybillbob";
-        //    int highScore = 3000;
-        //    HighScoreManager hs = new HighScoreManager();
-        //    hs.AddNameandScore(name, highScore);
-        //    Assert.IsTrue(hs.CreateStringOfScoresAndNames() == "billybobbybillbob......3000");
-        //}
+        [Test]
+        public void Testcreatestringofscoresandname_returnsstring_succesful()
+        {
+            string name = "billybobbybillbob";
+            int highscore = 3000;
+            HighScoreManager.AddNameAndScore(name, highscore);
+            HighScoreManager.CreateStringOfScoresAndNames();
+            Assert.IsTrue(HighScoreManager.HighScoreText == "billybobbybillbob......3000");
+        }
 
-        //[Test]
-        //public void TestLoad_ReturnsText_Succesful()
-        //{
-        //    string filename = "/highscoresfile.txt";
-        //    HighScoreManager hs = new HighScoreManager();
-        //    hs.LoadScore(filename);
-        //    Assert.IsTrue(hs.HighScoreList.Count > 0);
-        //}
+        [Test]
+        public void Testload_returnstext_succesful()
+        {
+            string name = "billybobbybillbob";
+            int highscore = 3000;
+            HighScoreManager.AddNameAndScore(name, highscore);
+            HighScoreManager.LoadScore();
+            Assert.IsTrue(HighScoreManager.HighScoreList.Count > 0);
+        }
 
-        //[Test]
-        //public void TestSave_ReturnsNothings_Succesful()
-        //{
-        //    string filename = "highscoresfile.txt";
-        //    HighScoreManager hs = new HighScoreManager();
-        //    hs.SaveScore(filename);
-        //    Assert.IsTrue(File.Exists(Directory.GetCurrentDirectory() + filename));
-        //}
+        [Test]
+        public void Testsave_returnsnothings_succesful()
+        {
+            string name = "billybobbybillbob";
+            int highscore = 3000;
+            HighScoreManager.AddNameAndScore(name, highscore);
+            HighScoreManager.SaveScore();
+            Assert.IsTrue(File.Exists(Directory.GetCurrentDirectory() + "SymphonySprintHighScores.txt"));
+        }
 
     }
 }
