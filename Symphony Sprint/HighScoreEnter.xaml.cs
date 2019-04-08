@@ -16,14 +16,18 @@ using System.Windows.Shapes;
 namespace Symphony_Sprint
 {
     /// <summary>
-    /// Interaction logic for HighScorePage.xaml
+    /// Interaction logic for HighScoreEnter.xaml
     /// </summary>
-    public partial class HighScorePage : Page
+    public partial class HighScoreEnter : Page
     {
-        public HighScorePage()
+        public HighScoreEnter()
         {
             InitializeComponent();
-            HighScoreManager.CreateStringOfScoresAndNames();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HighScoreManager.AddNameAndScore(playerName.Text, Convert.ToInt32(gameScore.Text));
         }
     }
 }
