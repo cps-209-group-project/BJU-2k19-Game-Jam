@@ -61,7 +61,7 @@ namespace Symphony_Sprint
             {
                 string name = Convert.ToString(HighScoreList[i].Name);
                 string score = Convert.ToString(HighScoreList[i].Score);
-                string finalString = name + "......" + score + "/n";
+                string finalString = name + "......" + score + " /n";
                 HighScoreText = HighScoreText + finalString;
             }
 
