@@ -12,7 +12,7 @@ namespace Symphony_Sprint.Game_Model
     public class HighScoreUnitTest
     {
         [Test]
-        public void testcreatestringofscoresandname_returnsstring_succesful()
+        public void Testcreatestringofscoresandname_returnsstring_succesful()
         {
             string name = "billybobbybillbob";
             int highscore = 3000;
@@ -22,7 +22,7 @@ namespace Symphony_Sprint.Game_Model
         }
 
         [Test]
-        public void testload_returnstext_succesful()
+        public void Testload_returnstext_succesful()
         {
            string filename = "/highscoresfile.txt";
             HighScoreManager hs = new HighScoreManager();
@@ -31,7 +31,7 @@ namespace Symphony_Sprint.Game_Model
         }
 
         [Test]
-        public void testsave_returnsnothings_succesful()
+        public void Testsave_returnsnothings_succesful()
         {
             string filename = "highscoresfile.txt";
             HighScoreManager hs = new HighScoreManager();
