@@ -145,7 +145,7 @@
     <None Include="Graphics\sparkle.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\time-1.png.png" />
+    <Resource Include="Graphics\time-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\trebleClef.gif" />
@@ -181,7 +181,7 @@
     <Resource Include="Graphics\halfNote.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\heart-1.png.png" />
+    <Resource Include="Graphics\heart-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\heartDead-1.png.png" />
@@ -196,7 +196,7 @@
     <None Include="Graphics\Level-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\lives-1.png.png" />
+    <Resource Include="Graphics\lives-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\longTitle-1.png.png" />

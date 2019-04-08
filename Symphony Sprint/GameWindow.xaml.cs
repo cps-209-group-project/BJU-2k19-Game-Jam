@@ -22,7 +22,7 @@ namespace Symphony_Sprint
     {
 
         public static DispatcherTimer gameTimer;
-        
+        public int seconds = 0;
         
 
         public GameWindow()
@@ -32,7 +32,16 @@ namespace Symphony_Sprint
 
         public void Window_Loaded(object sender, EventArgs e)
         {
-            
+            //Load images on screen
+            var source = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
+
+            time.Source = new BitmapImage(new Uri("/Graphics/time-1.png.png", UriKind.Relative));
+            lives.Source = new BitmapImage(new Uri("/Graphics/lives-1.png.png", UriKind.Relative));
+            heart1.Source = source;
+            heart2.Source = source;
+            heart3.Source = source;
+
+
             gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 200) };
             gameTimer.Tick += GameTimer_Tick;
 
@@ -48,7 +57,6 @@ namespace Symphony_Sprint
         private void GameTimer_Tick(object sender, EventArgs e)
         {
             
-            Console.WriteLine("Working");
 
             if (GameController.Instance.isGameOver == false)
             {
@@ -66,7 +74,10 @@ namespace Symphony_Sprint
             //Update NoteObjective
             //Update Level when needed.
 
-            
+            seconds++;
+            timeNum.Content = seconds.ToString();
+
+
             GameCanvas.Children.Clear();
             
 

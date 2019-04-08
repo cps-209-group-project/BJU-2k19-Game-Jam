@@ -5,13 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Symphony_Sprint"
         mc:Ignorable="d"
-        Title="GameWindow" Height="900" Width="1600"
+        Title="GameWindow" Height="1000" Width="1600"
         Loaded="Window_Loaded">
     
-    <Grid x:Name="GameGrid" Background="Black">
-        
-        <Canvas x:Name="GameCanvas" HorizontalAlignment="Center" Background="Blue" Width="1200" Height="700">
+    <StackPanel x:Name="GameGrid" Background="Black" Orientation="Horizontal">
+        <StackPanel Orientation="Vertical" Margin="0, 100, 0, 0">
+
+        <Image x:Name="lives" Margin="50, 0, 0, 50"  Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image x:Name="heart1" Margin="100, 0, 0, 0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image x:Name="heart2" Margin="100, 0, 0, 0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image x:Name="heart3" Margin="100, 0, 0, 0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image x:Name="time" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 200, 0, 0"/>
+        <Label x:Name="timeNum" Content="0" Background="White" FontSize="30" Height="50" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 250, 0, 0"/>
+        </StackPanel>
+        <Canvas x:Name="GameCanvas" HorizontalAlignment="Center" Background="Blue" Width="1200" Height="650" Margin="25, 50, 0, 100">
             
         </Canvas>
-    </Grid>
+        
+    </StackPanel>
 </Window>
