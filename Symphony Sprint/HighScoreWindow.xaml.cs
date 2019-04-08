@@ -18,12 +18,16 @@ namespace Symphony_Sprint
     /// <summary>
     /// Interaction logic for HighScorePage.xaml
     /// </summary>
-    public partial class HighScorePage : Page
+    public partial class HighScoreWindow : Window
     {
-        public HighScorePage()
+        public HighScoreWindow()
         {
             InitializeComponent();
             HighScoreManager.CreateStringOfScoresAndNames();
+        }
+
+        private void InitializeComponent()
+        {
         }
     }
 }

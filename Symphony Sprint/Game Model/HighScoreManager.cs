@@ -10,18 +10,26 @@ namespace Symphony_Sprint
 {
     class HighScoreManager
     {
-        public static List<HighScore> HighScoreList { get; set; }
-        public string HighScoreText { get; set; }
+        public static List<HighScore> HighScoreList{get; set;}
+        public static string HighScoreText { get; set; }
 
         //adds the name of the players and their score to a list in sorted order
         public static void AddNameAndScore(string name, int score)
         {
             HighScore newHS = new HighScore(name, score);
-            HighScoreList.Add(newHS);
+            List<HighScore> newList = new List<HighScore> { newHS };
+            if (HighScoreList == null)
+            {
+                HighScoreList = newList;
+            }
+            else
+            {
+                HighScoreList.Add(newHS);
+            }
         }
 
         //saves all highscores to a text file
-        public void SaveScore()
+        public static void SaveScore()
         {
             using (StreamWriter sw = new StreamWriter("SymphonySprintHighScores.txt"))
             {
@@ -33,7 +41,7 @@ namespace Symphony_Sprint
         }
 
         //loads scores from a text file
-        public void LoadScore()
+        public static void LoadScore()
         {
             using (StreamReader sr = new StreamReader("SymphonySprintHighScores.txt"))
             {
@@ -47,7 +55,7 @@ namespace Symphony_Sprint
         }
 
         //takes scores and names and makes string to be displayed on the window
-        public void CreateStringOfScoresAndNames()
+        public static void CreateStringOfScoresAndNames()
         {
             for (int i = 0; i < HighScoreList.Count; ++i)
             {

@@ -33,5 +33,11 @@ namespace Symphony_Sprint
             GameWindow gwin = new GameWindow();
             gwin.Show();
         }
+
+        private void HighScores_Click(object sender, RoutedEventArgs e)
+        {
+            HighScoreWindow highScoreWindow = new HighScoreWindow();
+            highScoreWindow.Show();
+        }
     }
 }

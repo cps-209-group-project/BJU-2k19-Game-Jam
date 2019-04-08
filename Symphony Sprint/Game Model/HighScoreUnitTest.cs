@@ -16,7 +16,6 @@ namespace Symphony_Sprint.Game_Model
         {
             string name = "billybobbybillbob";
             int highscore = 3000;
-            HighScoreManager hs = new HighScoreManager();
             HighScoreManager.AddNameAndScore(name, highscore);
             HighScoreManager.CreateStringOfScoresAndNames();
             Assert.IsTrue(HighScoreManager.HighScoreText == "billybobbybillbob......3000");
@@ -25,16 +24,20 @@ namespace Symphony_Sprint.Game_Model
         [Test]
         public void Testload_returnstext_succesful()
         {
-            HighScoreManager hs = new HighScoreManager();
-            hs.LoadScore();
+            string name = "billybobbybillbob";
+            int highscore = 3000;
+            HighScoreManager.AddNameAndScore(name, highscore);
+            HighScoreManager.LoadScore();
             Assert.IsTrue(HighScoreManager.HighScoreList.Count > 0);
         }
 
         [Test]
         public void Testsave_returnsnothings_succesful()
         {
-            HighScoreManager hs = new HighScoreManager();
-            hs.SaveScore();
+            string name = "billybobbybillbob";
+            int highscore = 3000;
+            HighScoreManager.AddNameAndScore(name, highscore);
+            HighScoreManager.SaveScore();
             Assert.IsTrue(File.Exists(Directory.GetCurrentDirectory() + "SymphonySprintHighScores.txt"));
         }
 
