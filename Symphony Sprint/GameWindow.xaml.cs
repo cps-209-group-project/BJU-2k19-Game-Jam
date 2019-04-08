@@ -37,6 +37,8 @@ namespace Symphony_Sprint
         public void Window_Loaded(object sender, EventArgs e)
         {
             //Load images on screen
+            
+
             var source = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
 
             time.Source = new BitmapImage(new Uri("/Graphics/time-1.png.png", UriKind.Relative));
@@ -46,7 +48,7 @@ namespace Symphony_Sprint
             heart3.Source = source;
 
 
-            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 200) };
+            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 5) };
             gameTimer.Tick += GameTimer_Tick;
 
             GameController.Instance.LargoLevel();
@@ -81,10 +83,16 @@ namespace Symphony_Sprint
             seconds++;
             timeNum.Content = seconds.ToString();
 
-
-            GameCanvas.Children.Clear();
             
+            GameCanvas.Children.Clear();
 
+            //Piano
+            var piano = new Image();
+            piano.Source = new BitmapImage(new Uri("/Graphics/pianoDouble-1.png.png", UriKind.Relative));
+            piano.Height = 54;
+            piano.Stretch = Stretch.UniformToFill;
+            Canvas.SetBottom(piano, 0);
+            GameCanvas.Children.Add(piano);
 
             //Player
             var playerSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", GameController.Instance.Player.ImgPath), UriKind.Relative));
@@ -98,7 +106,7 @@ namespace Symphony_Sprint
             GameCanvas.Children.Add(playerImg);
 
 
-            //Sets the players position depeding on its state. 
+            //Sets the players position depending on its state. 
 
             Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
             GameController.Instance.Player.UpdatePosition();
@@ -121,7 +129,7 @@ namespace Symphony_Sprint
                 }
 
                
-                if (obj.ImgPath == "trebleClef.gif")
+                if (obj.ImgPath == "trebleClef-7.png.png")
                 {
                     objImg.Height = 60;
                 }

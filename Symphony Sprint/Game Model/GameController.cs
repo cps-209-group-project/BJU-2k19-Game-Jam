@@ -17,7 +17,7 @@ namespace Symphony_Sprint.Game_Model
         public int notes;
         public bool isGameOver = false;
 
-        public string[] images = { "wholeNote.gif", "quarterNote.gif", "eigthNote.gif", "trebleClef.gif", "flat.gif", "sharp.gif", "halfNote.gif" };
+        public string[] images = { "wholeNote-1.png.png", "quarterNote-1.png.png", "eigthNote-1.png.png", "trebleClef-7.png.png", "flat-1.png.png", "sharp-1.png.png", "halfNote-1.png.png" };
 
         Random rand = new Random();
 
@@ -38,7 +38,7 @@ namespace Symphony_Sprint.Game_Model
 
         public GameController()
         {
-            Player = new Player("robin.png");
+            Player = new Player("Dr. Schaub.png");
             level = new Level();
         }
 
@@ -52,56 +52,42 @@ namespace Symphony_Sprint.Game_Model
         {
             var usedPos = new List<int>();
 
-            var positions = new HashSet<int>();
+            var positions = new HashSet<int>(); //HashSets cannot contain duplicate items.
 
-            
+
             for (int i = 0; i < 50; i++)
             {
                 //Sets our random numbers each time the loop goes through.
                 int img = rand.Next(0, 6);
                 int posX = rand.Next(1200, 15000);
-                int posY = rand.Next(115, 250);
+                int posY = rand.Next(50, 250);
 
-                
+
                 //Protects against duplicate random positions.
-                
-                positions.Add(posX); //Hashsets cannot obtain the same value.
-                
+                if (posX % 100 == 0)
+                {
+                    positions.Add(posX); //Hashsets cannot obtain the same value.
+                }
+                else
+                {
+                    int newposX = posX + 1000;
+                    positions.Add(newposX);
+                }
+                 
                 var posList = positions.ToList(); //Change our hashset to a list so we can index it.
                 
                 if (posList.Count < 10 || posList.Count != 0)
                 {
                     posX = posList[i];
-                } else
-                {
-                    posX = rand.Next(1200, 15000);
-                    posList.Clear();
-                }
+                } 
 
-                GameObject obj = new GameObject(images[img], 20, posX, posY);
+                GameObject obj = new GameObject(images[img], 3, posX, posY);
                 Level.GameObjects.Add(obj);
                 
             }
 
             
         }
-
-
-        public void ShuffleMe(List<int> list)
-        {
-            Random random = new Random();
-            int n = list.Count;
-
-            for (int i = list.Count - 1; i > 1; i--)
-            {
-                int rnd = random.Next(i + 1);
-
-                int value = list[rnd];
-                list[rnd] = list[i];
-                list[i] = value;
-            }
-        }
-
 
         public void Save(string filename)
         {
