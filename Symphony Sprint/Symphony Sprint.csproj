@@ -219,7 +219,7 @@
     <None Include="Graphics\highScore-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\highScores-1.png.png" />
+    <Resource Include="Graphics\highScores-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\Level-1.png.png" />
