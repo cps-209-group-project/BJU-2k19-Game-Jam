@@ -88,11 +88,12 @@ namespace Symphony_Sprint.Game_Model
 
         public string Serialize()
         {
-            throw new NotImplementedException();
+            return $"Points:{Points}\r\nNotes:{Notes}\r\nPlayer:{Player.Serialize()}\r\nLevel:{Level.Serialize()}";
         }
 
         public void Deserialize(string data)
         {
+            string[] parts = data.Split('\r', '\n');
             throw new NotImplementedException();
         }
     }

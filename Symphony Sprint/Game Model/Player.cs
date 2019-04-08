@@ -77,7 +77,7 @@ namespace Symphony_Sprint.Game_Model.World_Objects
 
         public string Serialize()
         {
-            throw new System.NotImplementedException();
+            return $"Lives={Lives},PosX={PosX},PosY={PosY},ImgPath={ImgPath}";
         }
 
         public void Deserialize(string data)

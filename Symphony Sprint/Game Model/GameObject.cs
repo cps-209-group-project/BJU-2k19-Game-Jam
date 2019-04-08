@@ -22,12 +22,12 @@ namespace Symphony_Sprint.Game_Model
             this.posX = x;
             this.posY = y;
             this.ImgPath = imgPath;
-            this.Speed = speed;
+            this.Speed = speed; 
         }
 
         public string Serialize()
         {
-            return "";
+             return $"Speed={Speed},PosX={posX},PosY={posY},ImgPath={ImgPath}";
         }
 
         public void Deserialize(string data)
