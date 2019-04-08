@@ -47,7 +47,7 @@ namespace Symphony_Sprint
             {
                 foreach (HighScore hs in HighScoreList)
                 {
-                    string[] list = sr.ReadLine().Split();
+                    string[] list = sr.ReadLine().Split(',');
                     AddNameAndScore(list[0], Convert.ToInt32(list[1]));
                 }
             }
