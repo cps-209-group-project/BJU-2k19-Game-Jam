@@ -23,7 +23,7 @@ namespace Symphony_Sprint.Game_Model.World_Objects
             State = movementState.running;
             Lives = 5;
             jumpceiling1 = 200;
-            jumpceiling2 = 0;
+            jumpceiling2 = 200;
         }
 
         //Events are registered in MainWindow.xaml.cs
@@ -31,29 +31,20 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         {
             if (e.Key == Key.Space)
             {
-                if (this.State != movementState.jumping && this.State != movementState.doublejump && this.State != movementState.decending && this.State != movementState.decending2)
+             
+                if (this.State == movementState.running)
                 {
                     this.State = movementState.jumping;
                 }
-                else if (this.State == movementState.doublejump || this.State == movementState.decending2)
-                {
-                    return;
-                }
-
-                else if (this.State == movementState.jumping && this.State != movementState.doublejump && this.State != movementState.decending2 || this.State == movementState.decending )
+                else if (this.State == movementState.jumping || this.State == movementState.decending)
                 {
                     jumpceiling2 = this.PosY + 100;
                     this.State = movementState.doublejump;
                 }
-
-            }
-        }
-
-        public void KeyIsUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Space)
-            {
-                //isJumping = false;
+                else if (this.State == movementState.doublejump || this.State == movementState.decending2)
+                {
+                    //Do nothing
+                }
             }
         }
 
@@ -69,41 +60,47 @@ namespace Symphony_Sprint.Game_Model.World_Objects
 
         public void UpdatePosition()
         {
-
-            if (this.PosY == jumpceiling1 && this.State != movementState.doublejump || this.State != movementState.doublejump && this.State != movementState.running && this.State != movementState.jumping && this.State != movementState.decending2) // need to check not running so doesn't decend on game start
-            {
-                this.State = movementState.decending;
-            }
             if (this.State == movementState.jumping)
             {
                 this.PosY += 10;
             }
-            if (this.State == movementState.doublejump)
+            else if (this.State == movementState.doublejump && this.PosY <= jumpceiling2)
             {
                 this.PosY += 10;
             }
-            if (this.State == movementState.decending && this.PosY != 60)
+            //decending assignment. make sure not in double jump, or wont get past first ceiling on second jump.
+            if (this.PosY >= jumpceiling1 && this.State != movementState.doublejump && this.State != movementState.decending2)
+            {
+                this.State = movementState.decending;
+            }
+
+            //decending logic
+            if (this.State == movementState.decending && this.PosY > 60)
             {
                 this.PosY -= 10;
             }
-            if (this.State == movementState.decending && this.PosY <= 60)
+            else if (this.State == movementState.decending && this.PosY == 60)
             {
                 this.PosY = 50;
                 this.State = movementState.running;
             }
-            if (this.State == movementState.doublejump && this.PosY == jumpceiling2)
+            //decending2 assignment
+            if (this.PosY == jumpceiling2)
             {
                 this.State = movementState.decending2;
             }
-            if (this.State == movementState.decending2 && this.PosY != 60)
+            // decending2 logic
+            if (this.State == movementState.decending2 && this.PosY > 60)
             {
                 this.PosY -= 10;
             }
-            if (this.State == movementState.decending2 && this.PosY <= 60)
+            else if (this.State == movementState.decending2 && this.PosY == 60)
             {
                 this.PosY = 50;
                 this.State = movementState.running;
             }
+            //last night 4:20
+            // today 2
         }
     }
 }
