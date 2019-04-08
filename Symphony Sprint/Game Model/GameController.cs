@@ -52,7 +52,7 @@ namespace Symphony_Sprint.Game_Model
         {
             var usedPos = new List<int>();
 
-            var positions = new HashSet<int>();
+            var positions = new HashSet<int>(); //HashSets cannot contain duplicate items.
 
             
             for (int i = 0; i < 50; i++)
@@ -66,7 +66,6 @@ namespace Symphony_Sprint.Game_Model
                 //Protects against duplicate random positions.
                 
                 positions.Add(posX); //Hashsets cannot obtain the same value.
-                
                 var posList = positions.ToList(); //Change our hashset to a list so we can index it.
                 
                 if (posList.Count < 10 || posList.Count != 0)
@@ -78,7 +77,7 @@ namespace Symphony_Sprint.Game_Model
                     posList.Clear();
                 }
 
-                GameObject obj = new GameObject(images[img], 20, posX, posY);
+                GameObject obj = new GameObject(images[img], 5, posX, posY);
                 Level.GameObjects.Add(obj);
                 
             }
@@ -87,20 +86,7 @@ namespace Symphony_Sprint.Game_Model
         }
 
 
-        public void ShuffleMe(List<int> list)
-        {
-            Random random = new Random();
-            int n = list.Count;
-
-            for (int i = list.Count - 1; i > 1; i--)
-            {
-                int rnd = random.Next(i + 1);
-
-                int value = list[rnd];
-                list[rnd] = list[i];
-                list[i] = value;
-            }
-        }
+        
 
 
         public void Save(string filename)
