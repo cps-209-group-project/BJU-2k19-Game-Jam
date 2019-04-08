@@ -23,9 +23,7 @@ namespace Symphony_Sprint
     {
         public MainWindow()
         {
-            InitializeComponent();
-            this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
-            this.KeyUp += new KeyEventHandler(GameController.Instance.Player.KeyIsUp);
+            InitializeComponent();           
             GameWindow gwin = new GameWindow();
             gwin.Show();
         }

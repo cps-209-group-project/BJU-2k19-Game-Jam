@@ -5,23 +5,25 @@ namespace Symphony_Sprint.Game_Model.World_Objects
     public class Player : ISerialize
     {
 
-        public enum movementState { running, jumping, doublejump }
+        public enum movementState { running, jumping, doublejump, decending, decending2 }
         public movementState State { get; set; }
         //public bool isJumping;
 
         public string ImgPath { get; set; }
-        public int Lives { get; set; }
-        public int Height { get; set; }
-
+        public int Lives { get; set; }       
         public int PosX { get; set; }
         public int PosY { get; set; }
+        public int jumpceiling1 { get; set; }
+        public int jumpceiling2 { get; set; }
 
 
         public Player(string img)
         {
             ImgPath = img;
             State = movementState.running;
-            Height = 0;
+            Lives = 5;
+            jumpceiling1 = 200;
+            jumpceiling2 = 0;
         }
 
         //Events are registered in MainWindow.xaml.cs
@@ -29,19 +31,21 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         {
             if (e.Key == Key.Space)
             {
-                if (this.State == movementState.doublejump)
+                if (this.State != movementState.jumping && this.State != movementState.doublejump && this.State != movementState.decending && this.State != movementState.decending2)
+                {
+                    this.State = movementState.jumping;
+                }
+                else if (this.State == movementState.doublejump || this.State == movementState.decending2)
                 {
                     return;
                 }
-                else
+
+                else if (this.State == movementState.jumping && this.State != movementState.doublejump && this.State != movementState.decending2 || this.State == movementState.decending )
                 {
-                    if (this.State == movementState.jumping)
-                    {
-                        this.State = movementState.doublejump;
-                    }
-                    Jump();
+                    jumpceiling2 = this.PosY + 100;
+                    this.State = movementState.doublejump;
                 }
-                
+
             }
         }
 
@@ -53,28 +57,6 @@ namespace Symphony_Sprint.Game_Model.World_Objects
             }
         }
 
-        public void Jump()
-        {
-            this.State = movementState.jumping;
-
-            int currentY = this.Height; // say 10
-            int maxY = currentY + 30; // 30 = jump max height
-
-            while (currentY < maxY) // make sure doesn't go over max
-            {
-                currentY += 1;
-            }
-
-            while (currentY > 10) // 10 = base coordinate on piano keys
-            {
-                currentY -= 1;
-            }
-            if (currentY == 10)
-            {
-                this.State = movementState.running;
-            }       
-        }
-
         public string Serialize()
         {
             throw new System.NotImplementedException();
@@ -83,6 +65,45 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         public void Deserialize(string data)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void UpdatePosition()
+        {
+
+            if (this.PosY == jumpceiling1 && this.State != movementState.doublejump || this.State != movementState.doublejump && this.State != movementState.running && this.State != movementState.jumping && this.State != movementState.decending2) // need to check not running so doesn't decend on game start
+            {
+                this.State = movementState.decending;
+            }
+            if (this.State == movementState.jumping)
+            {
+                this.PosY += 10;
+            }
+            if (this.State == movementState.doublejump)
+            {
+                this.PosY += 10;
+            }
+            if (this.State == movementState.decending && this.PosY != 60)
+            {
+                this.PosY -= 10;
+            }
+            if (this.State == movementState.decending && this.PosY <= 60)
+            {
+                this.PosY = 50;
+                this.State = movementState.running;
+            }
+            if (this.State == movementState.doublejump && this.PosY == jumpceiling2)
+            {
+                this.State = movementState.decending2;
+            }
+            if (this.State == movementState.decending2 && this.PosY != 60)
+            {
+                this.PosY -= 10;
+            }
+            if (this.State == movementState.decending2 && this.PosY <= 60)
+            {
+                this.PosY = 50;
+                this.State = movementState.running;
+            }
         }
     }
 }

@@ -28,11 +28,15 @@ namespace Symphony_Sprint
         public GameWindow()
         {
             InitializeComponent();
+            this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
+            this.KeyUp += new KeyEventHandler(GameController.Instance.Player.KeyIsUp);
+            GameController.Instance.Player.PosX = 100;
+            GameController.Instance.Player.PosY = 50;
         }
 
         public void Window_Loaded(object sender, EventArgs e)
         {
-            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 200) };
+            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 100) };
             gameTimer.Tick += GameTimer_Tick;
 
             GameController.Instance.LargoLevel();
@@ -71,8 +75,6 @@ namespace Symphony_Sprint
             var playerSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", GameController.Instance.Player.ImgPath), UriKind.Relative));
             var playerImg = new Image();
             playerImg.Height = 60;
-            GameController.Instance.Player.PosX = 100;
-            GameController.Instance.Player.PosY = 50;
 
             Canvas.SetLeft(playerImg, GameController.Instance.Player.PosX);
 
@@ -82,14 +84,18 @@ namespace Symphony_Sprint
 
 
             //Sets the players position depeding on its state. 
-            if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.running)
-            {
-                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
-            }
-            else if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.jumping)
-            {
-                Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY + 20);
-            }
+
+            Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
+            GameController.Instance.Player.UpdatePosition();
+            //GameController.Instance.Player.PosY += 1;
+            //call method update Positon
+
+            //else if (GameController.Instance.Player.State == Game_Model.World_Objects.Player.movementState.jumping)
+            //{
+            //    Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY + 20);
+            //}
+
+
             //End of player code
 
 
