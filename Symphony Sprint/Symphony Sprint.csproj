@@ -83,6 +83,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HighScoreEnter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HighScoreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,23 +101,44 @@
     </Compile>
     <Compile Include="Game Model\GameController.cs" />
     <Compile Include="Game Model\GameControllerTest.cs" />
+    <Compile Include="Game Model\HighScore.cs" />
     <Compile Include="Game Model\HighScoreUnitTest.cs" />
     <Compile Include="Game Model\ISerialize.cs" />
     <Compile Include="Game Model\Level.cs" />
     <Compile Include="Game Model\Player.cs" />
     <Compile Include="Game Model\GameObject.cs" />
-    <Compile Include="Game Model\HighScore.cs" />
+    <Compile Include="Game Model\HighScoreManager.cs" />
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighScoreEnter.xaml.cs">
+      <DependentUpon>HighScoreEnter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighScoreWindow.xaml.cs">
+      <DependentUpon>HighScoreWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -145,7 +174,7 @@
     <None Include="Graphics\sparkle.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\time-1.png.png" />
+    <Resource Include="Graphics\time-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\trebleClef.gif" />
@@ -181,7 +210,7 @@
     <Resource Include="Graphics\halfNote.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\heart-1.png.png" />
+    <Resource Include="Graphics\heart-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\heartDead-1.png.png" />
@@ -196,7 +225,7 @@
     <None Include="Graphics\Level-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\lives-1.png.png" />
+    <Resource Include="Graphics\lives-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\longTitle-1.png.png" />
@@ -218,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\robin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\scrollingBackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Symphony_Sprint.Properties
+namespace Symphony_Sprint
 {
     /// <summary>
-    /// Interaction logic for About.xaml
+    /// Interaction logic for HighScoreEnter.xaml
     /// </summary>
-    public partial class About : Page
+    public partial class HighScoreEnter : Page
     {
-        public About()
+        public HighScoreEnter()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HighScoreManager.AddNameAndScore(playerName.Text, Convert.ToInt32(gameScore.Text));
         }
     }
 }
