@@ -46,7 +46,7 @@ namespace Symphony_Sprint
             heart3.Source = source;
 
 
-            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 200) };
+            gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 50) };
             gameTimer.Tick += GameTimer_Tick;
 
             GameController.Instance.LargoLevel();
