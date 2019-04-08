@@ -57,6 +57,10 @@ namespace Symphony_Sprint
         //takes scores and names and makes string to be displayed on the window
         public static void CreateStringOfScoresAndNames()
         {
+            if (HighScoreList == null)
+            {
+                HighScoreList = new List<HighScore> { };
+            }
             for (int i = 0; i < HighScoreList.Count; ++i)
             {
                 string name = Convert.ToString(HighScoreList[i].Name);

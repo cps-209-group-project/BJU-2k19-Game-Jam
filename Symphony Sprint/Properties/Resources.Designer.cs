@@ -123,6 +123,16 @@ namespace Symphony_Sprint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blueBackground {
+            get {
+                object obj = ResourceManager.GetObject("blueBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eigthNote {
             get {
                 object obj = ResourceManager.GetObject("eigthNote", resourceCulture);
@@ -166,6 +176,16 @@ namespace Symphony_Sprint.Properties {
         internal static System.Drawing.Bitmap heartDead_1_png {
             get {
                 object obj = ResourceManager.GetObject("heartDead_1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap help_1_png {
+            get {
+                object obj = ResourceManager.GetObject("help_1_png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +293,16 @@ namespace Symphony_Sprint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap scrollingBackground {
+            get {
+                object obj = ResourceManager.GetObject("scrollingBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sharp {
             get {
                 object obj = ResourceManager.GetObject("sharp", resourceCulture);
@@ -286,6 +316,26 @@ namespace Symphony_Sprint.Properties {
         internal static System.Drawing.Bitmap sparkle {
             get {
                 object obj = ResourceManager.GetObject("sparkle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap start_1_png {
+            get {
+                object obj = ResourceManager.GetObject("start_1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap submit_1_png__1_ {
+            get {
+                object obj = ResourceManager.GetObject("submit_1_png__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

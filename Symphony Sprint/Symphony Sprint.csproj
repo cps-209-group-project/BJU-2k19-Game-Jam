@@ -168,7 +168,7 @@
     <None Include="Resources\mainTitle.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\mainTitle.png" />
+    <Resource Include="Graphics\mainTitle.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\sparkle.gif" />
@@ -198,7 +198,7 @@
     <None Include="Graphics\1000-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\about-1.png %282%29.png" />
+    <Resource Include="Graphics\about-1.png %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\eigthNote.gif" />
@@ -228,7 +228,7 @@
     <Resource Include="Graphics\lives-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\longTitle-1.png.png" />
+    <Resource Include="Graphics\longTitle-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\piano.gif" />
@@ -243,13 +243,25 @@
     <Resource Include="Graphics\sharp.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\Dr. Schaub.png" />
+    <Resource Include="Graphics\Dr. Schaub.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\robin.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\scrollingBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Graphics\blueBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\start-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\submit-1.png %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\help-1.png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
