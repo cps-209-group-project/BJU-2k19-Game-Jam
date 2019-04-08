@@ -2,7 +2,7 @@
 
 namespace Symphony_Sprint.Game_Model.World_Objects
 {
-    public class Player
+    public class Player : ISerialize
     {
 
         public enum movementState { running, jumping, doublejump }
@@ -10,7 +10,8 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         //public bool isJumping;
 
         public string ImgPath { get; set; }
-        //public int Height { get; set; }
+        public int Lives { get; set; }
+        public int Height { get; set; }
 
         public int PosX { get; set; }
         public int PosY { get; set; }
@@ -20,7 +21,7 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         {
             ImgPath = img;
             State = movementState.running;
-            //Height = 0;
+            Height = 0;
         }
 
         //Events are registered in MainWindow.xaml.cs
@@ -56,7 +57,7 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         {
             this.State = movementState.jumping;
 
-            int currentY = this.PosY; // say 10
+            int currentY = this.Height; // say 10
             int maxY = currentY + 30; // 30 = jump max height
 
             while (currentY < maxY) // make sure doesn't go over max
@@ -72,6 +73,16 @@ namespace Symphony_Sprint.Game_Model.World_Objects
             {
                 this.State = movementState.running;
             }       
-        }       
+        }
+
+        public string Serialize()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Deserialize(string data)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
