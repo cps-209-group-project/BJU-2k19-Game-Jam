@@ -1,4 +1,4 @@
-﻿using Symphony_Sprint.Game_Model;
+﻿ using Symphony_Sprint.Game_Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,19 +114,24 @@ namespace Symphony_Sprint
 
             //Game Object Code
             //Loops through each game object and sets there custom position.
-            foreach (GameObject obj in GameController.Instance.Level.GameObjects)
+            foreach (GameObject obj in GameController.Instance.Level.GameObjects.ToList())
             {
                 var objectSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", obj.ImgPath), UriKind.Relative));
                 var objImg = new Image();
-
+                
 
                 ImageBehavior.SetAnimatedSource(objImg, objectSource);
 
-                if (obj.posX > 1190 || obj.posX < 10)
+                if (obj.posX > 1190)
                 {
                     objImg.Visibility = Visibility.Hidden;
                 }
 
+                if(obj.posX < 10)
+                {
+                    //objImg.Visibility = Visibility.Hidden;
+                    GameController.Instance.Level.GameObjects.Remove(obj);
+                }
                
                 if (obj.ImgPath == "trebleClef-7.png.png")
                 {
@@ -136,6 +141,25 @@ namespace Symphony_Sprint
                 {
                     objImg.Height = 40;
                 }
+
+                if (DetectCollision(objImg, playerImg) == null)
+                {
+                    //objImg.Visibility = Visibility.Hidden;
+                    Console.WriteLine("Collision");
+                }
+
+
+                //if (Canvas.GetLeft(objImg) == GameController.Instance.Player.PosX && Canvas.GetBottom(objImg) == GameController.Instance.Player.PosY)
+                //{
+                //    objImg.Visibility = Visibility.Hidden;
+                //}
+
+                //if (obj.posX == GameController.Instance.Player.PosX && obj.posY == GameController.Instance.Player.PosY)
+                //{
+                //    objImg.Visibility = Visibility.Hidden;
+                    
+                //}
+
                 objImg.Uid = "GameObject";
                 GameCanvas.Children.Add(objImg);
                 obj.posX -= obj.Speed;
@@ -145,9 +169,16 @@ namespace Symphony_Sprint
                 //End of Game Object Code
                 
             }
-            
+ 
         }
 
-        
+        private Rect DetectCollision(FrameworkElement rect1, FrameworkElement rect2)
+        {
+            var r1 = new Rect(Canvas.GetLeft(rect1), Canvas.GetTop(rect1), rect1.ActualWidth, rect1.ActualHeight);
+            var r2 = new Rect(Canvas.GetLeft(rect2), Canvas.GetTop(rect2), rect2.ActualWidth, rect2.ActualHeight);
+            r1.Intersect(r2);
+            return r1;
+        }
+
     }
 }
