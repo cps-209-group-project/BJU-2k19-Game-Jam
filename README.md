@@ -11,5 +11,10 @@
 |Recording|
 |---------|
 
-|Expenses|
-|--------|
+## Expenses
+|Team Member|Time Invested|Remaining Budget|
+|-----------|-------------|----------------|
+|Stone|
+|Jason|
+|Ana|
+|Robin|
