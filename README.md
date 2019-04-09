@@ -13,4 +13,4 @@
 |Stone|
 |Jason|
 |Ana|
-|Robin|19.20||
+|Robin|19.20|| [RobinsJournal](/RobinsJournal.md) |
