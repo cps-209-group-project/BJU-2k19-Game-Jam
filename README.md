@@ -10,7 +10,7 @@ Click start to start the game. Press the space key to jump to collect notes or a
 - Player movement (jumping)
 - Enemy movement/game object movement
 ## Known Issues
-
+No known Issues
 ## Recording
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EeYugOVYK01IrhXNf90UibkBlYOhVyd_22nS1-pY78SgXA?e=fJMMqs)
 ## Expenses
