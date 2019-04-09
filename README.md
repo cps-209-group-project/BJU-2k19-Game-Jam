@@ -6,6 +6,7 @@ Click start to start the game. Press the space key to jump to collect notes or a
 - Game screen
 - Highscore screen
 - Save/Load
+- Unit tests
 - Player movement (jumping)
 - Enemy movement/game object movement
 ## Known Issues
