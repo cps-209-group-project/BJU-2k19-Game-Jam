@@ -31,7 +31,7 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         {
             if (e.Key == Key.Space)
             {
-             
+
                 if (this.State == movementState.running)
                 {
                     this.State = movementState.jumping;
