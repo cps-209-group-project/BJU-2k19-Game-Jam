@@ -13,4 +13,4 @@
 |Stone|
 |Jason|
 |Ana|
-|Robin|19.20|| [RobinsJournal](/https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/RobinsJournal) |
+|Robin|19.20||[Robins Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/RobinsJournal)|
