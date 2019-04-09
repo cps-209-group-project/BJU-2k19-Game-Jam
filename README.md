@@ -1,15 +1,11 @@
 # BJU-2k19-Game-Jam
-|Instructions|
-|------------|
+## Instructions
 
-|Work Completed|
-|--------------|
+## Work Completed
 
-|Known Issues|
-|------------|
+## Known Issues
 
-|Recording|
-|---------|
+## Recording
 
 ## Expenses
 |Team Member|Time Invested|Remaining Budget|
@@ -17,4 +13,4 @@
 |Stone|
 |Jason|
 |Ana|
-|Robin|
+|Robin|19.20||
