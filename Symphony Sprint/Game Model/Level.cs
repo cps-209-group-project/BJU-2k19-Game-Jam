@@ -1,4 +1,5 @@
 ﻿using Symphony_Sprint.Game_Model.World_Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,7 +25,34 @@ namespace Symphony_Sprint.Game_Model
 
         public void Deserialize(string data)
         {
-            throw new System.NotImplementedException();
+            int gameObjsIndex = data.IndexOf("\nGameObjects:");
+            string gameObjsSerialized = data.Substring(gameObjsIndex + 13);
+            gameObjs = new List<GameObject>();
+            foreach (var line in gameObjsSerialized.Split('\n'))
+            {
+                var gameObj = new GameObject("", 0, 0, 0);
+                gameObj.Deserialize(line);
+                gameObjs.Add(gameObj);
+            }
+
+            string otherProperties = data.Substring(0, gameObjsIndex);
+            string[] properties = otherProperties.Split(',');
+            foreach (string property in properties)
+            {
+                string[] propertyParts = property.Split('=');
+                string name = propertyParts[0];
+                string value = propertyParts[1];
+
+                switch (name)
+                {
+                    case "Difficulty":
+                        Difficulty = (DifficultyEnum)Enum.Parse(typeof(DifficultyEnum), value);
+                        break;
+                    case "NoteObjective":
+                        NoteObjective = int.Parse(value);
+                        break;
+                }
+            }
         }
     }
 }

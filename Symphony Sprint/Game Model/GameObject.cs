@@ -32,7 +32,29 @@ namespace Symphony_Sprint.Game_Model
 
         public void Deserialize(string data)
         {
+            string[] properties = data.Split(',');
+            foreach (string property in properties)
+            {
+                string[] propertyParts = property.Split('=');
+                string name = propertyParts[0];
+                string value = propertyParts[1];
 
+                switch (name)
+                {
+                    case "Speed":
+                        Speed = int.Parse(value);
+                        break;
+                    case "PosX":
+                        posX = int.Parse(value);
+                        break;
+                    case "PosY":
+                        posY = int.Parse(value);
+                        break;
+                    case "ImgPath":
+                        ImgPath = value;
+                        break;
+                }
+            }
         }
 
     }

@@ -124,8 +124,34 @@ namespace Symphony_Sprint.Game_Model
 
         public void Deserialize(string data)
         {
-            string[] parts = data.Split('\r', '\n');
-            throw new NotImplementedException();
+            data = data.Replace("\r", "");
+            int levelIndex = data.IndexOf("\nLevel:");
+            string levelSerialized = data.Substring(levelIndex + 7);
+            Level = new Level();
+            Level.Deserialize(levelSerialized);
+
+            string restOfProperties = data.Substring(0, levelIndex);
+            string[] lines = restOfProperties.Split('\n');
+            foreach (string line in lines)
+            {
+                string[] lineParts = line.Split(':');
+                string name = lineParts[0];
+                string value = lineParts[1];
+
+                switch (name)
+                {
+                    case "Points":
+                        Points = int.Parse(value);
+                        break;
+                    case "Notes":
+                        Notes = int.Parse(value);
+                        break;
+                    case "Player":
+                        Player = new Player(null);
+                        Player.Deserialize(value);
+                        break;
+                }
+            }
         }
     }
 }

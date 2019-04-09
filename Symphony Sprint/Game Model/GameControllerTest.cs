@@ -86,8 +86,7 @@ Speed=2,PosX=5,PosY=10,ImgPath=o2.png";
 Notes:99
 Player:Lives=3,PosX=20,PosY=20,ImgPath=p2.png
 Level:Difficulty=EASY,NoteObjective=90
-GameObjects:
-Speed=3,PosX=20,PosY=20,ImgPath=o1.png
+GameObjects:Speed=3,PosX=20,PosY=20,ImgPath=o1.png
 Speed=2,PosX=5,PosY=10,ImgPath=o2.png";
 
             var game = new GameController();
