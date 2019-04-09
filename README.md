@@ -8,8 +8,8 @@
 ## Recording
 
 ## Expenses
-|Team Member|Time Invested|Remaining Budget|
-|-----------|-------------|----------------|
+|Team Member|Time Invested|Remaining Budget|Journal Link|
+|-----------|-------------|----------------|------------|
 |Stone|
 |Jason|
 |Ana|
