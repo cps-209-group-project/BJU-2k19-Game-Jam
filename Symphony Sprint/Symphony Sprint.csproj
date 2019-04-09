@@ -168,7 +168,7 @@
     <None Include="Resources\mainTitle.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\mainTitle.png" />
+    <Resource Include="Graphics\mainTitle.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\sparkle.gif" />
@@ -198,7 +198,7 @@
     <None Include="Graphics\1000-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\about-1.png %282%29.png" />
+    <Resource Include="Graphics\about-1.png %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\eigthNote.gif" />
@@ -219,7 +219,7 @@
     <None Include="Graphics\highScore-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\highScores-1.png.png" />
+    <Resource Include="Graphics\highScores-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\Level-1.png.png" />
@@ -228,10 +228,10 @@
     <Resource Include="Graphics\lives-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\longTitle-1.png.png" />
+    <Resource Include="Graphics\longTitle-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\piano.gif" />
+    <Resource Include="Graphics\piano.gif" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\quarterNote.gif" />
@@ -243,13 +243,55 @@
     <Resource Include="Graphics\sharp.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\Dr. Schaub.png" />
+    <Resource Include="Graphics\Dr. Schaub.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\robin.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\scrollingBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\start-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\submit-1.png %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\help-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\sharp-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\wholeNote-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\eigthNote-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\flat-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\halfNote-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\quarterNote-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\trebleClef-7.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\blueBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\piano-1.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\pianoDouble-1.png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

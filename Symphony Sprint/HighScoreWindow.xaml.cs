@@ -26,8 +26,5 @@ namespace Symphony_Sprint
             HighScoreManager.CreateStringOfScoresAndNames();
         }
 
-        private void InitializeComponent()
-        {
-        }
     }
 }

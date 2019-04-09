@@ -8,7 +8,15 @@
         Title="GameWindow" Height="1000" Width="1600"
         Loaded="Window_Loaded">
     
-    <StackPanel x:Name="GameGrid" Background="Black" Orientation="Horizontal">
+    <StackPanel x:Name="GameGrid"  Orientation="Horizontal">
+        <StackPanel.Background>
+
+            <RadialGradientBrush>
+                <GradientStop Color="#29323c" Offset="1"/>
+                <GradientStop Color="#485563" Offset="0.007"/>
+            </RadialGradientBrush>
+
+        </StackPanel.Background>
         <StackPanel Orientation="Vertical" Margin="0, 100, 0, 0">
 
         <Image x:Name="lives" Margin="50, 0, 0, 50"  Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
@@ -18,8 +26,15 @@
         <Image x:Name="time" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 200, 0, 0"/>
         <Label x:Name="timeNum" Content="0" Background="White" FontSize="30" Height="50" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 250, 0, 0"/>
         </StackPanel>
-        <Canvas x:Name="GameCanvas" HorizontalAlignment="Center" Background="Blue" Width="1200" Height="650" Margin="25, 50, 0, 100">
-            
+        <Canvas x:Name="GameCanvas" HorizontalAlignment="Center"  Width="1200" Height="650" Margin="25, 50, 0, 100">
+            <Canvas.Background>
+                
+                    <RadialGradientBrush>
+                    <GradientStop Color="#48c6ef" Offset="1"/>
+                    <GradientStop Color="#6f86d6" Offset="0.007"/>
+                    </RadialGradientBrush>
+                
+            </Canvas.Background>
         </Canvas>
         
     </StackPanel>

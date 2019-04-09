@@ -28,8 +28,6 @@ namespace Symphony_Sprint
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
-            this.KeyUp += new KeyEventHandler(GameController.Instance.Player.KeyIsUp);
             GameWindow gwin = new GameWindow();
             gwin.Show();
         }
