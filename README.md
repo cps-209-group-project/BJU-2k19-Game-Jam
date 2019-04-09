@@ -1,8 +1,13 @@
 # BJU-2k19-Game-Jam
 ## Instructions
-
+Click start to start the game. Press the space key to jump to collect notes or avoid accidentals. Press space key while still jumping to double jump. 
 ## Work Completed
-
+- Title screen
+- Game screen
+- Highscore screen
+- Save/Load
+- Player movement (jumping)
+- Enemy movement/game object movement
 ## Known Issues
 
 ## Recording
