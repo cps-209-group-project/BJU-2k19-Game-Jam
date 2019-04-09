@@ -12,7 +12,7 @@ Click start to start the game. Press the space key to jump to collect notes or a
 ## Known Issues
 
 ## Recording
-
+https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EStKmsY66mNGj3fW14CCbAIBpv083G5mus32AcyMWxvC2g?e=9ZcRl9
 ## Expenses
 |Team Member|Time Invested|Remaining Budget|Journal Link|
 |-----------|-------------|----------------|------------|
