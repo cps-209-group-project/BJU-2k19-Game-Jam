@@ -99,8 +99,6 @@ namespace Symphony_Sprint.Game_Model.World_Objects
                 this.PosY = 50;
                 this.State = movementState.running;
             }
-            //last night 4:20
-            // today 2
         }
     }
 }
