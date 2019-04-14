@@ -31,7 +31,7 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         {
             if (e.Key == Key.Space)
             {
-             
+
                 if (this.State == movementState.running)
                 {
                     this.State = movementState.jumping;
@@ -46,16 +46,6 @@ namespace Symphony_Sprint.Game_Model.World_Objects
                     //Do nothing
                 }
             }
-        }
-
-        public string Serialize()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Deserialize(string data)
-        {
-            throw new System.NotImplementedException();
         }
 
         public void UpdatePosition()
@@ -98,6 +88,43 @@ namespace Symphony_Sprint.Game_Model.World_Objects
             {
                 this.PosY = 50;
                 this.State = movementState.running;
+            }
+        }
+
+        public string Serialize()
+        {
+            return $"Lives={Lives},PosX={PosX},PosY={PosY},ImgPath={ImgPath}";
+        }
+
+        public void Deserialize(string data)
+        {
+            {
+                string[] properties = data.Split(',');
+                foreach (string property in properties)
+                {
+                    string[] propertyParts = property.Split('=');
+                    string name = propertyParts[0];
+                    string value = propertyParts[1];
+
+                    switch (name)
+                    {
+                        case "Lives":
+                            Lives = int.Parse(value);
+                            break;
+                        case "Height":
+                            jumpceiling1 = int.Parse(value);
+                            break;
+                        case "PosX":
+                            PosX = int.Parse(value);
+                            break;
+                        case "PosY":
+                            PosY = int.Parse(value);
+                            break;
+                        case "ImgPath":
+                            ImgPath = value;
+                            break;
+                    }
+                }
             }
         }
     }

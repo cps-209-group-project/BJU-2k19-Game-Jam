@@ -1,6 +1,7 @@
-﻿using Symphony_Sprint.Game_Model;
+﻿ using Symphony_Sprint.Game_Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,24 +24,15 @@ namespace Symphony_Sprint
 
         public static DispatcherTimer gameTimer;
         public int seconds = 0;
-        System.Media.SoundPlayer sPlayer;
+        
 
         public GameWindow()
         {
             InitializeComponent();
-            sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
-            sPlayer.Play();
             this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
             GameController.Instance.Player.PosX = 100;
             GameController.Instance.Player.PosY = 50;
-            this.Closing += GameWindow_Closing1;
         }
-
-        private void GameWindow_Closing1(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            sPlayer.Stop();
-        }
-
 
         public void Window_Loaded(object sender, EventArgs e)
         {
@@ -107,35 +99,38 @@ namespace Symphony_Sprint
             var playerImg = new Image();
             playerImg.Height = 60;
 
-            Canvas.SetLeft(playerImg, GameController.Instance.Player.PosX);
-
-
             ImageBehavior.SetAnimatedSource(playerImg, playerSource);
             GameCanvas.Children.Add(playerImg);
 
 
             //Sets the players position depending on its state. 
-
-            Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
             GameController.Instance.Player.UpdatePosition();
+            Canvas.SetLeft(playerImg, GameController.Instance.Player.PosX);
+            Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
             //End of player code
 
 
             //Game Object Code
             //Loops through each game object and sets there custom position.
-            foreach (GameObject obj in GameController.Instance.Level.GameObjects)
+            foreach (GameObject obj in GameController.Instance.Level.GameObjects.ToList())
             {
                 var objectSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", obj.ImgPath), UriKind.Relative));
-                var objImg = new Image();
+                Image objImg = new Image();
+                objImg.Source = objectSource;
+                
 
 
-                ImageBehavior.SetAnimatedSource(objImg, objectSource);
 
-                if (obj.posX > 1190 || obj.posX < 10)
+                if (obj.posX > 1190)
                 {
                     objImg.Visibility = Visibility.Hidden;
                 }
 
+                if(obj.posX < 10)
+                {
+                    //objImg.Visibility = Visibility.Hidden;
+                    GameController.Instance.Level.GameObjects.Remove(obj);
+                }
                
                 if (obj.ImgPath == "trebleClef-7.png.png")
                 {
@@ -145,6 +140,9 @@ namespace Symphony_Sprint
                 {
                     objImg.Height = 40;
                 }
+
+                
+                
                 objImg.Uid = "GameObject";
                 GameCanvas.Children.Add(objImg);
                 obj.posX -= obj.Speed;
@@ -152,9 +150,48 @@ namespace Symphony_Sprint
                 Canvas.SetLeft(objImg, obj.posX);
                 Canvas.SetBottom(objImg, obj.posY);
                 //End of Game Object Code
+
+                //Collision Code Start
+                var objects = new System.Drawing.Rectangle(
+
+                    Convert.ToInt32(Canvas.GetLeft(objImg)),
+                        Convert.ToInt32(Canvas.GetBottom(objImg)),
+                        Convert.ToInt32(objImg.ActualWidth),
+                        Convert.ToInt32(objImg.ActualHeight)
+
+                    );
+
                 
+
+                var player = new System.Drawing.Rectangle(
+                        Convert.ToInt32(Canvas.GetLeft(playerImg)),
+                        Convert.ToInt32(Canvas.GetBottom(playerImg)),
+                        Convert.ToInt32(playerImg.ActualWidth),
+                        Convert.ToInt32(playerImg.ActualHeight)
+                    );
+
+                //if (objects.Left < player.Left && objects.Right > player.Left && objects.Top > player.Top && objects.Bottom < player.Top || objects.Left < player.Right && objects.Right > player.Right && objects.Top > player.Bottom && objects.Bottom < player.Bottom || objects.Left < player.Top && objects.Right > player.Top && objects.Top > player.Right && objects.Bottom < player.Right || objects.Left < player.Bottom && objects.Right > player.Bottom && objects.Top > player.Left && objects.Bottom < player.Left || player.Left < objects.Left && player.Right > objects.Left && player.Top > objects.Top && player.Bottom < objects.Top || player.Left < objects.Right && player.Right > objects.Right && player.Top > objects.Bottom && player.Bottom < objects.Bottom || player.Left < objects.Top && player.Right > objects.Top && player.Top > objects.Right && player.Bottom < objects.Right || player.Left < objects.Bottom && player.Right > objects.Bottom && player.Top > objects.Left && player.Bottom < objects.Left)
+                //{
+
+                //    Debug.WriteLine(objects.X + "and" + objects.Y);
+                //    GameController.Instance.Level.GameObjects.Remove(obj);
+                //}
+
+                if (objects.Left == player.Right)
+                {
+                    GameController.Instance.Level.GameObjects.Remove(obj);
+                }
+                
+                if (objects.IntersectsWith(player))
+                {
+                    Debug.WriteLine("Collision!");
+                }
+                //Collision code end
             }
-            
+
         }
+
+        
+
     }
 }

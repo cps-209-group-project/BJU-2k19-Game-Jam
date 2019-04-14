@@ -1,5 +1,5 @@
 Points:0
 Notes:0
-Player:Lives=0,PosX=0,PosY=0,ImgPath=robin.png
+Player:Lives=5,PosX=0,PosY=0,ImgPath=Dr. Schaub.png
 Level:Difficulty=EASY,NoteObjective=0
 GameObjects:
