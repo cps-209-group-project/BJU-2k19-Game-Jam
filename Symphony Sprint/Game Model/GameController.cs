@@ -59,7 +59,7 @@ namespace Symphony_Sprint.Game_Model
             {
                 //Sets our random numbers each time the loop goes through.
                 int img = rand.Next(0, 6);
-                int posX = rand.Next(1200, 15000);
+                int posX = rand.Next(1100, 15000);
                 int posY = rand.Next(50, 250);
 
 
@@ -76,10 +76,7 @@ namespace Symphony_Sprint.Game_Model
                  
                 var posList = positions.ToList(); //Change our hashset to a list so we can index it.
                 
-                if (posList.Count < 10 || posList.Count != 0)
-                {
-                    posX = posList[i];
-                } 
+                
 
                 GameObject obj = new GameObject(images[img], 3, posX, posY);
                 Level.GameObjects.Add(obj);

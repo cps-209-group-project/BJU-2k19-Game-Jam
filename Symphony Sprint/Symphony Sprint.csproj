@@ -171,7 +171,7 @@
     <Resource Include="Graphics\mainTitle.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\sparkle.gif" />
+    <Resource Include="Graphics\sparkle.gif" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\time-1.png.png" />
@@ -213,7 +213,7 @@
     <Resource Include="Graphics\heart-1.png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\heartDead-1.png.png" />
+    <Resource Include="Graphics\heartDead-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\highScore-1.png.png" />
