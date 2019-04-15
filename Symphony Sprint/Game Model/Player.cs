@@ -1,4 +1,8 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.IO;
+using System.Windows;
+using System.Windows.Input;
+using Microsoft.Win32;
 
 namespace Symphony_Sprint.Game_Model.World_Objects
 {
@@ -10,9 +14,11 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         public enum movementState { running, jumping, doublejump, decending, decending2 }
         public movementState State { get; set; }
         //public bool isJumping;
+        private OpenFileDialog loadDialog = new OpenFileDialog();
+        private SaveFileDialog saveDialog = new SaveFileDialog();
 
         public string ImgPath { get; set; }
-        public int Lives { get; set; }       
+        public int Lives { get; set; }
         public int PosX { get; set; }
         public int PosY { get; set; }
         public int jumpceiling1 { get; set; }
@@ -48,6 +54,44 @@ namespace Symphony_Sprint.Game_Model.World_Objects
                     //Do nothing
                 }
             }
+            else if (e.Key == Key.S)
+            {
+                keyS_press();
+            }
+            else if (e.Key == Key.L)
+            {
+                keyL_press();
+            }
+        }
+
+        private void keyS_press()
+        {
+            // gameTimer.Stop();
+
+            saveDialog.InitialDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameSaves");
+            // TODO: set properties on saveDialog (OR set them in the constructor of Player
+            if (saveDialog.ShowDialog() == true)
+            {
+                GameController.Instance.Save(saveDialog.FileName);
+                loadDialog.FileName = saveDialog.FileName;
+            }
+
+            // gameTimer.Resume();
+        }
+
+        private void keyL_press()
+        {
+            // gameTimer.Stop();
+
+            loadDialog.InitialDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameSaves");
+            // TODO: set properties on saveDialog (OR set them in the constructor of Player
+            if (loadDialog.ShowDialog() == true)
+            {
+                GameController.Instance.Load(loadDialog.FileName);
+                //loadDialog.FileName = saveDialog.FileName;
+            }
+
+            // gameTimer.Resume();
         }
 
         public void UpdatePosition()

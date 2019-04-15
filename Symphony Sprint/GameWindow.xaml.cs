@@ -1,4 +1,5 @@
-﻿ using Symphony_Sprint.Game_Model;
+﻿using Microsoft.Win32;
+using Symphony_Sprint.Game_Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,7 +22,6 @@ namespace Symphony_Sprint
     
     public partial class GameWindow : Window
     {
-
         public static DispatcherTimer gameTimer;
         public static DispatcherTimer displayTimer;
         public int seconds = 0;

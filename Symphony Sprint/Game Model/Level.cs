@@ -26,7 +26,7 @@ namespace Symphony_Sprint.Game_Model
         public void Deserialize(string data)
         {
             int gameObjsIndex = data.IndexOf("\nGameObjects:");
-            string gameObjsSerialized = data.Substring(gameObjsIndex + 13);
+            string gameObjsSerialized = data.Substring(gameObjsIndex + 14);
             gameObjs = new List<GameObject>();
             foreach (var line in gameObjsSerialized.Split('\n'))
             {
