@@ -1,6 +1,6 @@
 Points:52
 Notes:99
-Player:Lives=3,PosX=20,PosY=20,ImgPath=p2.png
+Player:Lives=3,PosX=20,PosY=20,JumpCeiling1=200,JumpCeiling2=200,ImgPath=p2.png
 Level:Difficulty=EASY,NoteObjective=90
 GameObjects:
 Speed=3,PosX=20,PosY=20,ImgPath=o1.png
