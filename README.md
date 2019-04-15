@@ -16,7 +16,7 @@ No known Issues
 ## Expenses
 |Team Member|Time Invested|Remaining Budget|Journal Link|
 |-----------|-------------|----------------|------------|
-|Stone|20|40|[Stones Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/StonesJournal)|
+|Stone|31|29|[Stones Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/StonesJournal)|
 |Jason|22.25|37.75|[Jasons Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/JasonsJournal)|
 |Ana|20 |40|[Anas Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/AnasJournal)|
 |Robin|19.20|40.80|[Robins Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/RobinsJournal)|
