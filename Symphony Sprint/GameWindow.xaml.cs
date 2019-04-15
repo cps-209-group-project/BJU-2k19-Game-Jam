@@ -2,6 +2,7 @@
 using Symphony_Sprint.Game_Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,17 +99,14 @@ namespace Symphony_Sprint
             var playerImg = new Image();
             playerImg.Height = 60;
 
-            Canvas.SetLeft(playerImg, GameController.Instance.Player.PosX);
-
-
             ImageBehavior.SetAnimatedSource(playerImg, playerSource);
             GameCanvas.Children.Add(playerImg);
 
 
             //Sets the players position depending on its state. 
-
-            Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
             GameController.Instance.Player.UpdatePosition();
+            Canvas.SetLeft(playerImg, GameController.Instance.Player.PosX);
+            Canvas.SetBottom(playerImg, GameController.Instance.Player.PosY);
             //End of player code
 
 
@@ -117,10 +115,11 @@ namespace Symphony_Sprint
             foreach (GameObject obj in GameController.Instance.Level.GameObjects.ToList())
             {
                 var objectSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", obj.ImgPath), UriKind.Relative));
-                var objImg = new Image();
+                Image objImg = new Image();
+                objImg.Source = objectSource;
                 
 
-                ImageBehavior.SetAnimatedSource(objImg, objectSource);
+
 
                 if (obj.posX > 1190)
                 {
@@ -142,24 +141,8 @@ namespace Symphony_Sprint
                     objImg.Height = 40;
                 }
 
-                if (DetectCollision(objImg, playerImg) == null)
-                {
-                    //objImg.Visibility = Visibility.Hidden;
-                    Console.WriteLine("Collision");
-                }
-
-
-                //if (Canvas.GetLeft(objImg) == GameController.Instance.Player.PosX && Canvas.GetBottom(objImg) == GameController.Instance.Player.PosY)
-                //{
-                //    objImg.Visibility = Visibility.Hidden;
-                //}
-
-                //if (obj.posX == GameController.Instance.Player.PosX && obj.posY == GameController.Instance.Player.PosY)
-                //{
-                //    objImg.Visibility = Visibility.Hidden;
-                    
-                //}
-
+                
+                
                 objImg.Uid = "GameObject";
                 GameCanvas.Children.Add(objImg);
                 obj.posX -= obj.Speed;
@@ -167,18 +150,48 @@ namespace Symphony_Sprint
                 Canvas.SetLeft(objImg, obj.posX);
                 Canvas.SetBottom(objImg, obj.posY);
                 //End of Game Object Code
+
+                //Collision Code Start
+                var objects = new System.Drawing.Rectangle(
+
+                    Convert.ToInt32(Canvas.GetLeft(objImg)),
+                        Convert.ToInt32(Canvas.GetBottom(objImg)),
+                        Convert.ToInt32(objImg.ActualWidth),
+                        Convert.ToInt32(objImg.ActualHeight)
+
+                    );
+
                 
+
+                var player = new System.Drawing.Rectangle(
+                        Convert.ToInt32(Canvas.GetLeft(playerImg)),
+                        Convert.ToInt32(Canvas.GetBottom(playerImg)),
+                        Convert.ToInt32(playerImg.ActualWidth),
+                        Convert.ToInt32(playerImg.ActualHeight)
+                    );
+
+                //if (objects.Left < player.Left && objects.Right > player.Left && objects.Top > player.Top && objects.Bottom < player.Top || objects.Left < player.Right && objects.Right > player.Right && objects.Top > player.Bottom && objects.Bottom < player.Bottom || objects.Left < player.Top && objects.Right > player.Top && objects.Top > player.Right && objects.Bottom < player.Right || objects.Left < player.Bottom && objects.Right > player.Bottom && objects.Top > player.Left && objects.Bottom < player.Left || player.Left < objects.Left && player.Right > objects.Left && player.Top > objects.Top && player.Bottom < objects.Top || player.Left < objects.Right && player.Right > objects.Right && player.Top > objects.Bottom && player.Bottom < objects.Bottom || player.Left < objects.Top && player.Right > objects.Top && player.Top > objects.Right && player.Bottom < objects.Right || player.Left < objects.Bottom && player.Right > objects.Bottom && player.Top > objects.Left && player.Bottom < objects.Left)
+                //{
+
+                //    Debug.WriteLine(objects.X + "and" + objects.Y);
+                //    GameController.Instance.Level.GameObjects.Remove(obj);
+                //}
+
+                if (objects.Left == player.Right)
+                {
+                    GameController.Instance.Level.GameObjects.Remove(obj);
+                }
+                
+                if (objects.IntersectsWith(player))
+                {
+                    Debug.WriteLine("Collision!");
+                }
+                //Collision code end
             }
- 
+
         }
 
-        private Rect DetectCollision(FrameworkElement rect1, FrameworkElement rect2)
-        {
-            var r1 = new Rect(Canvas.GetLeft(rect1), Canvas.GetTop(rect1), rect1.ActualWidth, rect1.ActualHeight);
-            var r2 = new Rect(Canvas.GetLeft(rect2), Canvas.GetTop(rect2), rect2.ActualWidth, rect2.ActualHeight);
-            r1.Intersect(r2);
-            return r1;
-        }
+        
 
     }
 }

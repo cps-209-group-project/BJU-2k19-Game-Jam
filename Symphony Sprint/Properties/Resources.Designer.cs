@@ -121,6 +121,15 @@ namespace Symphony_Sprint.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream audio_hero_On_The_Ball_SIPML_K_04_25_01 {
+            get {
+                return ResourceManager.GetStream("audio_hero_On_The_Ball_SIPML_K_04_25_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap eigthNote {
