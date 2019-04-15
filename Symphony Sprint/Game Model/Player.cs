@@ -14,8 +14,6 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         public enum movementState { running, jumping, doublejump, decending, decending2 }
         public movementState State { get; set; }
         //public bool isJumping;
-        private OpenFileDialog loadDialog = new OpenFileDialog();
-        private SaveFileDialog saveDialog = new SaveFileDialog();
 
         public string ImgPath { get; set; }
         public int Lives { get; set; }
@@ -39,7 +37,6 @@ namespace Symphony_Sprint.Game_Model.World_Objects
         {
             if (e.Key == Key.Space)
             {
-
                 if (this.State == movementState.running)
                 {
                     this.State = movementState.jumping;
@@ -54,44 +51,6 @@ namespace Symphony_Sprint.Game_Model.World_Objects
                     //Do nothing
                 }
             }
-            else if (e.Key == Key.S)
-            {
-                keyS_press();
-            }
-            else if (e.Key == Key.L)
-            {
-                keyL_press();
-            }
-        }
-
-        private void keyS_press()
-        {
-            // gameTimer.Stop();
-
-            saveDialog.InitialDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameSaves");
-            // TODO: set properties on saveDialog (OR set them in the constructor of Player
-            if (saveDialog.ShowDialog() == true)
-            {
-                GameController.Instance.Save(saveDialog.FileName);
-                loadDialog.FileName = saveDialog.FileName;
-            }
-
-            // gameTimer.Resume();
-        }
-
-        private void keyL_press()
-        {
-            // gameTimer.Stop();
-
-            loadDialog.InitialDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameSaves");
-            // TODO: set properties on saveDialog (OR set them in the constructor of Player
-            if (loadDialog.ShowDialog() == true)
-            {
-                GameController.Instance.Load(loadDialog.FileName);
-                //loadDialog.FileName = saveDialog.FileName;
-            }
-
-            // gameTimer.Resume();
         }
 
         public void UpdatePosition()
@@ -135,12 +94,16 @@ namespace Symphony_Sprint.Game_Model.World_Objects
                 this.PosY = 50;
                 this.State = movementState.running;
             }
-            
+
+            if (this.PosY == 0 && this.State != movementState.running)
+            {
+                this.State = movementState.running;
+            }
         }
 
         public string Serialize()
         {
-            return $"Lives={Lives},PosX={PosX},PosY={PosY},JumpCeiling1={jumpceiling1},JumpCeiling2={jumpceiling2},ImgPath={ImgPath}";
+            return $"Lives={Lives},PosX={PosX},PosY={PosY},State={State},JumpCeiling1={jumpceiling1},JumpCeiling2={jumpceiling2},ImgPath={ImgPath}";
         }
 
         public void Deserialize(string data)
@@ -158,8 +121,14 @@ namespace Symphony_Sprint.Game_Model.World_Objects
                         case "Lives":
                             Lives = int.Parse(value);
                             break;
-                        case "Height":
+                        case "JumpCeiling1":
                             jumpceiling1 = int.Parse(value);
+                            break;
+                        case "JumpCeiling2":
+                            jumpceiling2 = int.Parse(value);
+                            break;
+                        case "State":
+                            State = (movementState)Enum.Parse(typeof(movementState), value);
                             break;
                         case "PosX":
                             PosX = int.Parse(value);

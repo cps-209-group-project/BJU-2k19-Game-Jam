@@ -16,19 +16,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using WpfAnimatedGif;
+using System.IO;
 
 namespace Symphony_Sprint
 {
-    
     public partial class GameWindow : Window
     {
         public static DispatcherTimer gameTimer;
         public static DispatcherTimer displayTimer;
         public int seconds = 0;
         int min = 0;
-        public int livesLeft = 3;
         public int noteNum = 20;
-        
+        // public int livesLeft = 3;
+        private OpenFileDialog loadDialog = new OpenFileDialog();
+        private SaveFileDialog saveDialog = new SaveFileDialog();
 
         BitmapImage source1;
         BitmapImage source2;
@@ -41,13 +42,12 @@ namespace Symphony_Sprint
             this.KeyDown += new KeyEventHandler(this.KeyIsDown);
             GameController.Instance.Player.PosX = 200;
             GameController.Instance.Player.PosY = 50;
+            GameController.Instance.Player.Lives = 3;
         }
 
         public void Window_Loaded(object sender, EventArgs e)
         {
             //Load images on screen
-            
-
             source1 = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
             source2 = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
             source3 = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
@@ -59,7 +59,6 @@ namespace Symphony_Sprint
             heart2.Source = source2;
             heart3.Source = source3;
             scoreImg.Source = new BitmapImage(new Uri("/Graphics/score-1.png.png", UriKind.Relative));
-
 
             gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 5) };
             gameTimer.Tick += GameTimer_Tick;
@@ -96,21 +95,19 @@ namespace Symphony_Sprint
             //Update NoteObjective
             //Update Level when needed.
 
-            if (livesLeft == 2)
+            if (GameController.Instance.Player.Lives == 2)
             {
                 heart1.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
-            } else if (livesLeft == 1)
+            } else if (GameController.Instance.Player.Lives == 1)
             {
                 heart2.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
-            } else if (livesLeft == 0)
+            } else if (GameController.Instance.Player.Lives == 0)
             {
                 heart3.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
                 MessageBox.Show("Game Over");
                 GameController.Instance.isGameOver = true;
                 this.Close();
             }
-
-            
             
             if (seconds < 10)
             {
@@ -126,7 +123,6 @@ namespace Symphony_Sprint
             {
                 timeNum.Content = min + ":" + seconds;
             }
-
 
             GameCanvas.Children.Clear();
 
@@ -146,7 +142,6 @@ namespace Symphony_Sprint
             playerImg.Stretch = Stretch.Fill;
             ImageBehavior.SetAnimatedSource(playerImg, playerSource);
             GameCanvas.Children.Add(playerImg);
-
 
             //Sets the players position depending on its state. 
             GameController.Instance.Player.UpdatePosition();
@@ -187,9 +182,7 @@ namespace Symphony_Sprint
                 {
                     objImg.Height = 40;
                     objImg.Width = 60;
-                }
-
-                
+                }                
                 
                 objImg.Uid = "GameObject";
                 GameCanvas.Children.Add(objImg);
@@ -206,7 +199,6 @@ namespace Symphony_Sprint
                         Convert.ToDouble(Canvas.GetBottom(objImg)),
                         Convert.ToDouble(objImg.Width),
                         Convert.ToDouble(objImg.Height)
-
                     );
 
                 var player = new Rect(
@@ -217,9 +209,7 @@ namespace Symphony_Sprint
                     );
 
                 if(objects.Left <= player.Right && objects.Right >= player.Left && objects.Bottom >= player.Top && objects.Top <= player.Bottom)
-
                 {
-
                     if (obj.ImgPath == "flat-1.png.png" || obj.ImgPath == "sharp-1.png.png")
                     {
                         //Checks if cheat mode is enabled.
@@ -231,7 +221,7 @@ namespace Symphony_Sprint
                         Debug.WriteLine(obj.posX + " and " + obj.posY + " player: x: " + GameController.Instance.Player.PosX + " y: " + GameController.Instance.Player.PosY);
                         Debug.WriteLine("Rect: Object X: " + objects.X + " and " + objects.Y + " Player: " + player.X + " and " + player.Y);
                         Debug.WriteLine(obj.ImgPath);
-                        livesLeft--;
+                        GameController.Instance.Player.Lives--;
                         GameController.Instance.Level.GameObjects.Remove(obj);
                         GameCanvas.Children.Remove(objImg);
                     }
@@ -244,14 +234,10 @@ namespace Symphony_Sprint
                         GameController.Instance.Points += 200;
                         scoreNum.Content = GameController.Instance.Points;
                         noteObj.Content = noteNum;
-                    }
-                    
+                    } 
                 }
-
-                
                 //Collision code end
             }
-
         }
 
         public void KeyIsDown(object sender, KeyEventArgs e)
@@ -266,7 +252,45 @@ namespace Symphony_Sprint
                     GameController.Instance.isCheatEnabled = false;
                 }
             }
+            else if (e.Key == Key.S)
+            {
+                keyS_press();
+            }
+            else if (e.Key == Key.L)
+            {
+                keyL_press();
+            }
         }
 
+        private void keyS_press()
+        {
+            gameTimer.Stop();
+
+            saveDialog.InitialDirectory = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameSaves");
+            if (saveDialog.ShowDialog() == true)
+            {
+                GameController.Instance.Save(saveDialog.FileName);
+                loadDialog.FileName = saveDialog.FileName;
+            }
+
+            gameTimer.Start();
+        }
+
+        private void keyL_press()
+        {
+            gameTimer.Stop();
+
+            this.KeyDown -= new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
+
+            loadDialog.InitialDirectory = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameSaves");
+            if (loadDialog.ShowDialog() == true)
+            {
+                GameController.Instance.Load(loadDialog.FileName);
+            }
+
+            this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
+
+            gameTimer.Start();
+        }
     }
 }
