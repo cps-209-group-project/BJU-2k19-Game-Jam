@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using WpfAnimatedGif;
 
+
 namespace Symphony_Sprint
 {
     
@@ -33,14 +34,23 @@ namespace Symphony_Sprint
         BitmapImage source2;
         BitmapImage source3;
 
+        System.Media.SoundPlayer sPlayer;
+
         public GameWindow()
         {
             InitializeComponent();
             this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
             GameController.Instance.Player.PosX = 200;
             GameController.Instance.Player.PosY = 50;
+            sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
+            sPlayer.Play();
+            this.Closing += GameWindow_Closing;
         }
 
+        public void GameWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            sPlayer.Stop();
+        }
         public void Window_Loaded(object sender, EventArgs e)
         {
             //Load images on screen
