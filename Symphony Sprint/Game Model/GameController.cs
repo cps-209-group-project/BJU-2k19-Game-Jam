@@ -95,12 +95,10 @@ namespace Symphony_Sprint.Game_Model
             File.WriteAllText(filename, serializedData);
         }
 
-        public GameController Load(string filename)
+        public void Load(string filename)
         {
             string serializedData = File.ReadAllText(filename);
-            var game = new GameController();
-            game.Deserialize(serializedData);
-            return game;
+            this.Deserialize(serializedData);
         }
 
         public string Serialize()
