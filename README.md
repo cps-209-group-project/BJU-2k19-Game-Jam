@@ -1,6 +1,9 @@
 # BJU-2k19-Game-Jam
 ## Instructions
 Click start to start the game. Press the space key to jump to collect notes or avoid accidentals. Press space key while still jumping to double jump. 
+
+Keys:
+- C : Cheat Mode (Press C during game to access cheat mode)
 ## Work Completed
 - Title screen
 - Game screen
@@ -9,6 +12,10 @@ Click start to start the game. Press the space key to jump to collect notes or a
 - Unit tests
 - Player movement (jumping)
 - Enemy movement/game object movement
+- Collision
+- Basic Gameplay
+- Cheat Mode
+- Basic Points System
 ## Known Issues
 No known Issues
 ## Recording
