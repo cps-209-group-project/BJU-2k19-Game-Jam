@@ -24,14 +24,22 @@ namespace Symphony_Sprint
 
         public static DispatcherTimer gameTimer;
         public int seconds = 0;
-        
+        System.Media.SoundPlayer sPlayer;
 
         public GameWindow()
         {
             InitializeComponent();
+            sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
+            sPlayer.Play();
             this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
             GameController.Instance.Player.PosX = 100;
             GameController.Instance.Player.PosY = 50;
+            this.Closing += GameWindow_Closing;
+        }
+
+        private void GameWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            sPlayer.Stop();
         }
 
         public void Window_Loaded(object sender, EventArgs e)

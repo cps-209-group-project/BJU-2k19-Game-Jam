@@ -23,8 +23,8 @@
                 <Button x:Name="HighScores" Height="35" Background="Black" Margin="20" Click="HighScores_Click" BorderBrush="Black">
                     <Image Source="Graphics/highScores-1.png.png"/>
                 </Button>
-                <Button Height="35" Background="Black" Margin="20" BorderBrush="Black">
-                    <Image Source="Graphics/help-1.png.png"/>
+                <Button x:Name="btnHelp" Click="btnHelp_Click" Height="35" Background="Black" Margin="20" BorderBrush="Black">
+                    <Image Source="Graphics/help-1.png.png" RenderTransformOrigin="0.5,0.512"/>
                 </Button>
             </StackPanel>
 
