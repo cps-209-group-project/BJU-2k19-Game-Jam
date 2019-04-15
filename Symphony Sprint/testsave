@@ -1,5 +1,7 @@
-Points:0
-Notes:0
-Player:Lives=5,PosX=0,PosY=0,ImgPath=Dr. Schaub.png
-Level:Difficulty=EASY,NoteObjective=0
+Points:52
+Notes:99
+Player:Lives=3,PosX=20,PosY=20,ImgPath=p2.png
+Level:Difficulty=EASY,NoteObjective=90
 GameObjects:
+Speed=3,PosX=20,PosY=20,ImgPath=o1.png
+Speed=2,PosX=5,PosY=10,ImgPath=o2.png
