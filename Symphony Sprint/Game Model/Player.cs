@@ -8,9 +8,6 @@ namespace Symphony_Sprint.Game_Model.World_Objects
 {
     public class Player : ISerialize
     {
-
-        
-
         public enum movementState { running, jumping, doublejump, decending, decending2 }
         public movementState State { get; set; }
         //public bool isJumping;
