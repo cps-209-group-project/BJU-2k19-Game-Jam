@@ -35,8 +35,6 @@ namespace Symphony_Sprint
         BitmapImage source2;
         BitmapImage source3;
 
-        System.Media.SoundPlayer sPlayer;
-
         public GameWindow()
         {
             InitializeComponent();
@@ -45,14 +43,6 @@ namespace Symphony_Sprint
             GameController.Instance.Player.PosX = 200;
             GameController.Instance.Player.PosY = 50;
             GameController.Instance.Player.Lives = 3;
-            sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
-            sPlayer.Play();
-            this.Closing += GameWindow_Closing;
-        }
-
-        public void GameWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            sPlayer.Stop();
         }
 
         public void Window_Loaded(object sender, EventArgs e)
