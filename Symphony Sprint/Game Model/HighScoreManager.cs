@@ -29,9 +29,9 @@ namespace Symphony_Sprint
         }
 
         //saves all highscores to a text file
-        public static void SaveScore()
+        public static void SaveScore(string dir)
         {
-            using (StreamWriter sw = new StreamWriter("SymphonySprintHighScores.txt"))
+            using (StreamWriter sw = new StreamWriter(dir + "SymphonySprintHighScores.txt"))
             {
                 foreach (HighScore hs in HighScoreList)
                 {
@@ -41,13 +41,15 @@ namespace Symphony_Sprint
         }
 
         //loads scores from a text file
-        public static void LoadScore()
+        public static void LoadScore(string dir)
         {
-            using (StreamReader sr = new StreamReader("SymphonySprintHighScores.txt"))
+            HighScoreList = new List<HighScore>{};
+            string line;
+            using (StreamReader sr = new StreamReader(dir + "SymphonySprintHighScores.txt"))
             {
-                foreach (HighScore hs in HighScoreList)
+                while ((line = sr.ReadLine()) != null)
                 {
-                    string[] list = sr.ReadLine().Split(',');
+                    string[] list = line.Split(',');
                     AddNameAndScore(list[0], Convert.ToInt32(list[1]));
                 }
             }
