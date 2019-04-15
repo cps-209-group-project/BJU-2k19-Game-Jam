@@ -232,4 +232,7 @@
   <data name="audio_hero_On_The_Ball_SIPML_K_04_25_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sounds\game play music\audio_hero_On-The-Ball_SIPML_K-04-25-01.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="musical_symphony_orchestra_warming_up_before_concert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sounds\title screen music\musical_symphony_orchestra_warming_up_before_concert.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -237,7 +237,7 @@
     <Resource Include="Graphics\quarterNote.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\score-1.png.png" />
+    <Resource Include="Graphics\score-1.png.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\sharp.gif" />
@@ -308,6 +308,7 @@
     <Content Include="sounds\good note sounds\ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_003_542.mp3" />
     <Content Include="sounds\good note sounds\ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_004_543.mp3" />
     <Content Include="sounds\title screen music\musical_symphony_orchestra_warming_up_before_concert.mp3" />
+    <None Include="sounds\title screen music\musical_symphony_orchestra_warming_up_before_concert.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

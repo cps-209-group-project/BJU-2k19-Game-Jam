@@ -15,17 +15,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Resources;
-using Microsoft.Win32;
+using Symphony_Sprint.Properties;
 
 namespace Symphony_Sprint
 {
   
     public partial class MainWindow : Window
     {
-
+        System.Media.SoundPlayer sPlayerMW;
         public MainWindow()
         {
             InitializeComponent();
+            sPlayerMW = new System.Media.SoundPlayer(Properties.Resources.musical_symphony_orchestra_warming_up_before_concert);
+            sPlayerMW.Play();
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -38,6 +40,12 @@ namespace Symphony_Sprint
         {
             HighScoreWindow highScoreWindow = new HighScoreWindow();
             highScoreWindow.Show();
+        }
+
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Help helpWindow = new Help();
+            helpWindow.Show();
         }
     }
 }

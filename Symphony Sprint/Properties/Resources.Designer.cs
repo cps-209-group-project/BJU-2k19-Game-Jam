@@ -280,6 +280,15 @@ namespace Symphony_Sprint.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream musical_symphony_orchestra_warming_up_before_concert {
+            get {
+                return ResourceManager.GetStream("musical_symphony_orchestra_warming_up_before_concert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pianoDouble_1_png {
