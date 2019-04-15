@@ -27,7 +27,7 @@ namespace Symphony_Sprint
         public int seconds = 0;
         int min = 0;
         public int livesLeft = 3;
-        public int noteNum = 50;
+        public int noteNum = 20;
 
         BitmapImage source1;
         BitmapImage source2;
@@ -37,6 +37,7 @@ namespace Symphony_Sprint
         {
             InitializeComponent();
             this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
+            this.KeyDown += new KeyEventHandler(this.KeyIsDown);
             GameController.Instance.Player.PosX = 200;
             GameController.Instance.Player.PosY = 50;
         }
@@ -209,8 +210,6 @@ namespace Symphony_Sprint
 
                     );
 
-                
-
                 var player = new Rect(
                         Convert.ToDouble(Canvas.GetLeft(playerImg)),
                         Convert.ToDouble(Canvas.GetBottom(playerImg)),
@@ -218,17 +217,18 @@ namespace Symphony_Sprint
                         Convert.ToDouble(playerImg.Height)
                     );
 
-
-                
-
-
-                
                 if(objects.Left <= player.Right && objects.Right >= player.Left && objects.Bottom >= player.Top && objects.Top <= player.Bottom)
 
                 {
-                    
+
                     if (obj.ImgPath == "flat-1.png.png" || obj.ImgPath == "sharp-1.png.png")
                     {
+                        //Checks if cheat mode is enabled.
+                        if (GameController.Instance.isCheatEnabled == true)
+                        {
+                            return;
+                        }
+                        //Takes a life and removes enemy from game.
                         Debug.WriteLine(obj.posX + " and " + obj.posY + " player: x: " + GameController.Instance.Player.PosX + " y: " + GameController.Instance.Player.PosY);
                         Debug.WriteLine("Rect: Object X: " + objects.X + " and " + objects.Y + " Player: " + player.X + " and " + player.Y);
                         Debug.WriteLine(obj.ImgPath);
@@ -253,7 +253,19 @@ namespace Symphony_Sprint
 
         }
 
-        
+        public void KeyIsDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.C)
+            {
+                if (GameController.Instance.isCheatEnabled == false)
+                {
+                    GameController.Instance.isCheatEnabled = true;
+                } else
+                {
+                    GameController.Instance.isCheatEnabled = false;
+                }
+            }
+        }
 
     }
 }

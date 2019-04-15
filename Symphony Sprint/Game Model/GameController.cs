@@ -16,6 +16,7 @@ namespace Symphony_Sprint.Game_Model
         public int points;
         public int notes;
         public bool isGameOver = false;
+        public bool isCheatEnabled = false;
 
         public string[] images = { "wholeNote-1.png.png", "quarterNote-1.png.png", "eigthNote-1.png.png", "trebleClef-7.png.png", "flat-1.png.png", "sharp-1.png.png", "halfNote-1.png.png" };
 
