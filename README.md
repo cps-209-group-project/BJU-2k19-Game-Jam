@@ -3,7 +3,9 @@
 Click start to start the game. Press the space key to jump to collect notes or avoid accidentals. Press space key while still jumping to double jump. 
 
 Keys:
-- C : Cheat Mode (Press C during game to access cheat mode)
+- C : Cheat Mode (Press C during the game to access cheat mode)
+- S : Save (Press S during the game to save the game)
+- L : Load (Press L during the game to load a different game)
 ## Work Completed
 - Title screen
 - Game screen
