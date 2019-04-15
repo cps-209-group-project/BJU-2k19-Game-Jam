@@ -28,6 +28,7 @@ namespace Symphony_Sprint
         int min = 0;
         public int livesLeft = 3;
         public int noteNum = 20;
+        
 
         BitmapImage source1;
         BitmapImage source2;
@@ -57,6 +58,7 @@ namespace Symphony_Sprint
             heart1.Source = source1;
             heart2.Source = source2;
             heart3.Source = source3;
+            scoreImg.Source = new BitmapImage(new Uri("/Graphics/score-1.png.png", UriKind.Relative));
 
 
             gameTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 0, 0, 5) };
@@ -73,11 +75,8 @@ namespace Symphony_Sprint
         }
 
         private void DisplayTimer_Tick(object sender, EventArgs e)
-        {
-            
+        {           
             seconds++;
-            
-            
         }
 
         //Check if the game is over or not..
@@ -242,6 +241,8 @@ namespace Symphony_Sprint
                         GameController.Instance.Level.GameObjects.Remove(obj);
                         Debug.WriteLine("Collision: " + "Rect: Object X: " + objects.X + " and " + objects.Y + " Player: " + player.X + " and " + player.Y);
                         noteNum--;
+                        GameController.Instance.Points += 200;
+                        scoreNum.Content = GameController.Instance.Points;
                         noteObj.Content = noteNum;
                     }
                     
