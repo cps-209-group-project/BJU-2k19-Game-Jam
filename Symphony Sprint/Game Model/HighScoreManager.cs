@@ -79,5 +79,10 @@ namespace Symphony_Sprint
             HighScoreList.Sort();
             return HighScoreList.Count < 5 || score > HighScoreList[HighScoreList.Count - 1].Score;
         }
+
+        public static List<HighScore> GetHighScore()
+        {
+            return HighScoreList;
+        }
     }
 }

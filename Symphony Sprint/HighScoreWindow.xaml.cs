@@ -24,6 +24,13 @@ namespace Symphony_Sprint
         {
             InitializeComponent();
             HighScoreManager.CreateStringOfScoresAndNames();
+            foreach(var item in HighScoreManager.HighScoreList)
+            {
+                string name = item.Name.ToString();
+                string score = item.Score.ToString();
+                playerName.Text = name;
+                playerScore.Text = score;
+            }
             //hsText.Text = HighScoreManager.HighScoreText;
         }
 
