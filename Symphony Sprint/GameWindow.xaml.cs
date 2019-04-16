@@ -28,6 +28,8 @@ namespace Symphony_Sprint
         BitmapImage source2;
         BitmapImage source3;
 
+        System.Media.SoundPlayer sPlayer;
+
         public GameWindow()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace Symphony_Sprint
             GameController.Instance.Player.PosX = 200;
             GameController.Instance.Player.PosY = 50;
             GameController.Instance.Player.Lives = 3;
+            sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
         }
 
         public void Window_Loaded(object sender, EventArgs e)
@@ -100,6 +103,12 @@ namespace Symphony_Sprint
                 MessageBox.Show("Game Over");
                 GameController.Instance.isGameOver = true;
                 this.Close();
+                if (HighScoreManager.IsHighScore(Convert.ToInt32(scoreNum.Content)));
+                {
+                    HighScoreEnter HSEnter = new HighScoreEnter();
+                    HSEnter.gameScore.Text = Convert.ToString(scoreNum.Content);
+                    HSEnter.Show();
+                }
             }
             
             if (seconds < 10)

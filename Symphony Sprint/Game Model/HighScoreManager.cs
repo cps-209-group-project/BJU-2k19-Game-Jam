@@ -10,21 +10,22 @@ namespace Symphony_Sprint
 {
     class HighScoreManager
     {
-        public static List<HighScore> HighScoreList{get; set;}
+        public static List<HighScore> HighScoreList { get; set; } = new List<HighScore>();
         public static string HighScoreText { get; set; }
 
         //adds the name of the players and their score to a list in sorted order
         public static void AddNameAndScore(string name, int score)
         {
             HighScore newHS = new HighScore(name, score);
-            List<HighScore> newList = new List<HighScore> { newHS };
-            if (HighScoreList == null)
+
+            if (IsHighScore(score))
             {
-                HighScoreList = newList;
-            }
-            else
-            {
+                if (HighScoreList.Count >= 5)
+                {
+                    HighScoreList.RemoveAt(HighScoreList.Count - 1);
+                }
                 HighScoreList.Add(newHS);
+
             }
         }
 
@@ -43,7 +44,7 @@ namespace Symphony_Sprint
         //loads scores from a text file
         public static void LoadScore(string dir)
         {
-            HighScoreList = new List<HighScore>{};
+            HighScoreList = new List<HighScore> { };
             string line;
             using (StreamReader sr = new StreamReader(dir + "SymphonySprintHighScores.txt"))
             {
@@ -67,11 +68,16 @@ namespace Symphony_Sprint
             {
                 string name = Convert.ToString(HighScoreList[i].Name);
                 string score = Convert.ToString(HighScoreList[i].Score);
-                string finalString = name + "......" + score + " /n";
-                HighScoreText = HighScoreText + finalString;
+                //string finalString = name + "......" + score + " /n";
+                //HighScoreText = HighScoreText + finalString;
             }
 
         }
 
-    }   
+        public static bool IsHighScore(int score)
+        {
+            HighScoreList.Sort();
+            return HighScoreList.Count < 5 || score > HighScoreList[HighScoreList.Count - 1].Score;
+        }
+    }
 }
