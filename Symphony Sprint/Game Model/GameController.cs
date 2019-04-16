@@ -10,7 +10,6 @@ namespace Symphony_Sprint.Game_Model
 {
     public class GameController : ISerialize
     {
-
         public Level level;
         public Player player;
         public int points = 0;

@@ -26,7 +26,7 @@ namespace Symphony_Sprint.Game_Model
         public string Serialize()
         {
             string gameObjs = string.Join("\r\n", GameObjects.Select(go => go.Serialize()));
-            return $"Difficulty={Difficulty},NoteObjective={NoteObjective}\r\nGameObjects:\r\n{gameObjs}";
+            return $"Difficulty={Difficulty},Minutes={Min},Seconds={Seconds},NoteObjective={NoteObjective}\r\nGameObjects:\r\n{gameObjs}";
         }
 
         public void Deserialize(string data)
@@ -56,6 +56,12 @@ namespace Symphony_Sprint.Game_Model
                         break;
                     case "NoteObjective":
                         NoteObjective = int.Parse(value);
+                        break;
+                    case "Minutes":
+                        Min = int.Parse(value);
+                        break;
+                    case "Seconds":
+                        Seconds = int.Parse(value);
                         break;
                 }
             }

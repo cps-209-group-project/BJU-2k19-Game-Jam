@@ -121,7 +121,7 @@ namespace Symphony_Sprint
                 MessageBox.Show("Game Over");
                 GameController.Instance.isGameOver = true;
                 this.Close();
-                if (HighScoreManager.IsHighScore(Convert.ToInt32(scoreNum.Content)));
+                if (HighScoreManager.IsHighScore(Convert.ToInt32(scoreNum.Content)))
                 {
                     HighScoreEnter HSEnter = new HighScoreEnter();
                     HSEnter.gameScore.Text = Convert.ToString(scoreNum.Content);
@@ -293,6 +293,7 @@ namespace Symphony_Sprint
         private void keyS_press()
         {
             gameTimer.Stop();
+            displayTimer.Stop();
 
             saveDialog.InitialDirectory = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameSaves");
             if (saveDialog.ShowDialog() == true)
@@ -302,11 +303,13 @@ namespace Symphony_Sprint
             }
 
             gameTimer.Start();
+            displayTimer.Start();
         }
 
         private void keyL_press()
         {
             gameTimer.Stop();
+            displayTimer.Stop();
 
             this.KeyDown -= new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
 
@@ -319,6 +322,7 @@ namespace Symphony_Sprint
             this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
 
             gameTimer.Start();
+            displayTimer.Start();
         }
     }
 }
