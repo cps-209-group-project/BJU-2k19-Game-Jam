@@ -17,8 +17,7 @@ namespace Symphony_Sprint
     {
         public static DispatcherTimer gameTimer;
         public static DispatcherTimer displayTimer;
-        public int seconds = 0;
-        int min = 0;
+        
         
         //public int livesLeft = 3;
         private OpenFileDialog loadDialog = new OpenFileDialog();
@@ -87,7 +86,7 @@ namespace Symphony_Sprint
 
         private void DisplayTimer_Tick(object sender, EventArgs e)
         {           
-            seconds++;
+            GameController.Instance.Level.Seconds++;
         }
 
         //Check if the game is over or not..
@@ -112,9 +111,12 @@ namespace Symphony_Sprint
                 heart1.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
             } else if (GameController.Instance.Player.Lives == 1)
             {
+                heart1.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
                 heart2.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
             } else if (GameController.Instance.Player.Lives == 0)
             {
+                heart1.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
+                heart2.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
                 heart3.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
                 MessageBox.Show("Game Over");
                 GameController.Instance.isGameOver = true;
@@ -127,21 +129,22 @@ namespace Symphony_Sprint
                 }
             }
             
-            if (seconds < 10)
+            if (GameController.Instance.Level.Seconds < 10)
             {
-                timeNum.Content = min + ":0" + seconds;
+                timeNum.Content = GameController.Instance.Level.Min + ":0" + GameController.Instance.Level.Seconds;
             }
-            else if (seconds > 60)
+            else if (GameController.Instance.Level.Seconds > 60)
             {
-                min++;
-                seconds = 0;
-                timeNum.Content = min + ":" + seconds;
+                GameController.Instance.Level.Min++;
+                GameController.Instance.Level.Seconds = 0;
+                timeNum.Content = GameController.Instance.Level.Min + ":" + GameController.Instance.Level.Seconds;
             }
             else
             {
-                timeNum.Content = min + ":" + seconds;
+                timeNum.Content = GameController.Instance.Level.Min + ":" + GameController.Instance.Level.Seconds;
             }
 
+            CheckGameState();
             GameCanvas.Children.Clear();
 
             //Piano
@@ -256,6 +259,13 @@ namespace Symphony_Sprint
                 }
                 //Collision code end
             }
+        }
+
+        public void CheckGameState()
+        {
+            scoreNum.Content = GameController.Instance.Points;
+            noteObj.Content = GameController.Instance.Level.NoteObjective;
+            GameController.Instance.Player.Lives = GameController.Instance.Player.Lives;
         }
 
         public void KeyIsDown(object sender, KeyEventArgs e)
