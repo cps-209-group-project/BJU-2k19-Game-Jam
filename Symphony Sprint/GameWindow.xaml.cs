@@ -39,6 +39,13 @@ namespace Symphony_Sprint
             GameController.Instance.Player.PosY = 50;
             GameController.Instance.Player.Lives = 3;
             sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
+            sPlayer.Play();
+            this.Closing += GameWindow_Closing;
+        }
+
+        private void GameWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            sPlayer.Stop();
         }
 
         public void Window_Loaded(object sender, EventArgs e)
