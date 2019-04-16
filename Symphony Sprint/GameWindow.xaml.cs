@@ -33,11 +33,19 @@ namespace Symphony_Sprint
         public GameWindow()
         {
             InitializeComponent();
+            DataContext = GameController.Instance.Level;
+
             this.KeyDown += new KeyEventHandler(GameController.Instance.Player.KeyIsDown);
             this.KeyDown += new KeyEventHandler(this.KeyIsDown);
             GameController.Instance.Player.PosX = 200;
             GameController.Instance.Player.PosY = 50;
             GameController.Instance.Player.Lives = 3;
+
+            if (GameController.Instance.Level.levelName == "largo")
+            {
+                GameController.Instance.Level.NoteObjective = 20;
+            }
+
             sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
             sPlayer.Play();
             this.Closing += GameWindow_Closing;
@@ -68,6 +76,7 @@ namespace Symphony_Sprint
 
             displayTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 1) };
             displayTimer.Tick += DisplayTimer_Tick;
+            UpdateScreen();
             GameController.Instance.LargoLevel();
             //SetupGame();
             UpdateScreen();

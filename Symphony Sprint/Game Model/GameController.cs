@@ -51,8 +51,8 @@ namespace Symphony_Sprint.Game_Model
         //Sets up Level One
         public void LargoLevel()
         {
-
-            GameController.Instance.Level.NoteObjective = 20;
+            GameController.Instance.Level.levelName = "largo";
+            
             var usedPos = new List<int>();
 
             var positions = new HashSet<int>(); //HashSets cannot contain duplicate items.
