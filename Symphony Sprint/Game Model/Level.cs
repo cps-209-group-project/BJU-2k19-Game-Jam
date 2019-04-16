@@ -12,7 +12,14 @@ namespace Symphony_Sprint.Game_Model
         public List<GameObject> gameObjs = new List<GameObject>();
         public int noteObjective;
 
+        //public int seconds = 0;
+        //int min = 0;
+
+        public string levelName = "largo";
         // Gets and sets the note objective for each level in order to proceed to the next level.
+
+        public int Seconds { get; set; }
+        public int Min { get; set; }
         public int NoteObjective { get { return noteObjective; } set { noteObjective = value; } }
         public List<GameObject> GameObjects { get { return gameObjs; } }
 
