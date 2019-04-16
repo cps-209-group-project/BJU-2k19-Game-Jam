@@ -19,8 +19,8 @@ namespace Symphony_Sprint
         public static DispatcherTimer displayTimer;
         public int seconds = 0;
         int min = 0;
-        public int noteNum = 20;
-        // public int livesLeft = 3;
+        
+        //public int livesLeft = 3;
         private OpenFileDialog loadDialog = new OpenFileDialog();
         private SaveFileDialog saveDialog = new SaveFileDialog();
 
@@ -239,10 +239,10 @@ namespace Symphony_Sprint
                         GameCanvas.Children.Remove(objImg);
                         GameController.Instance.Level.GameObjects.Remove(obj);
                         Debug.WriteLine("Collision: " + "Rect: Object X: " + objects.X + " and " + objects.Y + " Player: " + player.X + " and " + player.Y);
-                        noteNum--;
+                        GameController.Instance.Level.NoteObjective--;
                         GameController.Instance.Points += 200;
                         scoreNum.Content = GameController.Instance.Points;
-                        noteObj.Content = noteNum;
+                        noteObj.Content = GameController.Instance.Level.NoteObjective;
                     } 
                 }
                 //Collision code end
