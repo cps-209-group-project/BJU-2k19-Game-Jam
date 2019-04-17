@@ -65,7 +65,7 @@ namespace Symphony_Sprint
             }
         }
 
-
+        //checks if new score is greater than lowest score. returns bool. 
         public static bool IsHighScore(int score)
         {
             HighScoreList.Sort();
