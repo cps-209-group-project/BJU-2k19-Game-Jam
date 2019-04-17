@@ -238,4 +238,10 @@
   <data name="SHPinscher_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Font\sh-pinscher\SHPinscher-Regular.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="notes_1_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Graphics\notes-1.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="organ_1_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Graphics\organ-1.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
