@@ -257,7 +257,26 @@ namespace Symphony_Sprint
                         gc.Level.GameObjects.Remove(obj);
                         Debug.WriteLine("Collision: " + "Rect: Object X: " + objects.X + " and " + objects.Y + " Player: " + player.X + " and " + player.Y);
                         gc.Level.NoteObjective--;
-                        gc.Points += 200;
+                        if(obj.ImgPath == "wholeNote-1.png.png")
+                        {
+                            gc.Points += 400;
+                        }
+                        else if (obj.ImgPath == "halfNote-1.png.png")
+                        {
+                            gc.Points += 300;
+                        }
+                        else if (obj.ImgPath == "quarterNote-1.png.png")
+                        {
+                            gc.Points += 200;
+                        }
+                        if (obj.ImgPath == "eigthNote-1.png.png")
+                        {
+                            gc.Points += 100;
+                        }
+                        if (obj.ImgPath == "trebleClef-7.png.png")
+                        {
+                            gc.Points += gc.Points * 2;
+                        }
                         scoreNum.Content = gc.Points;
                         noteObj.Content = gc.Level.NoteObjective;
                     } 
