@@ -25,6 +25,7 @@ namespace Symphony_Sprint
                     HighScoreList.RemoveAt(HighScoreList.Count - 1);
                 }
                 HighScoreList.Add(newHS);
+                HighScoreList.Sort();
 
             }
         }
@@ -64,22 +65,6 @@ namespace Symphony_Sprint
             }
         }
 
-        //takes scores and names and makes string to be displayed on the window
-        //public static void CreateStringOfScoresAndNames()
-        //{
-        //    if (HighScoreList == null)
-        //    {
-        //        HighScoreList = new List<HighScore> { };
-        //    }
-        //    for (int i = 0; i < HighScoreList.Count; ++i)
-        //    {
-        //        string name = Convert.ToString(HighScoreList[i].Name);
-        //        string score = Convert.ToString(HighScoreList[i].Score);
-        //        string finalString = name + "......" + score + " /n";
-        //        HighScoreText = HighScoreText + finalString;
-        //    }
-
-        //}
 
         public static bool IsHighScore(int score)
         {
