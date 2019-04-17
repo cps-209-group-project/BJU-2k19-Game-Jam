@@ -47,6 +47,6 @@ namespace Symphony_Sprint
         {
             Help helpWindow = new Help();
             helpWindow.Show();
-        }
+        }       
     }
 }

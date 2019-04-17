@@ -24,13 +24,5 @@ namespace Symphony_Sprint.Properties
         {
             InitializeComponent();
         }
-        //private void Window_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    helpM.PadRight(20);
-        //    txtHelp.Text = helpM;
-        //    txtHelp.Padding = new Thickness(20);
-        //    txtHelp.FontFamily = new FontFamily("SH Pinscher");
-        //}
-        //GameControle.Instance.Points
     }
 }

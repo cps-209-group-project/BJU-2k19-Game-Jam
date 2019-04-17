@@ -28,6 +28,7 @@ namespace Symphony_Sprint
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             HighScoreManager.AddNameAndScore(playerName.Text, Convert.ToInt32(gameScore.Text));
+            HighScoreManager.SaveScore("HighScoresFile.txt");
             this.Close();
         }
     }
