@@ -15,7 +15,7 @@ namespace Symphony_Sprint.Game_Model
     {
         private const string serializedPlayer = "Lives=3,PosX=20,PosY=20,State=running,JumpCeiling1=200,JumpCeiling2=100,ImgPath=p2.png";
         private const string serializedGameObject1 = "Speed=3,PosX=20,PosY=20,ImgPath=o1.png";
-        private static readonly string serializedLevel = $@"Difficulty=EASY,NoteObjective=90
+        private static readonly string serializedLevel = $@"Difficulty=EASY,Minutes=1,Seconds=6,NoteObjective=90
 GameObjects:
 {serializedGameObject1}
 Speed=2,PosX=5,PosY=10,ImgPath=o2.png";
@@ -97,6 +97,8 @@ Level:{serializedLevel}";
                 Level = new Level
                 {
                     Difficulty = Level.DifficultyEnum.EASY,
+                    Min = 1,
+                    Seconds = 6,
                     NoteObjective = 90,
                     gameObjs = new List<GameObject>
                     {
@@ -111,7 +113,7 @@ Level:{serializedLevel}";
             string expectedData = @"Points:52
 Notes:99
 Player:Lives=3,PosX=20,PosY=20,State=running,JumpCeiling1=200,JumpCeiling2=100,ImgPath=p2.png
-Level:Difficulty=EASY,NoteObjective=90
+Level:Difficulty=EASY,Minutes=1,Seconds=6,NoteObjective=90
 GameObjects:
 Speed=3,PosX=20,PosY=20,ImgPath=o1.png
 Speed=2,PosX=5,PosY=10,ImgPath=o2.png";
@@ -125,7 +127,7 @@ Speed=2,PosX=5,PosY=10,ImgPath=o2.png";
             var serializedData = @"Points:52
 Notes:99
 Player:Lives=3,PosX=20,PosY=20,State=running,JumpCeiling1=200,JumpCeiling2=100,ImgPath=p2.png
-Level:Difficulty=EASY,NoteObjective=90
+Level:Difficulty=EASY,Minutes=1,Seconds=6,NoteObjective=90
 GameObjects:
 Speed=3,PosX=20,PosY=20,ImgPath=o1.png
 Speed=2,PosX=5,PosY=10,ImgPath=o2.png";
