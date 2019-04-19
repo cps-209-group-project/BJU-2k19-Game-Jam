@@ -76,7 +76,7 @@ namespace Symphony_Sprint.Game_Model
 
         public void DetermineDifficulty(int img, int posX, int posY)
         {
-            switch (level.Difficulty)
+            switch (Level.Difficulty)
             {
                 case Level.DifficultyEnum.EASY:
                     GameObject easyObj = new GameObject(easyImages[img], 3, posX, posY);

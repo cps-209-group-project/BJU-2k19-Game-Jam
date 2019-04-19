@@ -28,28 +28,28 @@ namespace Symphony_Sprint
 
         private void Easy_Click(object sender, RoutedEventArgs e)
         {
-            GameController.Instance.level.Difficulty = Level.DifficultyEnum.EASY;
+            Level.Difficulty = Level.DifficultyEnum.EASY;
             GameWindow gwin = new GameWindow();
             gwin.Show();
         }
 
         private void Medium_Click(object sender, RoutedEventArgs e)
         {
-            GameController.Instance.level.Difficulty = Level.DifficultyEnum.MEDIUM;
+            Level.Difficulty = Level.DifficultyEnum.MEDIUM;
             GameWindow gwin = new GameWindow();
             gwin.Show();
         }
 
         private void Hard_Click(object sender, RoutedEventArgs e)
         {
-            GameController.Instance.level.Difficulty = Level.DifficultyEnum.HARD;
+            Level.Difficulty = Level.DifficultyEnum.HARD;
             GameWindow gwin = new GameWindow();
             gwin.Show();
         }
 
         private void Insane_Click(object sender, RoutedEventArgs e)
         {
-            GameController.Instance.level.Difficulty = Level.DifficultyEnum.INSANE;
+            Level.Difficulty = Level.DifficultyEnum.INSANE;
             GameWindow gwin = new GameWindow();
             gwin.Show();
         }
