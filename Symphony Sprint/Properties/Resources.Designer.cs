@@ -121,11 +121,71 @@ namespace Symphony_Sprint.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ana {
+            get {
+                object obj = ResourceManager.GetObject("ana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream audio_hero_On_The_Ball_SIPML_K_04_25_01 {
             get {
                 return ResourceManager.GetStream("audio_hero_On_The_Ball_SIPML_K_04_25_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap difficulty_1_png {
+            get {
+                object obj = ResourceManager.GetObject("difficulty_1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dr__Huges_Avatar {
+            get {
+                object obj = ResourceManager.GetObject("Dr__Huges_Avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dr__Knisely_Avatar_2 {
+            get {
+                object obj = ResourceManager.GetObject("Dr__Knisely_Avatar_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dr__McGee_Avatar {
+            get {
+                object obj = ResourceManager.GetObject("Dr__McGee_Avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap easy_1_png {
+            get {
+                object obj = ResourceManager.GetObject("easy_1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -192,6 +252,16 @@ namespace Symphony_Sprint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hard_1_png {
+            get {
+                object obj = ResourceManager.GetObject("hard_1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap heart_1_png {
             get {
                 object obj = ResourceManager.GetObject("heart_1_png", resourceCulture);
@@ -242,6 +312,26 @@ namespace Symphony_Sprint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap insane_1_png {
+            get {
+                object obj = ResourceManager.GetObject("insane_1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jason {
+            get {
+                object obj = ResourceManager.GetObject("jason", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Level_1_png {
             get {
                 object obj = ResourceManager.GetObject("Level_1_png", resourceCulture);
@@ -275,6 +365,16 @@ namespace Symphony_Sprint.Properties {
         internal static System.Drawing.Bitmap mainTitle1 {
             get {
                 object obj = ResourceManager.GetObject("mainTitle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medium_1_png {
+            get {
+                object obj = ResourceManager.GetObject("medium_1_png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -414,6 +514,16 @@ namespace Symphony_Sprint.Properties {
         internal static System.Drawing.Bitmap start_1_png {
             get {
                 object obj = ResourceManager.GetObject("start_1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stone {
+            get {
+                object obj = ResourceManager.GetObject("stone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
