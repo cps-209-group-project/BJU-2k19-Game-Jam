@@ -16,8 +16,10 @@ namespace Symphony_Sprint
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            GameWindow gwin = new GameWindow();
-            gwin.Show();
+            ChooseDifficulty dWin = new ChooseDifficulty();
+            dWin.Show();
+            //GameWindow gwin = new GameWindow();
+            //gwin.Show();
         }
 
         private void HighScores_Click(object sender, RoutedEventArgs e)

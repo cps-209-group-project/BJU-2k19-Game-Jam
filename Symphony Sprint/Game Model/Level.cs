@@ -7,7 +7,7 @@ namespace Symphony_Sprint.Game_Model
 {
     public class Level : ISerialize
     {
-        public enum DifficultyEnum { EASY, MEDIUM, HARD}
+        public enum DifficultyEnum { EASY, MEDIUM, HARD, INSANE}
         public DifficultyEnum Difficulty { get; set; }
         public List<GameObject> gameObjs = new List<GameObject>();
         public int noteObjective;
