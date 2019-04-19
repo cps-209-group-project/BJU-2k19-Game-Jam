@@ -21,15 +21,7 @@ namespace Symphony_Sprint.Game_Model
         public string[] insaneImages = { "trebleClef-7.png.png", "flat-1.png.png", "flat-1.png.png", "flat-1.png.png", "sharp-1.png.png", "sharp-1.png.png", "sharp-1.png.png" };
         Random rand = new Random();
 
-        private static GameController instance = new GameController();
-
-        public static GameController Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+       
 
         public Level Level { get { return level; } set { level = value; } }
         public Player Player { get { return player; } set { player = value; } }
@@ -50,7 +42,7 @@ namespace Symphony_Sprint.Game_Model
         //Sets up Level One
         public void LargoLevel()
         {
-            GameController.Instance.Level.levelName = "largo";
+            this.Level.levelName = "largo";
             
             var usedPos = new List<int>();
 
