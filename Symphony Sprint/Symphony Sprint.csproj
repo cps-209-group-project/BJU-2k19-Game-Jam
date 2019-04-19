@@ -297,7 +297,7 @@
   <ItemGroup>
     <Resource Include="High Scores Archive\HighScoresFile.txt" />
     <Resource Include="Graphics\organ-1.png.png" />
-    <Resource Include="Graphics\notes-1.png.png" />
+    <Resource Include="Graphics\notes-1.png" />
     <Content Include="sounds\bad note sounds\zapsplat_cartoon_impact_strings_slight_ascend_001_17952.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_005_15327.mp3" />

@@ -52,7 +52,7 @@ namespace Symphony_Sprint.Game_Model
             for (int i = 0; i < 50; i++)
             {
                 //Sets our random numbers each time the loop goes through.
-                int img = rand.Next(0, 6);
+                int img = rand.Next(0, 7);
                 int posX = rand.Next(1100, 15000);
                 int posY = rand.Next(50, 250);
 

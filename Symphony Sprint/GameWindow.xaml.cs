@@ -67,6 +67,7 @@ namespace Symphony_Sprint
             source2 = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
             source3 = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
 
+            noteImg.Source = new BitmapImage(new Uri("/Graphics/notes-1.png", UriKind.Relative));
             
             lives.Source = new BitmapImage(new Uri("/Graphics/lives-1.png.png", UriKind.Relative));
             time.Source = new BitmapImage(new Uri("/Graphics/time-1.png.png", UriKind.Relative));
