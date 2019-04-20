@@ -79,6 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="GameOverWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +112,9 @@
     <Compile Include="Game Model\Player.cs" />
     <Compile Include="Game Model\GameObject.cs" />
     <Compile Include="Game Model\HighScoreManager.cs" />
+    <Compile Include="GameOverWindow.xaml.cs">
+      <DependentUpon>GameOverWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
@@ -298,6 +305,7 @@
     <Resource Include="High Scores Archive\HighScoresFile.txt" />
     <Resource Include="Graphics\organ-1.png.png" />
     <Resource Include="Graphics\notes-1.png.png" />
+    <None Include="Resources\zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126.wav" />
     <Content Include="sounds\bad note sounds\zapsplat_cartoon_impact_strings_slight_ascend_001_17952.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_005_15327.mp3" />

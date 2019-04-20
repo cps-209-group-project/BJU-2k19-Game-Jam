@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using Symphony_Sprint.Game_Model;
 using System;
 using System.Diagnostics;
@@ -30,6 +31,7 @@ namespace Symphony_Sprint
         BitmapImage source3;
 
         System.Media.SoundPlayer sPlayer;
+        System.Media.SoundPlayer GOPlayer;
 
         public GameWindow()
         {
@@ -47,6 +49,8 @@ namespace Symphony_Sprint
             {
                 gc.Level.NoteObjective = 20;
             }
+
+            GOPlayer = new System.Media.SoundPlayer(Properties.Resources.zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126);
 
             sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
             sPlayer.Play();
@@ -123,15 +127,11 @@ namespace Symphony_Sprint
                 heart1.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
                 heart2.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
                 heart3.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
-                MessageBox.Show("Game Over");
+                GameOverWindow GOWin = new GameOverWindow(Convert.ToInt32(scoreNum.Content));
                 gc.isGameOver = true;
                 this.Close();
-                if (HighScoreManager.IsHighScore(Convert.ToInt32(scoreNum.Content)))
-                {
-                    HighScoreEnter HSEnter = new HighScoreEnter();
-                    HSEnter.gameScore.Text = Convert.ToString(scoreNum.Content);
-                    HSEnter.Show();
-                }
+                GOWin.Show();
+                GOPlayer.Play();
             }
             
             if (gc.Level.Seconds < 10)
