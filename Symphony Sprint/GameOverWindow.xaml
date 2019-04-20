@@ -10,7 +10,7 @@
     <Canvas Background="Black">
         <StackPanel>
             <TextBlock Height="100" Width="395" Padding="25" Margin="25,70,25,15" Text="Game Over" Foreground="White" FontSize="50" TextAlignment="Center" FontFamily="Agency FB"/>
-            <Button Content="OK Fine..." Height="30" Width="170" Background="Gold" Click="btnOK_Click"/>
+            <Button Content="OK" Height="30" Width="170" Background="Gold" Click="btnOK_Click"/>
         </StackPanel>
         <!--<Image Source="Graphics/help-1.png.png" Height="90" Margin="0,0,0,0"/>-->
         

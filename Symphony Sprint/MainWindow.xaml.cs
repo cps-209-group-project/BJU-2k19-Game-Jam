@@ -33,5 +33,11 @@ namespace Symphony_Sprint
             Help helpWindow = new Help();
             helpWindow.Show();
         }       
+
+        private void btnAbout_CLick(object sender, RoutedEventArgs e)
+        {
+            About aboutWin = new About();
+            aboutWin.Show();
+        }
     }
 }
