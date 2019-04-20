@@ -36,7 +36,7 @@ Level:{serializedLevel}";
             },
             Level = new Level
             {
-                Difficulty = Level.DifficultyEnum.EASY,
+                //Difficulty = Level.DifficultyEnum.EASY,
                 NoteObjective = 90,
                 gameObjs = new List<GameObject>
                     {
@@ -44,7 +44,9 @@ Level:{serializedLevel}";
                         new GameObject("o2.png", 2, 5, 10)
                     }
             }
+            
         };
+
 
         [Test]
         public void Save_Test()
@@ -65,7 +67,7 @@ Level:{serializedLevel}";
             Assert.AreEqual(20, game.Player.PosY);
             Assert.AreEqual("p2.png", game.Player.ImgPath);
             Assert.IsNotNull(game.Level);
-            Assert.AreEqual(Level.DifficultyEnum.EASY, game.Level.Difficulty);
+            Assert.AreEqual(Level.DifficultyEnum.EASY, Level.Difficulty);
             Assert.AreEqual(90, game.Level.NoteObjective);
             Assert.IsNotNull(game.Level.GameObjects);
             Assert.AreEqual(3, game.Level.GameObjects[0].Speed);
@@ -96,7 +98,7 @@ Level:{serializedLevel}";
                 },
                 Level = new Level
                 {
-                    Difficulty = Level.DifficultyEnum.EASY,
+                    //Difficulty = Level.DifficultyEnum.EASY,
                     Min = 1,
                     Seconds = 6,
                     NoteObjective = 90,
@@ -143,7 +145,7 @@ Speed=2,PosX=5,PosY=10,ImgPath=o2.png";
             Assert.AreEqual(20, game.Player.PosY);
             Assert.AreEqual("p2.png", game.Player.ImgPath);
             Assert.IsNotNull(game.Level);
-            Assert.AreEqual(Level.DifficultyEnum.EASY, game.Level.Difficulty);
+            Assert.AreEqual(Level.DifficultyEnum.EASY, Level.Difficulty);
             Assert.AreEqual(90, game.Level.NoteObjective);
             Assert.IsNotNull(game.Level.GameObjects);
             Assert.AreEqual(3, game.Level.GameObjects[0].Speed);
