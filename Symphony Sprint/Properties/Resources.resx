@@ -280,4 +280,7 @@
   <data name="zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Advent_Chamber_Orchestra___04___Mozart___Eine_Kleine_Nachtmusik_allegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sounds\game won music\Advent_Chamber_Orchestra_-_04_-_Mozart_-_Eine_Kleine_Nachtmusik_allegro.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

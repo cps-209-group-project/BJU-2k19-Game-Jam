@@ -31,6 +31,7 @@ namespace Symphony_Sprint
 
         System.Media.SoundPlayer sPlayer;
         System.Media.SoundPlayer GOPlayer;
+        System.Media.SoundPlayer victoryPlayer;
 
         public GameWindow()
         {
@@ -44,14 +45,24 @@ namespace Symphony_Sprint
             gc.Player.PosY = 50;
             gc.Player.Lives = 3;
 
-            if (gc.Level.levelName == "largo")
-            {
-                gc.Level.NoteObjective = 20;
-            }
+            //if (gc.Level.levelName == "largo")
+            //{
+            gc.Level.NoteObjective = 20;
+            //}
+            //else if (gc.Level.levelName == "andante")
+            //{
+            //    gc.Level.NoteObjective = 30;
+            //}
+            //else if (gc.Level.levelName == "allegro")
+            //{
+            //    gc.Level.NoteObjective = 40;
+            //}
 
             GOPlayer = new System.Media.SoundPlayer(Properties.Resources.zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126);
 
             sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
+
+            victoryPlayer = new System.Media.SoundPlayer(Properties.Resources.Advent_Chamber_Orchestra___04___Mozart___Eine_Kleine_Nachtmusik_allegro);
             sPlayer.Play();
             this.Closing += GameWindow_Closing;
         }
@@ -85,8 +96,8 @@ namespace Symphony_Sprint
             displayTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 1) };
             displayTimer.Tick += DisplayTimer_Tick;
             UpdateScreen();
+            
             gc.LargoLevel();
-            //SetupGame();
             UpdateScreen();
       
             gameTimer.Start();
@@ -134,6 +145,7 @@ namespace Symphony_Sprint
                 GOPlayer.Play();
             }
             
+            //Timer
             if (gc.Level.Seconds < 10)
             {
                 timeNum.Content = gc.Level.Min + ":0" + gc.Level.Seconds;
@@ -279,9 +291,44 @@ namespace Symphony_Sprint
                         }
                         scoreNum.Content = gc.Points;
                         noteObj.Content = gc.Level.NoteObjective;
+
+                        // If Note Objective is 0, we need to change the level.
+                        if (gc.Level.NoteObjective == 0)
+                        {
+                            ChangeLevelHandler();
+                        }
                     } 
                 }
                 //Collision code end
+            }
+        }
+        public void ChangeLevelHandler()
+        {
+            if (gc.Level.levelName == "largo")
+            {
+                gc.AndanteLevel();
+                gc.Level.NoteObjective = 30;
+                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF48EF9B");
+                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFF1F0D0");
+
+                gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
+            }
+            else if (gc.Level.levelName == "andante")
+            {
+                gc.AllegroLevel();
+                gc.Level.NoteObjective = 40;
+                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFEF48C9");
+                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF48D9F0");
+
+                gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
+            }
+            else if (gc.Level.levelName == "allegro")
+            {
+                VictoryWin victoryWindow = new VictoryWin(Convert.ToInt32(scoreNum.Content));
+                gc.isGameOver = true;
+                this.Close();
+                victoryWindow.Show();
+                victoryPlayer.Play();
             }
         }
 

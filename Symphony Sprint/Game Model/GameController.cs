@@ -43,21 +43,21 @@ namespace Symphony_Sprint.Game_Model
         public void LargoLevel()
         {
             this.Level.levelName = "largo";
-
+            //NoteObjective = 20
             CreateLevel();
         }
 
         public void AndanteLevel()
         {
             this.Level.levelName = "andante";
-
+            //NoteObjective = 30
             CreateLevel();
         }
 
         public void AllegroLevel()
         {
             this.Level.levelName = "allegro";
-
+            //NoteObjective = 40
             CreateLevel();
         }
 

@@ -35,10 +35,10 @@
             <Canvas.Background>
                 
                     <RadialGradientBrush>
-                    <GradientStop Color="#48c6ef" Offset="1"/>
-                    <GradientStop Color="#6f86d6" Offset="0.007"/>
-                    </RadialGradientBrush>
-                
+                    <GradientStop x:Name="primaryColor" Color="#48c6ef" Offset="1"/>
+                    <GradientStop x:Name="secondaryColor" Color="#6f86d6" Offset="0.007"/>
+                </RadialGradientBrush>
+                <!--    "#48c6ef"     "#6f86d6"    -->
             </Canvas.Background>
         </Canvas>
         

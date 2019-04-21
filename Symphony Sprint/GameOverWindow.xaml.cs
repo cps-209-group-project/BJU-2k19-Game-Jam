@@ -25,6 +25,7 @@ namespace Symphony_Sprint
             InitializeComponent();
             scorenum = scoreNum;
         }
+
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             if (HighScoreManager.IsHighScore(scorenum))

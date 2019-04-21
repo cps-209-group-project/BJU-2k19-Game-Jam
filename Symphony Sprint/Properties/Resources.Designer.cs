@@ -121,6 +121,15 @@ namespace Symphony_Sprint.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Advent_Chamber_Orchestra___04___Mozart___Eine_Kleine_Nachtmusik_allegro {
+            get {
+                return ResourceManager.GetStream("Advent_Chamber_Orchestra___04___Mozart___Eine_Kleine_Nachtmusik_allegro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ana {

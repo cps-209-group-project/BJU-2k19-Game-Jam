@@ -79,6 +79,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="VictoryWindow.xaml.cs">
+      <DependentUpon>VictoryWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="ChooseDifficulty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VictoryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -324,13 +331,14 @@
     <Resource Include="Graphics\medium-1.png.png" />
     <Resource Include="Graphics\notes-1.png" />
     <Resource Include="Graphics\organ-1.png.png" />
+    <None Include="Resources\Advent_Chamber_Orchestra_-_04_-_Mozart_-_Eine_Kleine_Nachtmusik_allegro.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_cartoon_impact_strings_slight_ascend_001_17952.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_005_15327.mp3" />
     <Content Include="sounds\game over music\cartoon_fail_strings_trumpet.mp3" />
     <Content Include="sounds\game over music\zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126.mp3" />
     <Content Include="sounds\game play music\audio_hero_On-The-Ball_SIPML_K-04-25-01.wav" />
-    <Content Include="sounds\game won music\Advent_Chamber_Orchestra_-_04_-_Mozart_-_Eine_Kleine_Nachtmusik_allegro.mp3" />
+    <Content Include="sounds\game won music\Advent_Chamber_Orchestra_-_04_-_Mozart_-_Eine_Kleine_Nachtmusik_allegro.wav" />
     <Content Include="sounds\good note sounds\ftus_musical_instrument_gender_gamelan_single_mallet_hit_high_mid_002_490.mp3" />
     <Content Include="sounds\good note sounds\ftus_musical_instrument_gender_gamelan_single_mallet_hit_high_mid_005_493.mp3" />
     <Content Include="sounds\good note sounds\ftus_musical_instrument_gender_gamelan_single_mallet_hit_mid_low_004_502.mp3" />
