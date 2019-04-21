@@ -308,8 +308,6 @@ namespace Symphony_Sprint
             {
                 gc.AndanteLevel();
                 gc.Level.NoteObjective = 30;
-                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF48EF9B");
-                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFF1F0D0");
 
                 gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
             }
@@ -317,8 +315,6 @@ namespace Symphony_Sprint
             {
                 gc.AllegroLevel();
                 gc.Level.NoteObjective = 40;
-                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFEF48C9");
-                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF48D9F0");
 
                 gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
             }
@@ -329,6 +325,27 @@ namespace Symphony_Sprint
                 this.Close();
                 victoryWindow.Show();
                 victoryPlayer.Play();
+            }
+
+            SetBackgroundColorFromLevelName(); // Sets the new background color
+        }
+
+        public void SetBackgroundColorFromLevelName()
+        {
+            if (gc.Level.levelName == "largo")
+            {
+                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#48c6ef");
+                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#6f86d6");
+            }
+            else if (gc.Level.levelName == "andante")
+            {
+                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF48EF9B");
+                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFF1F0D0");
+            }
+            else if (gc.Level.levelName == "allegro")
+            {
+                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFEF48C9");
+                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF48D9F0");
             }
         }
 
@@ -388,6 +405,7 @@ namespace Symphony_Sprint
             if (loadDialog.ShowDialog() == true)
             {
                 gc.Load(loadDialog.FileName);
+                SetBackgroundColorFromLevelName();
             }
 
             this.KeyDown += new KeyEventHandler(gc.Player.KeyIsDown);
