@@ -1,5 +1,4 @@
 ﻿using Microsoft.Win32;
-using Microsoft.Win32;
 using Symphony_Sprint.Game_Model;
 using System;
 using System.Diagnostics;

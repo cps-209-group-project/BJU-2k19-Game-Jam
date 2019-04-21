@@ -43,7 +43,26 @@ namespace Symphony_Sprint.Game_Model
         public void LargoLevel()
         {
             this.Level.levelName = "largo";
-            
+
+            CreateLevel();
+        }
+
+        public void AndanteLevel()
+        {
+            this.Level.levelName = "andante";
+
+            CreateLevel();
+        }
+
+        public void AllegroLevel()
+        {
+            this.Level.levelName = "allegro";
+
+            CreateLevel();
+        }
+
+        public void CreateLevel()
+        {
             var usedPos = new List<int>();
 
             var positions = new HashSet<int>(); //HashSets cannot contain duplicate items.
@@ -67,7 +86,7 @@ namespace Symphony_Sprint.Game_Model
                     int newposX = posX + 1000;
                     positions.Add(newposX);
                 }
-                 
+
                 var posList = positions.ToList(); //Change our hashset to a list so we can index it.
 
                 DetermineDifficulty(img, posX, posY);
