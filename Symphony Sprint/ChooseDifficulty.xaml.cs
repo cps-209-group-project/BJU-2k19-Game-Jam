@@ -31,6 +31,7 @@ namespace Symphony_Sprint
             Level.Difficulty = Level.DifficultyEnum.EASY;
             GameWindow gwin = new GameWindow();
             gwin.Show();
+            this.Close();
         }
 
         private void Medium_Click(object sender, RoutedEventArgs e)
@@ -38,6 +39,7 @@ namespace Symphony_Sprint
             Level.Difficulty = Level.DifficultyEnum.MEDIUM;
             GameWindow gwin = new GameWindow();
             gwin.Show();
+            this.Close();
         }
 
         private void Hard_Click(object sender, RoutedEventArgs e)
@@ -45,6 +47,7 @@ namespace Symphony_Sprint
             Level.Difficulty = Level.DifficultyEnum.HARD;
             GameWindow gwin = new GameWindow();
             gwin.Show();
+            this.Close();
         }
 
         private void Insane_Click(object sender, RoutedEventArgs e)
@@ -52,6 +55,7 @@ namespace Symphony_Sprint
             Level.Difficulty = Level.DifficultyEnum.INSANE;
             GameWindow gwin = new GameWindow();
             gwin.Show();
+            this.Close();
         }
     }
 }

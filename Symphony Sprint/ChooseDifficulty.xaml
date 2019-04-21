@@ -10,22 +10,26 @@
         <StackPanel HorizontalAlignment="Center" Width="800">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Graphics/Dr. McGee Avatar.png" Width="100" Margin="50"/>
-                <TextBlock Text="Difficulty" FontSize="50" Foreground="Yellow" TextAlignment="Center" Width="400" HorizontalAlignment="Center" Margin="2.5, 50, 20,20"/>
+                <Image Source="Graphics/difficulty-1.png.png" Width="400" HorizontalAlignment="Center" Margin="20, 20, 20,20"/>
                 <Image Source="Graphics/Dr. Knisely Avatar 2.png" Width="100" Margin="20,50"/>
             </StackPanel>
-            <StackPanel x:Name="DifficultyButtonPanel" Orientation="Horizontal">
-                <Button x:Name="Easy" Width="180" Margin="20" Click="Easy_Click" BorderBrush="Black">
-                    <Image Source="Graphics/start-1.png.png"/>
-                </Button>
-                <Button x:Name="Medium" Width="160" Height="60" Margin="20" Click="Medium_Click" BorderBrush="Black">
-                    <Image Source="Graphics/start-1.png.png"/>
-                </Button>
-                <Button x:Name="Hard" Width="160" Margin="20" Click="Hard_Click" BorderBrush="Black">
-                    <Image Source="Graphics/start-1.png.png"/>
-                </Button>
-                <Button x:Name="Insane" Width="160" Margin="20" Click="Insane_Click" BorderBrush="Black">
-                    <Image Source="Graphics/start-1.png.png"/>
-                </Button>
+            <StackPanel x:Name="DifficultyButtonPanel" Orientation="Horizontal" Margin="0,0,0,0" HorizontalAlignment="Right">
+                <StackPanel x:Name="EasyMediumPanel" HorizontalAlignment="Left" Margin="20,0,20,0">
+                    <Button x:Name="Easy" Width="160" Margin="20" Click="Easy_Click" BorderBrush="Black" HorizontalAlignment="Center">
+                        <Image Source="Graphics/easy-1.png.png"/>
+                    </Button>
+                    <Button x:Name="Medium" Width="200" Height="60" Margin="20" Click="Medium_Click" BorderBrush="Black" HorizontalAlignment="Center">
+                        <Image Source="Graphics/medium-1.png.png"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel x:Name="HardInsanePanel" HorizontalAlignment="Right" Margin="0,0,140,0">
+                    <Button x:Name="Hard" Width="170" Margin="20" Click="Hard_Click" BorderBrush="Black" HorizontalAlignment="Center">
+                        <Image Source="Graphics/hard-1.png.png"/>
+                    </Button>
+                    <Button x:Name="Insane" Width="200" Margin="20,20,20,20" Click="Insane_Click" BorderBrush="Black" HorizontalAlignment="Center">
+                        <Image Source="Graphics/insane-1.png.png"/>
+                    </Button>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Canvas>
