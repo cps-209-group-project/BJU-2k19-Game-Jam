@@ -44,19 +44,7 @@ namespace Symphony_Sprint
             gc.Player.PosX = 200;
             gc.Player.PosY = 50;
             gc.Player.Lives = 3;
-
-            //if (gc.Level.levelName == "largo")
-            //{
-            gc.Level.NoteObjective = 20;
-            //}
-            //else if (gc.Level.levelName == "andante")
-            //{
-            //    gc.Level.NoteObjective = 30;
-            //}
-            //else if (gc.Level.levelName == "allegro")
-            //{
-            //    gc.Level.NoteObjective = 40;
-            //}
+            gc.Level.NoteObjective = 10; //The first level, Largo, has 10 notes to collect.
 
             GOPlayer = new System.Media.SoundPlayer(Properties.Resources.zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126);
 
@@ -325,18 +313,32 @@ namespace Symphony_Sprint
             if (gc.Level.levelName == "largo")
             {
                 gc.AndanteLevel();
-                gc.Level.NoteObjective = 30;
+                gc.Level.NoteObjective = 20;
 
                 gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
             }
             else if (gc.Level.levelName == "andante")
             {
+                gc.ModeratoLevel();
+                gc.Level.NoteObjective = 30;
+
+                gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
+            }
+            else if (gc.Level.levelName == "moderato")
+            {
                 gc.AllegroLevel();
                 gc.Level.NoteObjective = 40;
 
                 gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
-            }
+            }                
             else if (gc.Level.levelName == "allegro")
+            {
+                gc.PrestoLevel();
+                gc.Level.NoteObjective = 40;
+
+                gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
+            }
+            else if (gc.Level.levelName == "presto")
             {
                 VictoryWin victoryWindow = new VictoryWin(Convert.ToInt32(scoreNum.Content));
                 gc.isGameOver = true;
@@ -360,10 +362,20 @@ namespace Symphony_Sprint
                 primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF48EF9B");
                 secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFF1F0D0");
             }
+            else if (gc.Level.levelName == "moderato")
+            {
+                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFE6E63D");
+                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFEAC39D");
+            }
             else if (gc.Level.levelName == "allegro")
             {
                 primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFEF48C9");
                 secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF48D9F0");
+            }
+            else if (gc.Level.levelName == "presto")
+            {
+                primaryColor.Color = (Color)ColorConverter.ConvertFromString("#FFFDFDFD");
+                secondaryColor.Color = (Color)ColorConverter.ConvertFromString("#FF6F84CD");
             }
         }
 

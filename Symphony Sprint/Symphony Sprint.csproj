@@ -333,7 +333,7 @@
     <Resource Include="Graphics\organ-1.png.png" />
     <None Include="Resources\Advent_Chamber_Orchestra_-_04_-_Mozart_-_Eine_Kleine_Nachtmusik_allegro.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_cartoon_impact_strings_slight_ascend_001_17952.mp3" />
-    <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.mp3" />
+    <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.wav" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_005_15327.mp3" />
     <Content Include="sounds\game over music\cartoon_fail_strings_trumpet.mp3" />
     <Content Include="sounds\game over music\zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126.mp3" />

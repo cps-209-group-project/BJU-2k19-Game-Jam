@@ -43,13 +43,19 @@ namespace Symphony_Sprint.Game_Model
         public void LargoLevel()
         {
             this.Level.levelName = "largo";
-            //NoteObjective = 20
+            //NoteObjective = 10
             CreateLevel();
         }
 
         public void AndanteLevel()
         {
             this.Level.levelName = "andante";
+            //NoteObjective = 20
+            CreateLevel();
+        }
+        public void ModeratoLevel()
+        {
+            this.Level.levelName = "moderato";
             //NoteObjective = 30
             CreateLevel();
         }
@@ -61,6 +67,13 @@ namespace Symphony_Sprint.Game_Model
             CreateLevel();
         }
 
+        public void PrestoLevel()
+        {
+            this.Level.levelName = "presto";
+            //NoteObjective = 50
+            CreateLevel();
+        }
+
         public void CreateLevel()
         {
             var usedPos = new List<int>();
@@ -68,7 +81,7 @@ namespace Symphony_Sprint.Game_Model
             var positions = new HashSet<int>(); //HashSets cannot contain duplicate items.
 
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 100; i++)
             {
                 //Sets our random numbers each time the loop goes through.
                 int img = rand.Next(0, 8);
@@ -102,15 +115,15 @@ namespace Symphony_Sprint.Game_Model
                     Level.GameObjects.Add(easyObj);
                     break;
                 case Level.DifficultyEnum.MEDIUM:
-                    GameObject mediumObj = new GameObject(mediumImages[img], 3, posX, posY);
+                    GameObject mediumObj = new GameObject(mediumImages[img], 4, posX, posY);
                     Level.GameObjects.Add(mediumObj);
                     break;
                 case Level.DifficultyEnum.HARD:
-                    GameObject hardObj = new GameObject(hardImages[img], 3, posX, posY);
+                    GameObject hardObj = new GameObject(hardImages[img], 5, posX, posY);
                     Level.GameObjects.Add(hardObj);
                     break;
                 case Level.DifficultyEnum.INSANE:
-                    GameObject insaneObj = new GameObject(insaneImages[img], 3, posX, posY);
+                    GameObject insaneObj = new GameObject(insaneImages[img], 6, posX, posY);
                     Level.GameObjects.Add(insaneObj);
                     break;
             }

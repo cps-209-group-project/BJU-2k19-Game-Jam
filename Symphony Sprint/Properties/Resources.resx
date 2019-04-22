@@ -283,4 +283,7 @@
   <data name="Advent_Chamber_Orchestra___04___Mozart___Eine_Kleine_Nachtmusik_allegro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sounds\game won music\Advent_Chamber_Orchestra_-_04_-_Mozart_-_Eine_Kleine_Nachtmusik_allegro.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="zapsplat_musical_karimba_tine_pluck_004_15326" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

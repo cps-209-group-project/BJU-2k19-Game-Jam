@@ -605,5 +605,14 @@ namespace Symphony_Sprint.Properties {
                 return ResourceManager.GetStream("zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream zapsplat_musical_karimba_tine_pluck_004_15326 {
+            get {
+                return ResourceManager.GetStream("zapsplat_musical_karimba_tine_pluck_004_15326", resourceCulture);
+            }
+        }
     }
 }
