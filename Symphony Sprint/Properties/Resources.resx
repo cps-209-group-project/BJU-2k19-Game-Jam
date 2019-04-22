@@ -301,4 +301,7 @@
   <data name="ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_004_543" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_004_543.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="zapsplat_musical_karimba_tine_pluck_004_15326" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
