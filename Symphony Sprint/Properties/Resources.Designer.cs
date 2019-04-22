@@ -239,6 +239,61 @@ namespace Symphony_Sprint.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ftus_musical_instrument_gender_gamelan_single_mallet_hit_high_mid_005_493 {
+            get {
+                return ResourceManager.GetStream("ftus_musical_instrument_gender_gamelan_single_mallet_hit_high_mid_005_493", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ftus_musical_instrument_gender_gamelan_single_mallet_hit_mid_low_004_502 {
+            get {
+                return ResourceManager.GetStream("ftus_musical_instrument_gender_gamelan_single_mallet_hit_mid_low_004_502", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_002_541 {
+            get {
+                return ResourceManager.GetStream("ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_002_541", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_003_542 {
+            get {
+                return ResourceManager.GetStream("ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_003_542", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_004_543 {
+            get {
+                return ResourceManager.GetStream("ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_004_543", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameOver_1_png {
+            get {
+                object obj = ResourceManager.GetObject("gameOver_1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap halfNote {

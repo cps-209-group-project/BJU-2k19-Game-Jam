@@ -332,6 +332,13 @@
     <Resource Include="Graphics\notes-1.png" />
     <Resource Include="Graphics\organ-1.png.png" />
     <None Include="Resources\Advent_Chamber_Orchestra_-_04_-_Mozart_-_Eine_Kleine_Nachtmusik_allegro.mp3" />
+    <None Include="Resources\gameOver-1.png.png" />
+    <Resource Include="Graphics\gameOver-1.png.png" />
+    <None Include="Resources\ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_004_543.wav" />
+    <None Include="Resources\ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_003_542.wav" />
+    <None Include="Resources\ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_002_541.wav" />
+    <None Include="Resources\ftus_musical_instrument_gender_gamelan_single_mallet_hit_mid_low_004_502.wav" />
+    <None Include="Resources\ftus_musical_instrument_gender_gamelan_single_mallet_hit_high_mid_005_493.wav" />
     <Content Include="sounds\bad note sounds\zapsplat_cartoon_impact_strings_slight_ascend_001_17952.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.mp3" />
     <Content Include="sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_005_15327.mp3" />

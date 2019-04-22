@@ -60,10 +60,10 @@ namespace Symphony_Sprint
 
             GOPlayer = new System.Media.SoundPlayer(Properties.Resources.zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126);
 
-            sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
+            //sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
 
             victoryPlayer = new System.Media.SoundPlayer(Properties.Resources.Advent_Chamber_Orchestra___04___Mozart___Eine_Kleine_Nachtmusik_allegro);
-            sPlayer.Play();
+            //sPlayer.Play();
             this.Closing += GameWindow_Closing;
         }
 
@@ -290,22 +290,32 @@ namespace Symphony_Sprint
                         if(obj.ImgPath == "wholeNote-1.png.png")
                         {
                             gc.Points += 40;
+                            sPlayer = new System.Media.SoundPlayer(Properties.Resources.ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_004_543);
+                            sPlayer.Play();
                         }
                         else if (obj.ImgPath == "halfNote-1.png.png")
                         {
                             gc.Points += 30;
+                            sPlayer = new System.Media.SoundPlayer(Properties.Resources.ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_003_542);
+                            sPlayer.Play();
                         }
                         else if (obj.ImgPath == "quarterNote-1.png.png")
                         {
                             gc.Points += 20;
+                            sPlayer = new System.Media.SoundPlayer(Properties.Resources.ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_002_541);
+                            sPlayer.Play();
                         }
                         if (obj.ImgPath == "eigthNote-1.png.png")
                         {
                             gc.Points += 10;
+                            sPlayer = new System.Media.SoundPlayer(Properties.Resources.ftus_musical_instrument_gender_gamelan_single_mallet_hit_high_mid_005_493);
+                            sPlayer.Play();
                         }
                         if (obj.ImgPath == "trebleClef-7.png.png")
                         {
                             gc.Points += gc.Points * 2;
+                            sPlayer = new System.Media.SoundPlayer(Properties.Resources.ftus_musical_instrument_gender_gamelan_single_mallet_hit_mid_low_004_502);
+                            sPlayer.Play();
                         }
                         scoreNum.Content = gc.Points;
                         noteObj.Content = gc.Level.NoteObjective;
