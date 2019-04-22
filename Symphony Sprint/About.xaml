@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="About">
 
-    <Canvas Background="slateGray" Margin="0,0,-6.4,0">
+    <Canvas Background="DimGray" Margin="0,0,-6.4,0">
         <Image Source="Graphics/about-1.png (2).png" Width="790" Height="65"/>
         <StackPanel HorizontalAlignment="Center" Width="110" Height="420">
             <Image Source="Graphics/stone.png" Height="80" Margin="0,70,0,0"/>
@@ -16,11 +16,13 @@
             <Image Source="Graphics/robin.png" Height="80" Margin="0,10,0,0"/>
             <Image Source="Graphics/ana.png" Height="80" Margin="0,10,0,0"/>
         </StackPanel>
-        <TextBlock Canvas.Left="120" TextWrapping="Wrap" FontSize="17" Canvas.Top="90"
+        <TextBlock Canvas.Left="120" TextWrapping="Wrap" FontSize="20" FontFamily="Agency FB" Canvas.Top="90"
                    Text="&#x2022;Stone Champion&#10;  Key Responsibilities: Game Play - Enemy Movement, Collision Detection, Cheat Mode  " />
-        <TextBlock Canvas.Left="120" TextWrapping="Wrap" FontSize="17" Canvas.Top="170"
+        <TextBlock Canvas.Left="120" TextWrapping="Wrap" FontSize="20" FontFamily="Agency FB" Canvas.Top="170"
                    Text="&#x2022;Jason French&#10;  Key Responsibilities: Serialization - Save/Load, Difficulty Modes, Multiple Levels"/>
-        <TextBlock Canvas.Left="120" TextWrapping="Wrap" Text="&#x2022;Robin Krehbiel&#10;  Key Responsibilities: Player Movement/Sound Effects - Player Movement,&#10;  Finishing High Scores, Sound Effects, Help Screen, About Screen, " FontSize="17" Canvas.Top="262"/>
-        <TextBlock Canvas.Left="120" TextWrapping="Wrap" Text="&#x2022;Ana Moran&#10;  Key Responsibilities: Auxiliary Screens/High Scores/Graphics - High Score Initialization&#10;  Graphics, Auxiliary Screen Initialization" FontSize="17" Canvas.Top="348" Height="72"/>
+        <TextBlock Canvas.Left="120" TextWrapping="Wrap" FontFamily="Agency FB"
+                   Text="&#x2022;Robin Krehbiel&#10;  Key Responsibilities: Player Movement/Sound Effects - Player Movement,&#10;  Finishing High Scores, Sound Effects, Help Screen, About Screen, " FontSize="20" Canvas.Top="262"/>
+        <TextBlock Canvas.Left="120" TextWrapping="Wrap" FontFamily="Agency FB"
+                   Text="&#x2022;Ana Moran&#10;  Key Responsibilities: Auxiliary Screens/High Scores/Graphics - High Score Initialization&#10;  Graphics, Auxiliary Screen Initialization" FontSize="20" Canvas.Top="348" Height="72"/>
     </Canvas>
 </Window>
