@@ -14,7 +14,7 @@
             <TextBlock Height="195" FontSize="30" TextAlignment="Left" Margin="25,0,25,0" Foreground="WHite" FontFamily="SH Pinscher" TextWrapping="Wrap"
              Text="Click start to start the game. Press the space key to jump to collect notes or avoid accidentals. Press space key while still jumping to double jump. Press S during game play to save the game. Press L to load the game you saved. Press C to turn cheat mode on or off. Objective: collect all the notes to get points. Avoid accedentals."/>
             <TextBlock  Padding="5" Height="155" FontSize="30" TextAlignment="Left" Margin="25,0,25,0" Foreground="WHite" FontFamily="SH Pinscher" TextWrapping="WrapWithOverflow"
-                        Text="Whole notes: 400 pts&#13;Half notes: 300 pts&#13;Quarter notes: 200 pts&#13;Eigth notes: 100 pts"/>
+                        Text="Whole notes: 40 pts&#13;Half notes: 30 pts&#13;Quarter notes: 20 pts&#13;Eigth notes: 10 pts"/>
         </StackPanel>
     </Canvas>
 </Window>
