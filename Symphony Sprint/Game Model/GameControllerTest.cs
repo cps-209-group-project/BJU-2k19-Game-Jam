@@ -92,7 +92,7 @@ Level:{serializedLevel}";
                     Lives = 3,
                     PosX = 20,
                     PosY = 20,
-                    State = Player.movementState.running,
+                    State = movementState.running,
                     jumpceiling1 = 200,
                     jumpceiling2 = 100
                 },

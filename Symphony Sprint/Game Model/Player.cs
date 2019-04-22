@@ -6,9 +6,10 @@ using Microsoft.Win32;
 
 namespace Symphony_Sprint.Game_Model.World_Objects
 {
+    public enum movementState { running, jumping, doublejump, decending, decending2 }
     public class Player : ISerialize
     {
-        public enum movementState { running, jumping, doublejump, decending, decending2 }
+        //public enum movementState { running, jumping, doublejump, decending, decending2 }
         public movementState State { get; set; }
         //public bool isJumping;
 

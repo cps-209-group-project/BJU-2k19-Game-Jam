@@ -175,8 +175,8 @@ namespace Symphony_Sprint
             //Player
             var playerSource = new BitmapImage(new Uri(String.Format("/Graphics/{0}", gc.Player.ImgPath), UriKind.Relative));
             var playerImg = new Image();
-            playerImg.Height = 50;
-            playerImg.Width = 45;
+            playerImg.Height = 60;
+            playerImg.Width = 50;
             playerImg.Stretch = Stretch.Fill;
             ImageBehavior.SetAnimatedSource(playerImg, playerSource);
             GameCanvas.Children.Add(playerImg);
@@ -215,6 +215,10 @@ namespace Symphony_Sprint
                 {
                     objImg.Height = 60;
                     objImg.Width = 100;
+                } else if (obj.ImgPath == "organ-1.png.png")
+                {
+                    objImg.Height = 60;
+                    objImg.Width = 60;
                 }
                 else
                 {
@@ -246,8 +250,22 @@ namespace Symphony_Sprint
                         Convert.ToDouble(playerImg.Height)
                     );
 
+                
+
                 if(objects.Left <= player.Right && objects.Right >= player.Left && objects.Bottom >= player.Top && objects.Top <= player.Bottom)
                 {
+                    if (gc.Player.State == Game_Model.World_Objects.movementState.decending || gc.Player.State == Game_Model.World_Objects.movementState.decending2)
+                    {
+                        if ((objects.Bottom +5) <= player.Bottom)
+                        {
+                            if (obj.ImgPath == "organ-1.png.png")
+                            {
+                                Canvas.SetBottom(playerImg, Canvas.GetBottom(objImg));
+                                gc.Player.State = Game_Model.World_Objects.movementState.running;
+                            }
+                        }
+                    }
+
                     if (obj.ImgPath == "flat-1.png.png" || obj.ImgPath == "sharp-1.png.png")
                     {
                         //Checks if cheat mode is enabled.
@@ -262,8 +280,8 @@ namespace Symphony_Sprint
                         gc.Player.Lives--;
                         gc.Level.GameObjects.Remove(obj);
                         GameCanvas.Children.Remove(objImg);
-                    }
-                    else
+                    } 
+                    else if (obj.ImgPath != "organ-1.png.png")
                     {
                         GameCanvas.Children.Remove(objImg);
                         gc.Level.GameObjects.Remove(obj);
@@ -271,19 +289,19 @@ namespace Symphony_Sprint
                         gc.Level.NoteObjective--;
                         if(obj.ImgPath == "wholeNote-1.png.png")
                         {
-                            gc.Points += 400;
+                            gc.Points += 40;
                         }
                         else if (obj.ImgPath == "halfNote-1.png.png")
                         {
-                            gc.Points += 300;
+                            gc.Points += 30;
                         }
                         else if (obj.ImgPath == "quarterNote-1.png.png")
                         {
-                            gc.Points += 200;
+                            gc.Points += 20;
                         }
                         if (obj.ImgPath == "eigthNote-1.png.png")
                         {
-                            gc.Points += 100;
+                            gc.Points += 10;
                         }
                         if (obj.ImgPath == "trebleClef-7.png.png")
                         {

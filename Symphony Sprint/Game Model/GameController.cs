@@ -15,10 +15,10 @@ namespace Symphony_Sprint.Game_Model
         public bool isGameOver = false;
         public bool isCheatEnabled = false;
 
-        public string[] easyImages = { "wholeNote-1.png.png", "quarterNote-1.png.png", "eigthNote-1.png.png", "trebleClef-7.png.png", "flat-1.png.png", "sharp-1.png.png", "halfNote-1.png.png" };
-        public string[] mediumImages = { "quarterNote-1.png.png", "eigthNote-1.png.png", "trebleClef-7.png.png", "halfNote-1.png.png", "flat-1.png.png", "flat-1.png.png", "sharp-1.png.png" };
-        public string[] hardImages = { "quarterNote-1.png.png", "eigthNote-1.png.png", "trebleClef-7.png.png", "flat-1.png.png", "sharp-1.png.png", "flat-1.png.png", "sharp-1.png.png" };
-        public string[] insaneImages = { "trebleClef-7.png.png", "flat-1.png.png", "flat-1.png.png", "flat-1.png.png", "sharp-1.png.png", "sharp-1.png.png", "sharp-1.png.png" };
+        public string[] easyImages = { "wholeNote-1.png.png", "quarterNote-1.png.png", "eigthNote-1.png.png", "trebleClef-7.png.png", "flat-1.png.png", "sharp-1.png.png", "halfNote-1.png.png", "organ-1.png.png" };
+        public string[] mediumImages = { "quarterNote-1.png.png", "eigthNote-1.png.png", "trebleClef-7.png.png", "halfNote-1.png.png", "flat-1.png.png", "flat-1.png.png", "sharp-1.png.png", "organ-1.png.png" };
+        public string[] hardImages = { "quarterNote-1.png.png", "eigthNote-1.png.png", "trebleClef-7.png.png", "flat-1.png.png", "sharp-1.png.png", "flat-1.png.png", "sharp-1.png.png", "organ-1.png.png" };
+        public string[] insaneImages = { "trebleClef-7.png.png", "flat-1.png.png", "flat-1.png.png", "flat-1.png.png", "sharp-1.png.png", "sharp-1.png.png", "sharp-1.png.png", "organ-1.png.png" };
         Random rand = new Random();
 
        
@@ -71,7 +71,7 @@ namespace Symphony_Sprint.Game_Model
             for (int i = 0; i < 50; i++)
             {
                 //Sets our random numbers each time the loop goes through.
-                int img = rand.Next(0, 7);
+                int img = rand.Next(0, 8);
                 int posX = rand.Next(1100, 15000);
                 int posY = rand.Next(50, 250);
 
