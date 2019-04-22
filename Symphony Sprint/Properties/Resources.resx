@@ -304,4 +304,7 @@
   <data name="zapsplat_musical_karimba_tine_pluck_004_15326" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sounds\bad note sounds\zapsplat_musical_karimba_tine_pluck_004_15326.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="musical_air_horn_dancehall_style_001__AudioTrimmer_com_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\musical_air_horn_dancehall_style_001-[AudioTrimmer.com].wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

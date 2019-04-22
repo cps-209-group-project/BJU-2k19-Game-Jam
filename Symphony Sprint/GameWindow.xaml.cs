@@ -32,6 +32,7 @@ namespace Symphony_Sprint
         System.Media.SoundPlayer sPlayer;
         System.Media.SoundPlayer GOPlayer;
         System.Media.SoundPlayer victoryPlayer;
+        System.Media.SoundPlayer gStartPlayer;
 
         public GameWindow()
         {
@@ -47,11 +48,8 @@ namespace Symphony_Sprint
             gc.Level.NoteObjective = 10; //The first level, Largo, has 10 notes to collect.
 
             GOPlayer = new System.Media.SoundPlayer(Properties.Resources.zapsplat_cartoon_fail_negative_descending_musical_tuba_marimba_oboe_18126);
-
-            //sPlayer = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
-
+            gStartPlayer = new System.Media.SoundPlayer(Properties.Resources.musical_air_horn_dancehall_style_001__AudioTrimmer_com_);
             victoryPlayer = new System.Media.SoundPlayer(Properties.Resources.Advent_Chamber_Orchestra___04___Mozart___Eine_Kleine_Nachtmusik_allegro);
-            //sPlayer.Play();
             this.Closing += GameWindow_Closing;
         }
 
@@ -59,11 +57,11 @@ namespace Symphony_Sprint
         {
             gameTimer.Stop();
             displayTimer.Stop();
-            sPlayer.Stop();
         }
 
         public void Window_Loaded(object sender, EventArgs e)
         {
+            gStartPlayer.Play();
             //Load images on screen
             source1 = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
             source2 = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
@@ -267,6 +265,8 @@ namespace Symphony_Sprint
                         Debug.WriteLine(obj.ImgPath);
                         gc.Player.Lives--;
                         gc.Level.GameObjects.Remove(obj);
+                        sPlayer = new System.Media.SoundPlayer(Properties.Resources.zapsplat_musical_karimba_tine_pluck_004_15326);
+                        sPlayer.Play();
                         GameCanvas.Children.Remove(objImg);
                     } 
                     else if (obj.ImgPath != "organ-1.png.png")

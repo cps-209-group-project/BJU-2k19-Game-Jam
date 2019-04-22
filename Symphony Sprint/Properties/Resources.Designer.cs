@@ -446,6 +446,15 @@ namespace Symphony_Sprint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream musical_air_horn_dancehall_style_001__AudioTrimmer_com_ {
+            get {
+                return ResourceManager.GetStream("musical_air_horn_dancehall_style_001__AudioTrimmer_com_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream musical_symphony_orchestra_warming_up_before_concert {
             get {
                 return ResourceManager.GetStream("musical_symphony_orchestra_warming_up_before_concert", resourceCulture);

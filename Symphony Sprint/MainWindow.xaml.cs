@@ -10,13 +10,13 @@ namespace Symphony_Sprint
         public MainWindow()
         {
             InitializeComponent();
-            sPlayerMW = new System.Media.SoundPlayer(Properties.Resources.musical_symphony_orchestra_warming_up_before_concert);
+            sPlayerMW = new System.Media.SoundPlayer(Properties.Resources.audio_hero_On_The_Ball_SIPML_K_04_25_01);
             sPlayerMW.Play();
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            ChooseDifficulty dWin = new ChooseDifficulty();
+            ChooseDifficulty dWin = new ChooseDifficulty(sPlayerMW);
             dWin.Show();
             //GameWindow gwin = new GameWindow();
             //gwin.Show();

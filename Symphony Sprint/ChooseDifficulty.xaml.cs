@@ -21,9 +21,11 @@ namespace Symphony_Sprint
     /// </summary>
     public partial class ChooseDifficulty : Window
     {
-        public ChooseDifficulty()
+        System.Media.SoundPlayer mPlayer;
+        public ChooseDifficulty(System.Media.SoundPlayer sndPlayer)
         {
             InitializeComponent();
+            mPlayer = sndPlayer;
         }
 
         private void Easy_Click(object sender, RoutedEventArgs e)
@@ -31,6 +33,7 @@ namespace Symphony_Sprint
             Level.Difficulty = Level.DifficultyEnum.EASY;
             GameWindow gwin = new GameWindow();
             gwin.Show();
+            //mPlayer.Stop();
             this.Close();
         }
 
@@ -39,6 +42,7 @@ namespace Symphony_Sprint
             Level.Difficulty = Level.DifficultyEnum.MEDIUM;
             GameWindow gwin = new GameWindow();
             gwin.Show();
+            //mPlayer.Stop();
             this.Close();
         }
 
@@ -47,6 +51,7 @@ namespace Symphony_Sprint
             Level.Difficulty = Level.DifficultyEnum.HARD;
             GameWindow gwin = new GameWindow();
             gwin.Show();
+            //mPlayer.Stop();
             this.Close();
         }
 
@@ -55,6 +60,7 @@ namespace Symphony_Sprint
             Level.Difficulty = Level.DifficultyEnum.INSANE;
             GameWindow gwin = new GameWindow();
             gwin.Show();
+            //mPlayer.Stop();
             this.Close();
         }
     }
