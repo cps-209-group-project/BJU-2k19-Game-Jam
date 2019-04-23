@@ -22,10 +22,11 @@ Keys:
 - Multiple Levels
 - Diffuculty Levels
 - Sound Effects
-- High Score
+- High Scores
 - Easter Egg
 ## Known Issues
 Bug with planar gameplay, doesn't descend when it gets past instrument object.
+High Scores file sometimes clears out.
 ## Recording
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EeYugOVYK01IrhXNf90UibkBlYOhVyd_22nS1-pY78SgXA?e=fJMMqs) (Alpha)
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EVc3PpqaRc5PmXQC041hRRIBqOVEnn7cGQhTE1BS6Q7NZg?e=NrT1So) (Beta)
