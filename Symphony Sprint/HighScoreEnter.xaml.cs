@@ -26,6 +26,7 @@ namespace Symphony_Sprint
             if (GameOverWindow.IsPitty == true)
             {
                 MessageBox.Show("Here. Have some points.");
+                GameOverWindow.IsPitty = false;
             }
         }
 
