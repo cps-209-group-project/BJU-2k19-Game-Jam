@@ -24,7 +24,7 @@ No known Issues
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EeYugOVYK01IrhXNf90UibkBlYOhVyd_22nS1-pY78SgXA?e=fJMMqs) (Alpha)
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EVc3PpqaRc5PmXQC041hRRIBqOVEnn7cGQhTE1BS6Q7NZg?e=NrT1So) (Beta)
 
-[Screen Recording] (https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EY71JvLLLnVAgv_WVKmJWj4BZzDBqmh9Da4ke4VSnOKiPw?e=cIFnu2)(Release Canidate)
+[Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EY71JvLLLnVAgv_WVKmJWj4BZzDBqmh9Da4ke4VSnOKiPw?e=cIFnu2) (Release Canidate)
 
 ## Expenses
 |Team Member|Time Invested|Remaining Budget|Journal Link|
