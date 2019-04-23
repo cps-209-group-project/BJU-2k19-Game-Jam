@@ -18,8 +18,14 @@ Keys:
 - Basic Gameplay
 - Cheat Mode
 - Basic Points System
+- Multi Planar
+- Multiple Levels
+- Diffuculty Levels
+- Sound Effects
+- High Score
+- Easter Egg
 ## Known Issues
-No known Issues
+Bug with planar gameplay, doesn't decend when it gets past instrument object.
 ## Recording
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EeYugOVYK01IrhXNf90UibkBlYOhVyd_22nS1-pY78SgXA?e=fJMMqs) (Alpha)
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EVc3PpqaRc5PmXQC041hRRIBqOVEnn7cGQhTE1BS6Q7NZg?e=NrT1So) (Beta)
