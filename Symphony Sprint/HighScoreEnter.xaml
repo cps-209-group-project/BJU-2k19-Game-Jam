@@ -5,13 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Symphony_Sprint"
       Height="600" Width="800"
+      WindowStartupLocation="CenterScreen"
       Title="HighScoreEnter">
     <!--Loaded="Window_Loaded">-->
     <Canvas Background="Black">
         <StackPanel HorizontalAlignment="Center" Width="800">
                 <Image Source="Graphics/highScore-1.png.png" Width="600" Margin="0,90,0,0"/>
             <TextBlock x:Name="gameScore" Text="{Binding Path=GameScore}" FontFamily="SH Pinscher" FontSize="75" Foreground="White" HorizontalAlignment="Center"/>
-            <TextBlock Text="Please enter your name:" FontFamily="SH Pinscher" FontSize="25" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock Text="Please enter your name:" FontFamily="SH Pinscher" FontSize="25" Foreground="LightGoldenrodYellow" HorizontalAlignment="Center"/>
             <TextBox x:Name="playerName" Width="350" Height="50" Margin="20" FontFamily="SH Pinscher" FontSize="40"/>
             <Button Width="200" FontSize="45" Margin="20,20,20,0" Click="Button_Click">
                 <Image Source="Graphics/submit-1.png (1).png"/>

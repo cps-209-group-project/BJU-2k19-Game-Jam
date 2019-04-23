@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Symphony_Sprint
 {
@@ -29,7 +18,7 @@ namespace Symphony_Sprint
                 TextBlock nameBlock = new TextBlock();
                 nameBlock.FontSize = 25;
                 nameBlock.TextAlignment = TextAlignment.Center;
-                nameBlock.Foreground = Brushes.White;
+                nameBlock.Foreground = Brushes.LightGoldenrodYellow;
                 nameBlock.Margin = new Thickness(0,5,0,0);
                 nameBlock.Height = 33;
                 nameBlock.FontFamily = new FontFamily("SH Pinscher");
@@ -38,7 +27,7 @@ namespace Symphony_Sprint
                 TextBlock scoreBlock = new TextBlock();
                 scoreBlock.FontSize = 25;
                 scoreBlock.TextAlignment = TextAlignment.Center;
-                scoreBlock.Foreground = Brushes.White;
+                scoreBlock.Foreground = Brushes.LightGoldenrodYellow;
                 scoreBlock.Margin = new Thickness(0, 5, 0, 0);
                 scoreBlock.Height = 33;
                 scoreBlock.FontFamily = new FontFamily("SH Pinscher");
@@ -50,7 +39,6 @@ namespace Symphony_Sprint
                 nameBlock.Text = name;
                 scoreBlock.Text = score;
             }
-            
         }
     }
 }

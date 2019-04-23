@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Symphony_Sprint"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="VictoryWin" Height="350" Width="450">
     <Canvas Background="Black">
         <StackPanel>
-            <TextBlock Height="100" Width="395" Padding="25" Margin="25,70,25,15" Text="You won!" Foreground="White" FontSize="50" TextAlignment="Center" FontFamily="Agency FB"/>
+            <TextBlock Height="100" Width="395" Padding="25" Margin="25,70,25,15" Text="You won!" Foreground="LightGoldenrodYellow" FontSize="50" TextAlignment="Center" FontFamily="Agency FB"/>
             <Button Content="OK" Height="30" Width="170" Background="Gold" Click="btnOK_Click"/>
         </StackPanel>
     </Canvas>

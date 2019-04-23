@@ -3,7 +3,6 @@ using System.Windows;
 
 namespace Symphony_Sprint
 {
-
     public partial class MainWindow : Window
     {
         System.Media.SoundPlayer sPlayerMW;
@@ -18,8 +17,6 @@ namespace Symphony_Sprint
         {
             ChooseDifficulty dWin = new ChooseDifficulty(sPlayerMW);
             dWin.Show();
-            //GameWindow gwin = new GameWindow();
-            //gwin.Show();
         }
 
         private void HighScores_Click(object sender, RoutedEventArgs e)
