@@ -25,7 +25,7 @@ Keys:
 - High Score
 - Easter Egg
 ## Known Issues
-Bug with planar gameplay, doesn't decend when it gets past instrument object.
+Bug with planar gameplay, doesn't descend when it gets past instrument object.
 ## Recording
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EeYugOVYK01IrhXNf90UibkBlYOhVyd_22nS1-pY78SgXA?e=fJMMqs) (Alpha)
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EVc3PpqaRc5PmXQC041hRRIBqOVEnn7cGQhTE1BS6Q7NZg?e=NrT1So) (Beta)
@@ -36,6 +36,6 @@ Bug with planar gameplay, doesn't decend when it gets past instrument object.
 |Team Member|Time Invested|Remaining Budget|Journal Link|
 |-----------|-------------|----------------|------------|
 |Stone|52|8|[Stones Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/StonesJournal)|
-|Jason|36|24|[Jasons Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/JasonsJournal)|
+|Jason|38|22|[Jasons Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/JasonsJournal)|
 |Ana|20 |40|[Anas Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/AnasJournal)|
 |Robin|46.35|13.65|[Robins Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/RobinsJournal)|
