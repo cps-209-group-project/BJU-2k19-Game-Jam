@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="GameOverWindow" Height="350" Width="450">
 
-    <Canvas Background="Black">
+    <Canvas x:Name="goCanvas" Background="Black">
         <!--<TextBlock Height="100" Width="395" Padding="25" Margin="25,70,25,15" Text="Game Over" Foreground="White" FontSize="50" TextAlignment="Center" FontFamily="Agency FB"/>-->
         <Button Content="OK" Height="30" Width="170" Background="Gold" Click="btnOK_Click"  Canvas.Left="140" Canvas.Top="190"/>
         <Image Source="Graphics/gameOver-1.png.png" Height="55" Canvas.Left="45" Canvas.Top="80"/>

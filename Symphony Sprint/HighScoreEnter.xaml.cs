@@ -23,6 +23,10 @@ namespace Symphony_Sprint
         public HighScoreEnter()
         {
             InitializeComponent();
+            if (GameOverWindow.IsPitty == true)
+            {
+                MessageBox.Show("Here. Have some points.");
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
