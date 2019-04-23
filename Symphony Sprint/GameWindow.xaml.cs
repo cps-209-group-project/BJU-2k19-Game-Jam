@@ -248,8 +248,11 @@ namespace Symphony_Sprint
                             {
                                 Canvas.SetBottom(playerImg, Canvas.GetBottom(objImg));
                                 gc.Player.State = Game_Model.World_Objects.movementState.running;
-                            }
+
+                                
+                            } 
                         }
+  
                     }
 
                     if (obj.ImgPath == "flat-1.png.png" || obj.ImgPath == "sharp-1.png.png")
@@ -301,6 +304,12 @@ namespace Symphony_Sprint
                         }
                         if (obj.ImgPath == "trebleClef-7.png.png")
                         {
+                            if (gc.Points == 0)
+                            {
+                                gc.Points += 10;
+                                sPlayer = new System.Media.SoundPlayer(Properties.Resources.ftus_musical_instrument_gender_gamelan_single_mallet_hit_mid_low_004_502);
+                                sPlayer.Play();
+                            }
                             gc.Points += gc.Points * 2;
                             sPlayer = new System.Media.SoundPlayer(Properties.Resources.ftus_musical_instrument_gender_gamelan_single_mallet_hit_mid_low_004_502);
                             sPlayer.Play();
@@ -315,6 +324,7 @@ namespace Symphony_Sprint
                         }
                     } 
                 }
+                
                 //Collision code end
             }
         }

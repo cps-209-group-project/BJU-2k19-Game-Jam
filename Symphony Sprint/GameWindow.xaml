@@ -18,10 +18,10 @@
             </RadialGradientBrush>
 
         </StackPanel.Background>
-        <StackPanel Orientation="Vertical" Margin="0, 100, 0, 0">
+        <StackPanel Orientation="Vertical" Margin="0, 50, 0, 0">
 
         <Image x:Name="lives" Margin="50, 0, 0, 50"  Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Image x:Name="heart1" Margin="100, 0, 0, 0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image x:Name="heart1" Margin="100, -20, 0, 0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Image x:Name="heart2" Margin="100, 0, 0, 0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Image x:Name="heart3" Margin="100, 0, 0, 0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Image x:Name="noteImg" Margin="25, 20, 0, 0" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center"/>
