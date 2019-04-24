@@ -18,16 +18,25 @@ Keys:
 - Basic Gameplay
 - Cheat Mode
 - Basic Points System
+- Multi Planar
+- Multiple Levels
+- Diffuculty Levels
+- Sound Effects
+- High Scores
+- Easter Egg
 ## Known Issues
-No known Issues
+Bug with planar gameplay, doesn't descend when it gets past instrument object.
+High Scores file sometimes clears out.
 ## Recording
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EeYugOVYK01IrhXNf90UibkBlYOhVyd_22nS1-pY78SgXA?e=fJMMqs) (Alpha)
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EVc3PpqaRc5PmXQC041hRRIBqOVEnn7cGQhTE1BS6Q7NZg?e=NrT1So) (Beta)
 
+[Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EY71JvLLLnVAgv_WVKmJWj4BZzDBqmh9Da4ke4VSnOKiPw?e=cIFnu2) (Release Canidate)
+
 ## Expenses
 |Team Member|Time Invested|Remaining Budget|Journal Link|
 |-----------|-------------|----------------|------------|
-|Stone|32|28|[Stones Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/StonesJournal)|
-|Jason|25.25|34.75|[Jasons Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/JasonsJournal)|
+|Stone|52|8|[Stones Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/StonesJournal)|
+|Jason|38|22|[Jasons Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/JasonsJournal)|
 |Ana|20 |40|[Anas Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/AnasJournal)|
-|Robin|27.20|32.80|[Robins Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/RobinsJournal)|
+|Robin|46.35|13.65|[Robins Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/RobinsJournal)|

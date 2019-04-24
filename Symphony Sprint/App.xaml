@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Symphony_Sprint"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Font/sh-pinscher/SHPinscher-Regular.otf"/>
+        </Style>
     </Application.Resources>
 </Application>

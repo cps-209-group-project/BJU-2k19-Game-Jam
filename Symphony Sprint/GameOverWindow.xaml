@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Symphony_Sprint"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="GameOverWindow" Height="350" Width="450">
 
     <Canvas x:Name="goCanvas" Background="Black">
