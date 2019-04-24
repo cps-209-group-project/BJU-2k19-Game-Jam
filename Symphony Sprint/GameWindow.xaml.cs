@@ -246,10 +246,9 @@ namespace Symphony_Sprint
                         {
                             if (obj.ImgPath == "organ-1.png.png")
                             {
-                                Canvas.SetBottom(playerImg, Canvas.GetBottom(objImg));
+                                Canvas.SetBottom(playerImg, Canvas.GetBottom(objImg) + 50);
                                 gc.Player.State = Game_Model.World_Objects.movementState.running;
 
-                                
                             } 
                         }
   

@@ -93,14 +93,14 @@ namespace Symphony_Sprint.Game_Model.World_Objects
                 this.State = movementState.running;
             }
 
-            if (this.PosY == 0 && this.State != movementState.running)
-            {
-                this.State = movementState.running;
-            }
+            //if (this.PosY == 0 && this.State != movementState.running)
+            //{
+            //    this.State = movementState.running;
+            //}
 
-            if (this.PosY > 50 && this.State == movementState.onObject)
+            if (this.PosY > 50 && this.State == movementState.running)
             {
-                this.PosY -= 1;
+                this.State = movementState.decending;
             }
         }
 
