@@ -25,7 +25,7 @@ Keys:
 - High Scores
 - Easter Egg
 ## Known Issues
-Bug with planar gameplay, doesn't descend when it gets past instrument object.
+None that we know of.
 High Scores file sometimes clears out.
 ## Recording
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EeYugOVYK01IrhXNf90UibkBlYOhVyd_22nS1-pY78SgXA?e=fJMMqs) (Alpha)
