@@ -48,6 +48,10 @@ namespace Symphony_Sprint
                 HSEnter.Show();
                 this.Close();
             }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btnPitty_Click(object sender, RoutedEventArgs e)
