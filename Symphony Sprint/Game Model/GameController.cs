@@ -23,7 +23,7 @@ namespace Symphony_Sprint.Game_Model
 
         public Level Level { get { return level; } set { level = value; } }
         public Player Player { get { return player; } set { player = value; } }
-        public int Points { get { return points; } set { points = value; } }    
+        public int Points { get { return points; } set { points = value; } }
         public int Notes { get { return notes; } set { notes = value; } }
 
         public GameController()

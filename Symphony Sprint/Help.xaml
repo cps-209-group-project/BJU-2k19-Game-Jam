@@ -5,15 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Symphony_Sprint.Properties"
       mc:Ignorable="d" 
-      Height="500" Width="800"
+      Height="565" Width="800"
       WindowStartupLocation="CenterScreen"
       Title="Help">
 
-    <StackPanel x:Name="vPanel" Background="Black" HorizontalAlignment="Center" Width="800">
-        <Image Source="Graphics/help-1.png.png" Height="90" Margin="0,0,0,0"/>
-        <TextBlock Height="221" FontSize="30" TextAlignment="Left" Margin="25,0,25,0" Foreground="LightGoldenrodYellow" FontFamily="SH Pinscher" TextWrapping="Wrap"
-             Text="Click start to start the game. Press the space key to jump to collect notes or avoid accidentals. Press space key while still jumping to double jump. Press S during game play to save the game. Press L to load the game you saved. Press C to turn cheat mode on or off. Objective: collect all the notes to get points. Avoid accedentals."/>
-        <TextBlock  Padding="5" Height="155" FontSize="30" TextAlignment="Left" Margin="25,0,25,0" Foreground="LightGoldenrodYellow" FontFamily="SH Pinscher" TextWrapping="WrapWithOverflow"
-                        Text="Whole notes: 40 pts&#13;Half notes: 30 pts&#13;Quarter notes: 20 pts&#13;Eigth notes: 10 pts"/>
-    </StackPanel>
+    <Canvas x:Name="vPanel" Background="Black" HorizontalAlignment="Center" Width="800" Margin="0,0,0,0">
+        <Image Source="Graphics/help-1.png.png" Height="90" Margin="0,0,0,0" Canvas.Left="282"/>
+        <TextBlock Height="190" FontSize="29" TextAlignment="Left" Foreground="LightGoldenrodYellow" FontFamily="Agency FB" TextWrapping="Wrap" Width="745"
+             Text="Click start to start the game. Press the space key to jump to collect notes or avoid accidentals. Press space key while still jumping to double jump. Press S during game play to save the game. Press L to load the game you saved. Press C to turn cheat mode on or off. Objective: collect all the notes to get points. Avoid accedentals." Canvas.Left="25" Canvas.Top="95" Canvas.Bottom="0"/>
+        <TextBlock  Padding="5" Height="200" FontSize="28" TextAlignment="Left" Foreground="LightGoldenrodYellow" FontFamily="Agency FB" TextWrapping="WrapWithOverflow"
+                        Text="Note Values&#13;Whole notes: 40 pts&#13;Half notes: 30 pts&#13;Quarter notes: 20 pts&#13;Eigth notes: 10 pts" Canvas.Left="25" Canvas.Top="290" Width="235"/>
+        <TextBlock Canvas.Left="282" TextWrapping="Wrap" Canvas.Top="285" Height="240" Width="488" Foreground="LightGoldenrodYellow" FontFamily="Agency FB" FontSize="28"
+                   ><Run Text="Spacebar: jump/double jump (press space during the game if stationary, and once again if jumping) "/><LineBreak/><Run Text="C : Cheat Mode (Press C during the game to access cheat mode) "/><LineBreak/><Run Text="S : Save (Press S during the game to save the game) "/><LineBreak/><Run Text="L : Load (Press L during the game to load a different game)"/></TextBlock>
+    </Canvas>
 </Window>

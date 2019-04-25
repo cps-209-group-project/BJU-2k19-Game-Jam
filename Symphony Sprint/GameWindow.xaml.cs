@@ -19,8 +19,8 @@ namespace Symphony_Sprint
 
         public static DispatcherTimer gameTimer;
         public static DispatcherTimer displayTimer;
-        
-        
+
+
         //public int livesLeft = 3;
         private OpenFileDialog loadDialog = new OpenFileDialog();
         private SaveFileDialog saveDialog = new SaveFileDialog();
@@ -68,7 +68,7 @@ namespace Symphony_Sprint
             source3 = new BitmapImage(new Uri("/Graphics/heart-1.png.png", UriKind.Relative));
 
             noteImg.Source = new BitmapImage(new Uri("/Graphics/notes-1.png", UriKind.Relative));
-            
+
             lives.Source = new BitmapImage(new Uri("/Graphics/lives-1.png.png", UriKind.Relative));
             time.Source = new BitmapImage(new Uri("/Graphics/time-1.png.png", UriKind.Relative));
             heart1.Source = source1;
@@ -82,16 +82,16 @@ namespace Symphony_Sprint
             displayTimer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 1) };
             displayTimer.Tick += DisplayTimer_Tick;
             UpdateScreen();
-            
+
             gc.LargoLevel();
             UpdateScreen();
-      
+
             gameTimer.Start();
             displayTimer.Start();
         }
 
         private void DisplayTimer_Tick(object sender, EventArgs e)
-        {           
+        {
             gc.Level.Seconds++;
         }
 
@@ -115,11 +115,13 @@ namespace Symphony_Sprint
             if (gc.Player.Lives == 2)
             {
                 heart1.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
-            } else if (gc.Player.Lives == 1)
+            }
+            else if (gc.Player.Lives == 1)
             {
                 heart1.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
                 heart2.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
-            } else if (gc.Player.Lives == 0)
+            }
+            else if (gc.Player.Lives == 0)
             {
                 heart1.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
                 heart2.Source = new BitmapImage(new Uri("/Graphics/heartDead-1.png.png", UriKind.Relative));
@@ -130,7 +132,7 @@ namespace Symphony_Sprint
                 GOWin.Show();
                 GOPlayer.Play();
             }
-            
+
             //Timer
             if (gc.Level.Seconds < 10)
             {
@@ -191,17 +193,18 @@ namespace Symphony_Sprint
                     objImg.Visibility = Visibility.Hidden;
                 }
 
-                if(obj.posX < 10)
+                if (obj.posX < 10)
                 {
                     //objImg.Visibility = Visibility.Hidden;
                     gc.Level.GameObjects.Remove(obj);
                 }
-               
+
                 if (obj.ImgPath == "trebleClef-7.png.png")
                 {
                     objImg.Height = 60;
                     objImg.Width = 100;
-                } else if (obj.ImgPath == "organ-1.png.png")
+                }
+                else if (obj.ImgPath == "organ-1.png.png")
                 {
                     objImg.Height = 60;
                     objImg.Width = 60;
@@ -210,8 +213,8 @@ namespace Symphony_Sprint
                 {
                     objImg.Height = 40;
                     objImg.Width = 60;
-                }                
-                
+                }
+
                 objImg.Uid = "GameObject";
                 GameCanvas.Children.Add(objImg);
                 obj.posX -= obj.Speed;
@@ -236,22 +239,22 @@ namespace Symphony_Sprint
                         Convert.ToDouble(playerImg.Height)
                     );
 
-                
 
-                if(objects.Left <= player.Right && objects.Right >= player.Left && objects.Bottom >= player.Top && objects.Top <= player.Bottom)
+
+                if (objects.Left <= player.Right && objects.Right >= player.Left && objects.Bottom >= player.Top && objects.Top <= player.Bottom)
                 {
                     if (gc.Player.State == Game_Model.World_Objects.movementState.decending || gc.Player.State == Game_Model.World_Objects.movementState.decending2)
                     {
-                        if ((objects.Bottom +5) <= player.Bottom)
+                        if ((objects.Bottom + 5) <= player.Bottom)
                         {
                             if (obj.ImgPath == "organ-1.png.png")
                             {
                                 Canvas.SetBottom(playerImg, Canvas.GetBottom(objImg) + 50);
                                 gc.Player.State = Game_Model.World_Objects.movementState.running;
 
-                            } 
+                            }
                         }
-  
+
                     }
 
                     if (obj.ImgPath == "flat-1.png.png" || obj.ImgPath == "sharp-1.png.png")
@@ -270,14 +273,14 @@ namespace Symphony_Sprint
                         sPlayer = new System.Media.SoundPlayer(Properties.Resources.zapsplat_musical_karimba_tine_pluck_004_15326);
                         sPlayer.Play();
                         GameCanvas.Children.Remove(objImg);
-                    } 
+                    }
                     else if (obj.ImgPath != "organ-1.png.png")
                     {
                         GameCanvas.Children.Remove(objImg);
                         gc.Level.GameObjects.Remove(obj);
                         Debug.WriteLine("Collision: " + "Rect: Object X: " + objects.X + " and " + objects.Y + " Player: " + player.X + " and " + player.Y);
                         gc.Level.NoteObjective--;
-                        if(obj.ImgPath == "wholeNote-1.png.png")
+                        if (obj.ImgPath == "wholeNote-1.png.png")
                         {
                             gc.Points += 40;
                             sPlayer = new System.Media.SoundPlayer(Properties.Resources.ftus_musical_instrument_gender_small_gamelan_single_mallet_hit_high_004_543);
@@ -321,9 +324,9 @@ namespace Symphony_Sprint
                         {
                             ChangeLevelHandler();
                         }
-                    } 
+                    }
                 }
-                
+
                 //Collision code end
             }
         }
@@ -349,7 +352,7 @@ namespace Symphony_Sprint
                 gc.Level.NoteObjective = 40;
 
                 gc.Level.GameObjects.RemoveAll(o => o.posX <= 1190); // Remove all objects from the screen because it's a new level
-            }                
+            }
             else if (gc.Level.levelName == "allegro")
             {
                 gc.PrestoLevel();
@@ -412,7 +415,8 @@ namespace Symphony_Sprint
                 if (gc.isCheatEnabled == false)
                 {
                     gc.isCheatEnabled = true;
-                } else
+                }
+                else
                 {
                     gc.isCheatEnabled = false;
                 }
