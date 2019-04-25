@@ -47,7 +47,7 @@ namespace Symphony_Sprint
         public static void LoadScore(string dir)
         {
             HighScoreList = new List<HighScore> { };
-            if (! File.Exists(dir))
+            if (!File.Exists(dir))
             {
                 return;
             }

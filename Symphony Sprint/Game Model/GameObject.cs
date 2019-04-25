@@ -8,10 +8,10 @@ namespace Symphony_Sprint.Game_Model
 {
     public class GameObject : ISerialize
     {
-        
 
-        public  string ImgPath { get;  set; }
-        public  int Speed { get; set; }
+
+        public string ImgPath { get; set; }
+        public int Speed { get; set; }
 
         public int posX { get; set; }
         public int posY { get; set; }
@@ -22,12 +22,12 @@ namespace Symphony_Sprint.Game_Model
             this.posX = x;
             this.posY = y;
             this.ImgPath = imgPath;
-            this.Speed = speed; 
+            this.Speed = speed;
         }
 
         public string Serialize()
         {
-             return $"Speed={Speed},PosX={posX},PosY={posY},ImgPath={ImgPath}";
+            return $"Speed={Speed},PosX={posX},PosY={posY},ImgPath={ImgPath}";
         }
 
         public void Deserialize(string data)

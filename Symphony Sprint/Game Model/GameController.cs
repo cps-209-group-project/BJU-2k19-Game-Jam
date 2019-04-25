@@ -21,8 +21,6 @@ namespace Symphony_Sprint.Game_Model
         public string[] insaneImages = { "trebleClef-7.png.png", "flat-1.png.png", "flat-1.png.png", "flat-1.png.png", "sharp-1.png.png", "sharp-1.png.png", "sharp-1.png.png", "organ-1.png.png" };
         Random rand = new Random();
 
-       
-
         public Level Level { get { return level; } set { level = value; } }
         public Player Player { get { return player; } set { player = value; } }
         public int Points { get { return points; } set { points = value; } }

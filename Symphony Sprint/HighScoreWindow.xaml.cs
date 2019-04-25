@@ -19,7 +19,7 @@ namespace Symphony_Sprint
                 nameBlock.FontSize = 25;
                 nameBlock.TextAlignment = TextAlignment.Center;
                 nameBlock.Foreground = Brushes.LightGoldenrodYellow;
-                nameBlock.Margin = new Thickness(0,5,0,0);
+                nameBlock.Margin = new Thickness(0, 5, 0, 0);
                 nameBlock.Height = 33;
                 nameBlock.FontFamily = new FontFamily("SH Pinscher");
                 namePanel.Children.Add(nameBlock);

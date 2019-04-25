@@ -44,7 +44,7 @@ Level:{serializedLevel}";
                         new GameObject("o2.png", 2, 5, 10)
                     }
             }
-            
+
         };
 
 

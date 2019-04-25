@@ -57,7 +57,7 @@ namespace Symphony_Sprint
         private void btnPitty_Click(object sender, RoutedEventArgs e)
         {
             IsPitty = true;
-            scorenum += 1000;           
+            scorenum += 1000;
             HighScoreEnter hsEnt = new HighScoreEnter();
             hsEnt.gameScore.Text = Convert.ToString(1000);
             hsEnt.Show();
