@@ -1,8 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Windows;
+﻿//-----------------------------------------------------------
+//File:   Symphony Sprint
+//Desc:   This class handles Plaer movement.
+//        
+//-----------------------------------------------------------
+using System;
 using System.Windows.Input;
-using Microsoft.Win32;
+
 
 namespace Symphony_Sprint.Game_Model.World_Objects
 {

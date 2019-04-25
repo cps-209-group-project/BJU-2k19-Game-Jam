@@ -1,9 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------
+//File:   Symphony Sprint
+//Desc:   This class Tests the GameController Class.
+//        
+//-----------------------------------------------------------
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
 using NUnit.Framework;
 using Symphony_Sprint.Game_Model.World_Objects;
 

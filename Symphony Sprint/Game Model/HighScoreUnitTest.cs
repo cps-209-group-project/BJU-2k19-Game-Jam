@@ -1,4 +1,9 @@
-﻿using System.IO;
+﻿//-----------------------------------------------------------
+//File:   Symphony Sprint
+//Desc:   This class tests highscores methods.
+//        
+//-----------------------------------------------------------
+using System.IO;
 using NUnit.Framework;
 
 namespace Symphony_Sprint.Game_Model

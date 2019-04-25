@@ -1,9 +1,11 @@
-﻿using Symphony_Sprint.Game_Model;
+﻿//-----------------------------------------------------------
+//File:   Symphony Sprint
+//Desc:   This class handles highscores methods.
+//        
+//-----------------------------------------------------------
+using Symphony_Sprint.Game_Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace Symphony_Sprint

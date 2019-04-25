@@ -1,4 +1,9 @@
-﻿using Symphony_Sprint.Game_Model.World_Objects;
+﻿//-----------------------------------------------------------
+//File:   Symphony Sprint
+//Desc:   This class handles Game Serialization logic.
+//        
+//-----------------------------------------------------------
+using Symphony_Sprint.Game_Model.World_Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

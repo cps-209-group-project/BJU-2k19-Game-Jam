@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//-----------------------------------------------------------
+//File:   Symphony Sprint
+//Desc:   This class defines HighScore objects.
+//        
+//-----------------------------------------------------------
+using System;
 
 namespace Symphony_Sprint.Game_Model
 {

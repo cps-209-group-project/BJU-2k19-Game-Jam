@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//-----------------------------------------------------------
+//File:   Symphony Sprint
+//Desc:   This class handles Game Serialization methods.
+//        
+//-----------------------------------------------------------
 
 namespace Symphony_Sprint.Game_Model
 {
