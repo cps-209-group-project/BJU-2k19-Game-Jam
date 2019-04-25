@@ -1,4 +1,10 @@
-﻿using Symphony_Sprint.Game_Model;
+﻿//-----------------------------------------------------------
+//File:   Symphunny Sprint
+//Desc:   This class handles choosing difficulty gamemode.
+//        
+//----------------------------------------------------------- 
+
+using Symphony_Sprint.Game_Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

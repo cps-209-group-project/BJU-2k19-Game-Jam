@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------
+//File:   Symphunny Sprint
+//Desc:   This class handles Game Over window.
+//        
+//-----------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

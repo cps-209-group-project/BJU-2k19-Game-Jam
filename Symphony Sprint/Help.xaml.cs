@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------
+//File:   Symphunny Sprint
+//Desc:   This class handles help screen.
+//        
+//-----------------------------------------------------------
+
+using System;
 using System;
 using System.Collections.Generic;
 using System.Linq;

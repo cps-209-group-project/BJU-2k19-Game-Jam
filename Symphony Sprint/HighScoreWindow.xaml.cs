@@ -1,4 +1,10 @@
-﻿using System.Windows;
+﻿//-----------------------------------------------------------
+//File:   Symphunny Sprint
+//Desc:   This class handles high score screen logic.
+//        
+//-----------------------------------------------------------
+
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 

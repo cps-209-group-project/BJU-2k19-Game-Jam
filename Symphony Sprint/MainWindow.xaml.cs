@@ -1,4 +1,10 @@
-﻿using Symphony_Sprint.Properties;
+﻿//-----------------------------------------------------------
+//File:   Symphunny Sprint
+//Desc:   This class handles Main screen input
+//        
+//-----------------------------------------------------------
+
+using Symphony_Sprint.Properties;
 using System.Windows;
 
 namespace Symphony_Sprint
