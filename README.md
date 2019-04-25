@@ -33,6 +33,8 @@ High Scores file sometimes clears out.
 
 [Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EY71JvLLLnVAgv_WVKmJWj4BZzDBqmh9Da4ke4VSnOKiPw?e=cIFnu2) (Release Canidate)
 
+[Screen Recording](https://bju-my.sharepoint.com/:v:/g/personal/scham978_students_bju_edu/EeuMF6igbX5GoqY-Ept_3NkBBgMuUy3_0RditMx5-xtQeg?e=d5LMBG) (Release)
+
 ## Expenses
 |Team Member|Time Invested|Remaining Budget|Journal Link|
 |-----------|-------------|----------------|------------|
