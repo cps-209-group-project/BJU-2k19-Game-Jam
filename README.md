@@ -39,6 +39,6 @@ High Scores file sometimes clears out.
 |Team Member|Time Invested|Remaining Budget|Journal Link|
 |-----------|-------------|----------------|------------|
 |Stone|52|8|[Stones Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/StonesJournal)|
-|Jason|38|22|[Jasons Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/JasonsJournal)|
+|Jason|40|20|[Jasons Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/JasonsJournal)|
 |Ana|20 |40|[Anas Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/AnasJournal)|
 |Robin|46.35|13.65|[Robins Journal](https://github.com/cps-209-group-project/BJU-2k19-Game-Jam/wiki/RobinsJournal)|
